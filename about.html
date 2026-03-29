@@ -22,9 +22,7 @@
   <meta property="og:url" content="https://sbgbca.edu.in/about.html" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%231a3a6e'/><text y='.9em' font-size='64' fill='white' font-family='serif' font-weight='700' x='8'>S</text></svg>" />
-
+  <link rel="icon" type="image/png" href="components/images/logo-favicon.png" />
   <!-- CSS (paths relative from pages/) -->
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="stylesheet" href="../assets/css/navbar.css" />
@@ -47,13 +45,15 @@
       align-items: center;
       overflow: hidden;
     }
+
     .page-hero::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(120deg, rgba(10,20,45,0.9) 0%, rgba(26,58,110,0.7) 100%);
+      background: linear-gradient(120deg, rgba(10, 20, 45, 0.9) 0%, rgba(26, 58, 110, 0.7) 100%);
       z-index: 1;
     }
+
     .page-hero-bg {
       position: absolute;
       inset: 0;
@@ -62,28 +62,37 @@
       object-fit: cover;
       opacity: 0.45;
     }
+
     .page-hero .container {
       position: relative;
       z-index: 2;
       padding-block: var(--sp-16);
     }
+
     .page-hero-breadcrumb {
       display: flex;
       align-items: center;
       gap: var(--sp-2);
       font-size: var(--fs-xs);
-      color: rgba(255,255,255,0.6);
+      color: rgba(255, 255, 255, 0.6);
       margin-bottom: var(--sp-4);
       text-transform: uppercase;
       letter-spacing: 0.08em;
       font-weight: 600;
     }
+
     .page-hero-breadcrumb a {
-      color: rgba(255,255,255,0.6);
+      color: rgba(255, 255, 255, 0.6);
       transition: color var(--transition-fast);
     }
-    .page-hero-breadcrumb a:hover { color: var(--clr-accent-light); }
-    .page-hero-breadcrumb i { font-size: 0.6rem; }
+
+    .page-hero-breadcrumb a:hover {
+      color: var(--clr-accent-light);
+    }
+
+    .page-hero-breadcrumb i {
+      font-size: 0.6rem;
+    }
 
     .page-hero h1 {
       font-family: var(--font-heading);
@@ -93,15 +102,17 @@
       line-height: 1.2;
       margin-bottom: var(--sp-4);
     }
+
     .page-hero h1 span {
       background: linear-gradient(90deg, var(--clr-accent-light), var(--clr-accent));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
+
     .page-hero p {
       font-size: var(--fs-md);
-      color: rgba(255,255,255,0.8);
+      color: rgba(255, 255, 255, 0.8);
       max-width: 560px;
       line-height: 1.75;
     }
@@ -113,9 +124,11 @@
       gap: var(--sp-16);
       align-items: center;
     }
+
     .about-overview-img {
       position: relative;
     }
+
     .about-overview-img img {
       width: 100%;
       height: 440px;
@@ -124,6 +137,7 @@
       box-shadow: var(--shadow-xl);
       display: block;
     }
+
     .about-overview-badge {
       position: absolute;
       bottom: -20px;
@@ -136,12 +150,14 @@
       box-shadow: var(--shadow-lg);
       font-family: var(--font-heading);
     }
+
     .about-overview-badge strong {
       display: block;
       font-size: var(--fs-2xl);
       font-weight: 800;
       line-height: 1;
     }
+
     .about-overview-badge span {
       font-size: var(--fs-xs);
       font-weight: 700;
@@ -149,31 +165,39 @@
       letter-spacing: 0.06em;
       opacity: 0.85;
     }
-    .about-overview-text .section-eyebrow { margin-bottom: var(--sp-3); }
+
+    .about-overview-text .section-eyebrow {
+      margin-bottom: var(--sp-3);
+    }
+
     .about-overview-text .section-title {
       text-align: left;
       margin-bottom: var(--sp-4);
     }
+
     .about-overview-text p {
       color: var(--clr-muted);
       line-height: 1.8;
       margin-bottom: var(--sp-4);
       font-size: var(--fs-base);
     }
+
     .affiliation-badge {
       display: inline-flex;
       align-items: center;
       gap: var(--sp-3);
-      background: rgba(26,58,110,0.07);
-      border: 1px solid rgba(26,58,110,0.15);
+      background: rgba(26, 58, 110, 0.07);
+      border: 1px solid rgba(26, 58, 110, 0.15);
       border-radius: var(--radius-md);
       padding: var(--sp-3) var(--sp-4);
       margin-bottom: var(--sp-6);
     }
+
     .affiliation-badge i {
       color: var(--clr-primary);
       font-size: 1rem;
     }
+
     .affiliation-badge span {
       font-size: var(--fs-sm);
       font-weight: 600;
@@ -186,22 +210,26 @@
       grid-template-columns: 1fr 1fr;
       gap: var(--sp-8);
     }
+
     .vm-card {
       border-radius: var(--radius-lg);
       padding: var(--sp-10) var(--sp-8);
       position: relative;
       overflow: hidden;
     }
+
     .vm-card--vision {
       background: var(--clr-primary-dark);
       color: var(--clr-white);
     }
+
     .vm-card--mission {
       background: var(--clr-white);
       border: 1px solid var(--clr-border);
       color: var(--clr-text);
       box-shadow: var(--shadow-md);
     }
+
     .vm-card-icon {
       width: 56px;
       height: 56px;
@@ -212,16 +240,19 @@
       font-size: 1.4rem;
       margin-bottom: var(--sp-5);
     }
+
     .vm-card--vision .vm-card-icon {
-      background: rgba(232,160,32,0.15);
-      border: 1px solid rgba(232,160,32,0.3);
+      background: rgba(232, 160, 32, 0.15);
+      border: 1px solid rgba(232, 160, 32, 0.3);
       color: var(--clr-accent-light);
     }
+
     .vm-card--mission .vm-card-icon {
-      background: rgba(26,58,110,0.08);
-      border: 1px solid rgba(26,58,110,0.12);
+      background: rgba(26, 58, 110, 0.08);
+      border: 1px solid rgba(26, 58, 110, 0.12);
       color: var(--clr-primary);
     }
+
     .vm-card-label {
       display: inline-block;
       font-size: var(--fs-xs);
@@ -230,8 +261,14 @@
       text-transform: uppercase;
       margin-bottom: var(--sp-2);
     }
-    .vm-card--vision .vm-card-label { color: var(--clr-accent-light); }
-    .vm-card--mission .vm-card-label { color: var(--clr-accent); }
+
+    .vm-card--vision .vm-card-label {
+      color: var(--clr-accent-light);
+    }
+
+    .vm-card--mission .vm-card-label {
+      color: var(--clr-accent);
+    }
 
     .vm-card h2 {
       font-family: var(--font-heading);
@@ -240,15 +277,27 @@
       margin-bottom: var(--sp-4);
       line-height: 1.25;
     }
-    .vm-card--vision h2 { color: var(--clr-white); }
-    .vm-card--mission h2 { color: var(--clr-primary-dark); }
+
+    .vm-card--vision h2 {
+      color: var(--clr-white);
+    }
+
+    .vm-card--mission h2 {
+      color: var(--clr-primary-dark);
+    }
 
     .vm-card p {
       line-height: 1.8;
       font-size: var(--fs-base);
     }
-    .vm-card--vision p { color: rgba(255,255,255,0.75); }
-    .vm-card--mission p { color: var(--clr-muted); }
+
+    .vm-card--vision p {
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .vm-card--mission p {
+      color: var(--clr-muted);
+    }
 
     /* ---- Highlights ---- */
     .highlights-grid {
@@ -256,6 +305,7 @@
       grid-template-columns: repeat(4, 1fr);
       gap: var(--sp-6);
     }
+
     .highlight-card {
       background: var(--clr-white);
       border-radius: var(--radius-lg);
@@ -265,17 +315,19 @@
       box-shadow: var(--shadow-sm);
       transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
     }
+
     .highlight-card:hover {
       transform: translateY(-5px);
       box-shadow: var(--shadow-lg);
-      border-color: rgba(26,58,110,0.15);
+      border-color: rgba(26, 58, 110, 0.15);
     }
+
     .highlight-icon {
       width: 64px;
       height: 64px;
       border-radius: var(--radius-md);
-      background: linear-gradient(135deg, rgba(26,58,110,0.08), rgba(37,84,160,0.14));
-      border: 1px solid rgba(26,58,110,0.1);
+      background: linear-gradient(135deg, rgba(26, 58, 110, 0.08), rgba(37, 84, 160, 0.14));
+      border: 1px solid rgba(26, 58, 110, 0.1);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -284,11 +336,13 @@
       margin: 0 auto var(--sp-5);
       transition: background var(--transition-base), color var(--transition-base);
     }
+
     .highlight-card:hover .highlight-icon {
       background: var(--clr-primary);
       color: var(--clr-white);
       border-color: transparent;
     }
+
     .highlight-card h3 {
       font-family: var(--font-heading);
       font-size: var(--fs-md);
@@ -296,6 +350,7 @@
       color: var(--clr-primary-dark);
       margin-bottom: var(--sp-3);
     }
+
     .highlight-card p {
       font-size: var(--fs-sm);
       color: var(--clr-muted);
@@ -307,29 +362,38 @@
       background: var(--clr-primary-dark);
       padding-block: var(--sp-16);
     }
-    .values-strip .section-header { margin-bottom: var(--sp-10); }
+
+    .values-strip .section-header {
+      margin-bottom: var(--sp-10);
+    }
+
     .values-list {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: var(--sp-6);
     }
+
     .value-item {
       display: flex;
       align-items: flex-start;
       gap: var(--sp-4);
       padding: var(--sp-6);
       border-radius: var(--radius-lg);
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.07);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.07);
       transition: background var(--transition-base);
     }
-    .value-item:hover { background: rgba(255,255,255,0.08); }
+
+    .value-item:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
     .value-item-icon {
       width: 44px;
       height: 44px;
       border-radius: var(--radius-sm);
-      background: rgba(232,160,32,0.12);
-      border: 1px solid rgba(232,160,32,0.2);
+      background: rgba(232, 160, 32, 0.12);
+      border: 1px solid rgba(232, 160, 32, 0.2);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -337,6 +401,7 @@
       color: var(--clr-accent-light);
       flex-shrink: 0;
     }
+
     .value-item-text h4 {
       font-family: var(--font-heading);
       font-size: var(--fs-base);
@@ -344,9 +409,10 @@
       color: var(--clr-white);
       margin-bottom: var(--sp-1);
     }
+
     .value-item-text p {
       font-size: var(--fs-sm);
-      color: rgba(255,255,255,0.62);
+      color: rgba(255, 255, 255, 0.62);
       line-height: 1.65;
     }
 
@@ -359,16 +425,24 @@
       overflow: hidden;
       border-top: 3px solid var(--clr-accent);
     }
+
     .about-cta::before {
       content: '';
       position: absolute;
-      width: 600px; height: 600px;
+      width: 600px;
+      height: 600px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(232,160,32,0.09) 0%, transparent 70%);
-      top: -250px; right: -180px;
+      background: radial-gradient(circle, rgba(232, 160, 32, 0.09) 0%, transparent 70%);
+      top: -250px;
+      right: -180px;
       pointer-events: none;
     }
-    .about-cta-content { position: relative; z-index: 1; }
+
+    .about-cta-content {
+      position: relative;
+      z-index: 1;
+    }
+
     .about-cta h2 {
       font-family: var(--font-heading);
       font-size: clamp(1.75rem, 3.5vw, 2.75rem);
@@ -376,40 +450,73 @@
       color: var(--clr-white);
       margin-bottom: var(--sp-4);
     }
+
     .about-cta p {
-      color: rgba(255,255,255,0.8);
+      color: rgba(255, 255, 255, 0.8);
       font-size: var(--fs-md);
       max-width: 500px;
       margin-inline: auto;
       margin-bottom: var(--sp-8);
       line-height: 1.75;
     }
+
     .cta-btn-group {
       display: flex;
       justify-content: center;
       gap: var(--sp-4);
       flex-wrap: wrap;
     }
+
     .about-cta .btn-accent:hover {
-      box-shadow: 0 0 0 4px rgba(232,160,32,0.25), 0 6px 24px rgba(232,160,32,0.45);
+      box-shadow: 0 0 0 4px rgba(232, 160, 32, 0.25), 0 6px 24px rgba(232, 160, 32, 0.45);
     }
 
     /* ---- Responsive ---- */
     @media (max-width: 1024px) {
-      .highlights-grid { grid-template-columns: repeat(2, 1fr); }
-      .values-list     { grid-template-columns: repeat(2, 1fr); }
+      .highlights-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .values-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
+
     @media (max-width: 900px) {
-      .about-overview { grid-template-columns: 1fr; }
-      .about-overview-img { order: -1; }
-      .about-overview-img img { height: 300px; }
-      .about-overview-badge { bottom: -12px; right: -8px; }
-      .vm-grid { grid-template-columns: 1fr; }
+      .about-overview {
+        grid-template-columns: 1fr;
+      }
+
+      .about-overview-img {
+        order: -1;
+      }
+
+      .about-overview-img img {
+        height: 300px;
+      }
+
+      .about-overview-badge {
+        bottom: -12px;
+        right: -8px;
+      }
+
+      .vm-grid {
+        grid-template-columns: 1fr;
+      }
     }
+
     @media (max-width: 600px) {
-      .highlights-grid { grid-template-columns: 1fr; }
-      .values-list     { grid-template-columns: 1fr; }
-      .page-hero .container { padding-block: var(--sp-12); }
+      .highlights-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .values-list {
+        grid-template-columns: 1fr;
+      }
+
+      .page-hero .container {
+        padding-block: var(--sp-12);
+      }
     }
   </style>
 </head>
@@ -469,7 +576,8 @@
               <span class="dropdown-icon" aria-hidden="true"><i class="fa-solid fa-users"></i></span> Our Management
             </a>
             <a href="founders-desk.html" class="dropdown-link" role="menuitem">
-              <span class="dropdown-icon" aria-hidden="true"><i class="fa-solid fa-pen-to-square"></i></span> Founder's Desk
+              <span class="dropdown-icon" aria-hidden="true"><i class="fa-solid fa-pen-to-square"></i></span> Founder's
+              Desk
             </a>
           </div>
         </li>
@@ -492,8 +600,7 @@
     <!-- =================== PAGE HERO =================== -->
     <section class="page-hero" aria-label="About page hero">
       <!-- PASTE IMAGE HERE: assets/images/about-hero.jpg -->
-      <img class="page-hero-bg"
-        src="https://images.unsplash.com/photo-1562774053-701939374585?w=1600&q=75"
+      <img class="page-hero-bg" src="https://images.unsplash.com/photo-1562774053-701939374585?w=1600&q=75"
         alt="SBG BCA College campus" loading="eager" fetchpriority="high" />
 
       <div class="container">
@@ -520,8 +627,7 @@
           <!-- Image Side -->
           <div class="about-overview-img" data-reveal>
             <!-- PASTE ABOUT IMAGE HERE: assets/images/about-overview.jpg -->
-            <img
-              src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80"
+            <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80"
               alt="SBG BCA College campus and students" loading="lazy" />
             <div class="about-overview-badge">
               <strong>15+</strong>
@@ -849,7 +955,8 @@
             <li><a href="../index.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Home</a></li>
             <li><a href="about.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> About Us</a></li>
             <li><a href="programs.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Programs</a></li>
-            <li><a href="facilities.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Facilities</a></li>
+            <li><a href="facilities.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Facilities</a>
+            </li>
             <li><a href="gallery.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Gallery</a></li>
             <li><a href="contact.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Contact Us</a></li>
           </ul>
@@ -858,11 +965,12 @@
         <div class="footer-links">
           <h4>About College</h4>
           <ul>
-            <li><a href="about.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Vision &amp; Mission</a></li>
-            <li><a href="management.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Our Management</a></li>
-            <li><a href="founders-desk.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Founder's Desk</a></li>
-            <li><a href="#"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Admissions</a></li>
-            <li><a href="#"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Student Portal</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Vision &amp;
+                Mission</a></li>
+            <li><a href="management.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Our
+                Management</a></li>
+            <li><a href="founders-desk.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Founder's
+                Desk</a></li>
           </ul>
         </div>
 

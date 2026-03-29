@@ -22,9 +22,7 @@
   <meta property="og:url" content="https://sbgbca.edu.in/management.html" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%231a3a6e'/><text y='.9em' font-size='64' fill='white' font-family='serif' font-weight='700' x='8'>S</text></svg>" />
-
+  <link rel="icon" type="image/png" href="components/images/logo-favicon.png" />
   <!-- CSS -->
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="stylesheet" href="../assets/css/navbar.css" />
@@ -116,6 +114,8 @@
       border: 1px solid var(--clr-border);
       box-shadow: var(--shadow-md);
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
       transition: transform var(--transition-base), box-shadow var(--transition-base);
     }
     .leader-card:hover {
@@ -124,8 +124,8 @@
     }
     .leader-card-img-wrap {
       position: relative;
-      height: 320px;
-      background: linear-gradient(135deg, rgba(26,58,110,0.07), rgba(37,84,160,0.12));
+      height: 260px;
+      background: linear-gradient(135deg, rgba(26,58,110,0.1), rgba(37,84,160,0.2));
       overflow: hidden;
     }
     .leader-card-img-wrap img {
@@ -136,8 +136,8 @@
       display: block;
     }
     .leader-card-img-placeholder {
-      width: 100%;
-      height: 100%;
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -163,22 +163,26 @@
       border-radius: var(--radius-full);
     }
     .leader-card-body {
-      padding: var(--sp-7) var(--sp-7) var(--sp-8);
+      padding: var(--sp-6) var(--sp-6) var(--sp-6);
+      display: flex;
+      flex-direction: column;
+      flex: 1;
     }
     .leader-card-name {
       font-family: var(--font-heading);
       font-size: var(--fs-xl);
       font-weight: 800;
       color: var(--clr-primary-dark);
-      margin-bottom: var(--sp-1);
+      margin-bottom: 4px;
+      letter-spacing: -0.02em;
     }
     .leader-card-title {
       font-size: var(--fs-sm);
-      font-weight: 600;
+      font-weight: 500;
       color: var(--clr-accent);
       letter-spacing: 0.04em;
       text-transform: uppercase;
-      margin-bottom: var(--sp-4);
+      margin-bottom: var(--sp-3);
       display: flex;
       align-items: center;
       gap: var(--sp-2);
@@ -193,13 +197,17 @@
     }
     .leader-card-desc {
       color: var(--clr-muted);
-      line-height: 1.8;
+      line-height: 1.65;
       font-size: var(--fs-base);
       margin-bottom: var(--sp-5);
     }
     .leader-card-socials {
       display: flex;
-      gap: var(--sp-2);
+      align-items: center;
+      gap: var(--sp-3);
+      padding-top: var(--sp-4);
+      margin-top: auto;
+      border-top: 1px solid var(--clr-border);
     }
     .leader-card-socials a {
       width: 36px;
@@ -218,6 +226,8 @@
       background: var(--clr-primary);
       color: var(--clr-white);
       border-color: transparent;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
     /* ---- Philosophy Quote ---- */
@@ -800,8 +810,6 @@
             <li><a href="about.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Vision &amp; Mission</a></li>
             <li><a href="management.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Our Management</a></li>
             <li><a href="founders-desk.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Founder's Desk</a></li>
-            <li><a href="#"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Admissions</a></li>
-            <li><a href="#"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Student Portal</a></li>
           </ul>
         </div>
 
@@ -840,11 +848,7 @@
 
       <div class="footer-bottom">
         <span>© <span id="footerYear">2025</span> SBG BCA College. All rights reserved.</span>
-        <div class="footer-bottom-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Use</a>
-          <a href="#">Sitemap</a>
-        </div>
+        <span>Designed and Developed by <span id="developer"></span><a href="https://cubiccode.in" target="_blank" rel="noopener noreferrer">CUBICCODE</a></span>
       </div>
     </div>
   </footer>
