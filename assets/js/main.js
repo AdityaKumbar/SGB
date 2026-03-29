@@ -1,85 +1,7 @@
 /**
  * SBG BCA College — Main JavaScript
- * Handles: Navbar, Scroll effects, Animations, Counter
+ * Handles: Scroll reveals, Counter animations, and general utilities
  */
-
-/* ============================================
-   NAV SCROLL + HIGHLIGHT
-   ============================================ */
-const navbar = document.getElementById('mainNav');
-const navToggle = document.getElementById('navToggle');
-const navMenu   = document.getElementById('navMenu');
-
-// Scroll shadow on navbar
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 48) {
-    navbar?.classList.add('scrolled');
-  } else {
-    navbar?.classList.remove('scrolled');
-  }
-}, { passive: true });
-
-// Highlight active nav link
-(function highlightActive() {
-  const links = document.querySelectorAll('.nav-link[data-nav]');
-  const page  = window.location.pathname.split('/').pop() || 'index.html';
-
-  links.forEach(link => {
-    const href = (link.getAttribute('href') || '').split('/').pop();
-    if (href === page || (page === 'index.html' && href === 'index.html')) {
-      link.classList.add('active');
-    }
-  });
-})();
-
-/* ============================================
-   HAMBURGER MENU
-   ============================================ */
-if (navToggle && navMenu) {
-  navToggle.addEventListener('click', () => {
-    const isOpen = navMenu.classList.toggle('open');
-    navToggle.classList.toggle('open', isOpen);
-    navToggle.setAttribute('aria-expanded', String(isOpen));
-    document.body.style.overflow = isOpen ? 'hidden' : '';
-  });
-
-  // Close on outside click
-  document.addEventListener('click', (e) => {
-    if (!navbar?.contains(e.target)) {
-      navMenu.classList.remove('open');
-      navToggle?.classList.remove('open');
-      navToggle?.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    }
-  });
-
-  // Close on Escape
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      navMenu.classList.remove('open');
-      navToggle?.classList.remove('open');
-      navToggle?.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    }
-  });
-}
-
-/* ============================================
-   DROPDOWN — mobile toggle
-   ============================================ */
-document.querySelectorAll('.nav-item').forEach(item => {
-  const link = item.querySelector('.nav-link[aria-haspopup]');
-  if (!link) return;
-
-  // Mobile: tap to toggle
-  link.addEventListener('click', (e) => {
-    if (window.innerWidth <= 900) {
-      e.preventDefault();
-      const isOpen = item.classList.toggle('open');
-      link.setAttribute('aria-expanded', String(isOpen));
-    }
-  });
-});
 
 /* ============================================
    SCROLL REVEAL ANIMATION
@@ -142,18 +64,3 @@ document.querySelectorAll('.numbers-grid, .hero-stats').forEach(el => counterObs
    ============================================ */
 const yearEl = document.getElementById('footerYear');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-/* ============================================
-   SMOOTH AOS-LIKE CUSTOM LOGIC (Optional polish)
-   ============================================ */
-// Close mobile menu when a nav link (non-dropdown) is clicked
-document.querySelectorAll('.nav-link:not([aria-haspopup])').forEach(link => {
-  link.addEventListener('click', () => {
-    if (navMenu?.classList.contains('open')) {
-      navMenu.classList.remove('open');
-      navToggle?.classList.remove('open');
-      navToggle?.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    }
-  });
-});

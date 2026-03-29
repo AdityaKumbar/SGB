@@ -3,11 +3,11 @@
    Design System & Tokens
    ============================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
 
 /* ---- CSS Variables ---- */
 :root {
-  /* Primary Palette */
+  /* ... existing colors ... */
   --clr-primary:       #1a3a6e;   /* deep navy */
   --clr-primary-light: #2554a0;
   --clr-primary-dark:  #102447;
@@ -27,7 +27,7 @@
 
   /* Typography */
   --font-body:    'Inter', system-ui, sans-serif;
-  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-heading: 'Poppins', sans-serif;
 
   --fs-xs:   0.75rem;
   --fs-sm:   0.875rem;
