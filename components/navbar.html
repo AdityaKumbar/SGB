@@ -1,0 +1,110 @@
+<!-- =============================================
+   NAVBAR COMPONENT
+   Include this inside <body> at the top
+   ============================================= -->
+
+<!-- Top Bar -->
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-left">
+      <a href="mailto:admissions@sbgbca.edu.in">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        admissions@sbgbca.edu.in
+      </a>
+      <a href="tel:+911234567890">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.13 6.13l1.27-1.34a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        +91 12345 67890
+      </a>
+    </div>
+    <div class="topbar-right">
+      <span>Affiliated to Mumbai University &nbsp;|&nbsp; NAAC Accredited</span>
+      <div class="social-links">
+        <a href="#" aria-label="Facebook">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Main Navbar -->
+<nav class="navbar" id="mainNav" role="navigation" aria-label="Main navigation">
+  <div class="container">
+
+    <!-- Logo -->
+    <a href="../index.html" class="nav-logo" aria-label="SBG BCA College Home">
+      <div class="nav-logo-icon" aria-hidden="true">SBG</div>
+      <div class="nav-logo-text">
+        <span class="college-name">SBG BCA College</span>
+        <span class="college-sub">Under SBG Groups</span>
+      </div>
+    </a>
+
+    <!-- Hamburger Toggle -->
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- Nav Links -->
+    <ul class="nav-menu" id="navMenu" role="list">
+      <li class="nav-item">
+        <a href="../index.html" class="nav-link" data-nav="home">Home</a>
+      </li>
+
+      <!-- About Us Dropdown -->
+      <li class="nav-item" id="aboutDropdown">
+        <a href="../pages/about.html" class="nav-link" data-nav="about" aria-haspopup="true" aria-expanded="false">
+          About Us
+          <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="dropdown-menu" role="menu" aria-label="About Us submenu">
+          <a href="../pages/about.html" class="dropdown-link" role="menuitem">
+            <span class="dropdown-icon" aria-hidden="true">🏫</span>
+            About Us
+          </a>
+          <div class="dropdown-divider" role="separator"></div>
+          <a href="../pages/management.html" class="dropdown-link" role="menuitem">
+            <span class="dropdown-icon" aria-hidden="true">👥</span>
+            Our Management
+          </a>
+          <a href="../pages/founders-desk.html" class="dropdown-link" role="menuitem">
+            <span class="dropdown-icon" aria-hidden="true">✍️</span>
+            Founder's Desk
+          </a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a href="../pages/programs.html" class="nav-link" data-nav="programs">Programs</a>
+      </li>
+      <li class="nav-item">
+        <a href="../pages/facilities.html" class="nav-link" data-nav="facilities">Facilities</a>
+      </li>
+      <li class="nav-item">
+        <a href="../pages/gallery.html" class="nav-link" data-nav="gallery">Gallery</a>
+      </li>
+      <li class="nav-item">
+        <a href="../pages/contact.html" class="nav-link" data-nav="contact">Contact</a>
+      </li>
+
+      <!-- Mobile CTA -->
+      <li class="mobile-cta" aria-hidden="true">
+        <a href="../pages/programs.html" class="btn btn-outline" style="font-size:.875rem;">View Programs</a>
+        <a href="../pages/contact.html" class="btn btn-primary" style="font-size:.875rem;">Apply Now</a>
+      </li>
+    </ul>
+
+    <!-- Desktop CTA -->
+    <div class="nav-cta flex gap-4" aria-label="Quick actions">
+      <a href="../pages/programs.html" class="btn btn-outline" id="navViewPrograms">View Programs</a>
+      <a href="../pages/contact.html" class="btn btn-primary" id="navApplyNow">Apply Now</a>
+    </div>
+
+  </div>
+</nav>
