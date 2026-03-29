@@ -14,6 +14,7 @@
   - [x] Added properly scaled and styled logo image (`components/images/logo.png`) to Navbar.
   - [x] Applied logo image to Footer with dynamic dark mode inversion support.
   - [x] Removed overlapping logo title text (`.nav-logo-text`) to create a cleaner header as requested.
+  - [x] Updated the website favicon to use the college logo.
 
 ## To-Do List (Pending Tasks)
 - [ ] Implement inner individual pages (e.g., `about.html`, `programs.html`, `facilities.html`, `gallery.html`, `contact.html`).
