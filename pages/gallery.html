@@ -397,13 +397,13 @@
         </div>
 
         <!-- Filter Buttons -->
-        <div class="gallery-filters" role="group" aria-label="Filter gallery by category">
+        <!-- <div class="gallery-filters" role="group" aria-label="Filter gallery by category">
           <button class="gallery-filter-btn active" data-filter="all"   onclick="filterGallery('all')">All Photos</button>
           <button class="gallery-filter-btn"        data-filter="campus"   onclick="filterGallery('campus')">Campus</button>
           <button class="gallery-filter-btn"        data-filter="events"   onclick="filterGallery('events')">Events</button>
           <button class="gallery-filter-btn"        data-filter="facilities" onclick="filterGallery('facilities')">Facilities</button>
           <button class="gallery-filter-btn"        data-filter="students" onclick="filterGallery('students')">Student Life</button>
-        </div>
+        </div> -->
 
         <!-- Gallery Grid -->
         <!--
@@ -416,120 +416,108 @@
 
           <!-- Item 1 — Campus -->
           <div class="gallery-item" data-category="campus" data-caption="Main campus building and entrance" tabindex="0" role="button" aria-label="Open campus photo">
-            <img src="https://images.unsplash.com/photo-1562774053-701939374585?w=800&q=70" alt="SBG BCA College main building" loading="lazy" />
+            <img src="../components/images/building.png" alt="SBG BCA College main building" loading="lazy" />
             <div class="gallery-item-overlay">
               <span class="gallery-item-caption">Main Campus Building</span>
-              <span class="gallery-item-tag"><i class="fa-solid fa-building-columns"></i> Campus</span>
             </div>
             <div class="gallery-item-zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
           </div>
 
           <!-- Item 2 — Facilities -->
-          <div class="gallery-item" data-category="facilities" data-caption="State-of-the-art computer laboratory" tabindex="0" role="button" aria-label="Open computer lab photo">
-            <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=800&q=70" alt="Computer laboratory" loading="lazy" />
+          <div class="gallery-item" data-category="facilities" data-caption="Sitting Area" tabindex="0" role="button" aria-label="Open computer lab photo">
+            <img src="../components/images/sittingArea.png" alt="Computer laboratory" loading="lazy" />
             <div class="gallery-item-overlay">
-              <span class="gallery-item-caption">Computer Laboratory</span>
-              <span class="gallery-item-tag"><i class="fa-solid fa-computer"></i> Facilities</span>
+              <span class="gallery-item-caption">Sitting Area</span>
             </div>
             <div class="gallery-item-zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
           </div>
 
           <!-- Item 3 — Events -->
-          <div class="gallery-item" data-category="events" data-caption="Annual Tech Fest — student presentations" tabindex="0" role="button" aria-label="Open tech fest photo">
-            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=70" alt="Annual Tech Fest" loading="lazy" />
+          <div class="gallery-item" data-category="events" data-caption="Auditorium" tabindex="0" role="button" aria-label="Open tech fest photo">
+            <img src="../components/images/stage.png" alt="Annual Tech Fest" loading="lazy" />
             <div class="gallery-item-overlay">
-              <span class="gallery-item-caption">Annual Tech Fest</span>
-              <span class="gallery-item-tag"><i class="fa-solid fa-calendar-star"></i> Events</span>
+              <span class="gallery-item-caption">Auditorium</span>
             </div>
             <div class="gallery-item-zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
           </div>
 
           <!-- Item 4 — Students -->
-          <div class="gallery-item" data-category="students" data-caption="Students collaborating on a group project" tabindex="0" role="button" aria-label="Open student project photo">
-            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=70" alt="Students working on project" loading="lazy" />
+          <div class="gallery-item" data-category="students" data-caption="Class Room" tabindex="0" role="button" aria-label="Open student project photo">
+            <img src="../components/images/class1.jpeg" alt="Students working on project" loading="lazy" />
             <div class="gallery-item-overlay">
-              <span class="gallery-item-caption">Group Project Session</span>
-              <span class="gallery-item-tag"><i class="fa-solid fa-users"></i> Student Life</span>
+              <span class="gallery-item-caption">Class Room</span>
             </div>
             <div class="gallery-item-zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
           </div>
 
           <!-- Item 5 — Facilities -->
-          <div class="gallery-item" data-category="facilities" data-caption="Smart library with 10,000+ books and digital catalog" tabindex="0" role="button" aria-label="Open library photo">
-            <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&q=70" alt="College library" loading="lazy" />
+          <div class="gallery-item" data-category="facilities" data-caption="Class Room" tabindex="0" role="button" aria-label="Open library photo">
+            <img src="../components/images/class3.jpeg" alt="College library" loading="lazy" />
             <div class="gallery-item-overlay">
-              <span class="gallery-item-caption">Smart Library</span>
-              <span class="gallery-item-tag"><i class="fa-solid fa-book-open"></i> Facilities</span>
+              <span class="gallery-item-caption">Class Room</span>
             </div>
             <div class="gallery-item-zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
           </div>
 
           <!-- Item 6 — Events -->
-          <div class="gallery-item" data-category="events" data-caption="Convocation ceremony — graduating batch 2024" tabindex="0" role="button" aria-label="Open convocation photo">
-            <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&q=70" alt="Convocation ceremony" loading="lazy" />
+          <div class="gallery-item" data-category="events" data-caption="Class Room" tabindex="0" role="button" aria-label="Open convocation photo">
+            <img src="../components/images/class4.png" alt="Convocation ceremony" loading="lazy" />
             <div class="gallery-item-overlay">
-              <span class="gallery-item-caption">Convocation Ceremony 2024</span>
-              <span class="gallery-item-tag"><i class="fa-solid fa-graduation-cap"></i> Events</span>
+              <span class="gallery-item-caption">Class Room</span>
             </div>
             <div class="gallery-item-zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
           </div>
 
           <!-- Item 7 — Campus -->
-          <div class="gallery-item" data-category="campus" data-caption="Campus garden and open study spaces" tabindex="0" role="button" aria-label="Open campus garden photo">
-            <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&q=70" alt="Campus open spaces" loading="lazy" />
+          <div class="gallery-item" data-category="campus" data-caption="Projector Room" tabindex="0" role="button" aria-label="Open campus garden photo">
+            <img src="../components/images/projectorRoom.png" alt="Campus open spaces" loading="lazy" />
             <div class="gallery-item-overlay">
-              <span class="gallery-item-caption">Campus Open Spaces</span>
-              <span class="gallery-item-tag"><i class="fa-solid fa-tree"></i> Campus</span>
+              <span class="gallery-item-caption">Projector Room</span>
             </div>
             <div class="gallery-item-zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
           </div>
 
           <!-- Item 8 — Students -->
-          <div class="gallery-item" data-category="students" data-caption="Students at the annual cultural festival" tabindex="0" role="button" aria-label="Open cultural fest photo">
-            <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=70" alt="Cultural festival" loading="lazy" />
+          <div class="gallery-item" data-category="students" data-caption="Library" tabindex="0" role="button" aria-label="Open cultural fest photo">
+            <img src="../components/images/library.jpeg" alt="Cultural festival" loading="lazy" />
             <div class="gallery-item-overlay">
-              <span class="gallery-item-caption">Cultural Festival — Utsav 2024</span>
-              <span class="gallery-item-tag"><i class="fa-solid fa-music"></i> Student Life</span>
+              <span class="gallery-item-caption">Library</span>
             </div>
             <div class="gallery-item-zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
           </div>
 
           <!-- Item 9 — Events -->
-          <div class="gallery-item" data-category="events" data-caption="Industry expert guest lecture series" tabindex="0" role="button" aria-label="Open guest lecture photo">
-            <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=70" alt="Guest lecture in auditorium" loading="lazy" />
+          <div class="gallery-item" data-category="events" data-caption="Computer Lab" tabindex="0" role="button" aria-label="Open guest lecture photo">
+            <img src="../components/images/computerLab.jpeg" alt="Guest lecture in auditorium" loading="lazy" />
             <div class="gallery-item-overlay">
-              <span class="gallery-item-caption">Guest Lecture Series</span>
-              <span class="gallery-item-tag"><i class="fa-solid fa-microphone"></i> Events</span>
+              <span class="gallery-item-caption">Computer Lab</span>
             </div>
             <div class="gallery-item-zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
           </div>
 
           <!-- Item 10 — Facilities -->
-          <div class="gallery-item" data-category="facilities" data-caption="Sports complex — outdoor cricket ground" tabindex="0" role="button" aria-label="Open sports photo">
-            <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=800&q=70" alt="Sports complex" loading="lazy" />
+          <div class="gallery-item" data-category="facilities" data-caption="Language Room" tabindex="0" role="button" aria-label="Open sports photo">
+            <img src="../components/images/languageRoom.png" alt="Sports complex" loading="lazy" />
             <div class="gallery-item-overlay">
-              <span class="gallery-item-caption">Sports Complex</span>
-              <span class="gallery-item-tag"><i class="fa-solid fa-person-running"></i> Facilities</span>
+              <span class="gallery-item-caption">Language Room</span>
             </div>
             <div class="gallery-item-zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
           </div>
 
           <!-- Item 11 — Students -->
-          <div class="gallery-item" data-category="students" data-caption="Hackathon 2024 — 24-hour coding challenge" tabindex="0" role="button" aria-label="Open hackathon photo">
-            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=70" alt="Hackathon event" loading="lazy" />
+          <div class="gallery-item" data-category="students" data-caption="Office" tabindex="0" role="button" aria-label="Open hackathon photo">
+            <img src="../components/images/office.png" alt="Hackathon event" loading="lazy" />
             <div class="gallery-item-overlay">
-              <span class="gallery-item-caption">Hackathon 2024</span>
-              <span class="gallery-item-tag"><i class="fa-solid fa-code"></i> Student Life</span>
+              <span class="gallery-item-caption">Office</span>
             </div>
             <div class="gallery-item-zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
           </div>
 
           <!-- Item 12 — Campus -->
-          <div class="gallery-item" data-category="campus" data-caption="College entrance and administrative block" tabindex="0" role="button" aria-label="Open campus entrance photo">
-            <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=70" alt="Campus entrance" loading="lazy" />
+          <div class="gallery-item" data-category="campus" data-caption="Office" tabindex="0" role="button" aria-label="Open campus entrance photo">
+            <img src="../components/images/office2.png" alt="Campus entrance" loading="lazy" />
             <div class="gallery-item-overlay">
-              <span class="gallery-item-caption">Campus Entrance</span>
-              <span class="gallery-item-tag"><i class="fa-solid fa-building"></i> Campus</span>
+              <span class="gallery-item-caption">Office</span>
             </div>
             <div class="gallery-item-zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
           </div>
