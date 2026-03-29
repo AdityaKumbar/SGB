@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta -->
+  <title>Contact Us | SBG BCA College — Belagavi</title>
+  <meta name="description"
+    content="Get in touch with SBG BCA College, Belagavi — for admissions, queries, campus visits, or general information. We're happy to help." />
+  <meta name="keywords"
+    content="Contact SBG BCA College, admissions Belagavi, BCA college phone, college address Belagavi" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Contact Us | SBG BCA College" />
+  <meta property="og:description" content="Reach out to SBG BCA College, Belagavi for admissions and queries." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sbgbca.edu.in/pages/contact.html" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%231a3a6e'/><text y='.9em' font-size='64' fill='white' font-family='serif' font-weight='700' x='8'>S</text></svg>" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/navbar.css" />
+  <link rel="stylesheet" href="../assets/css/footer.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* =============================================
+       CONTACT PAGE — PAGE-SPECIFIC STYLES
+       ============================================= */
+
+    /* ---- Page Hero ---- */
+    .page-hero {
+      position: relative; background: var(--clr-primary-dark);
+      min-height: 320px; display: flex; align-items: center; overflow: hidden;
+    }
+    .page-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(120deg, rgba(10,20,45,0.92) 0%, rgba(26,58,110,0.72) 100%); z-index: 1;
+    }
+    .page-hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.38; }
+    .page-hero .container { position: relative; z-index: 2; padding-block: var(--sp-16); }
+    .page-hero-breadcrumb {
+      display: flex; align-items: center; gap: var(--sp-2);
+      font-size: var(--fs-xs); color: rgba(255,255,255,0.6); margin-bottom: var(--sp-4);
+      text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;
+    }
+    .page-hero-breadcrumb a { color: rgba(255,255,255,0.6); transition: color var(--transition-fast); }
+    .page-hero-breadcrumb a:hover { color: var(--clr-accent-light); }
+    .page-hero-breadcrumb i { font-size: 0.6rem; }
+    .page-hero h1 {
+      font-family: var(--font-heading); font-size: clamp(1.9rem, 4vw, 3rem);
+      font-weight: 800; color: var(--clr-white); line-height: 1.2; margin-bottom: var(--sp-4);
+    }
+    .page-hero h1 span {
+      background: linear-gradient(90deg, var(--clr-accent-light), var(--clr-accent));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .page-hero p { font-size: var(--fs-md); color: rgba(255,255,255,0.8); max-width: 560px; line-height: 1.75; }
+
+    /* ---- Contact Layout ---- */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: var(--sp-10);
+      align-items: start;
+    }
+
+    /* ---- Contact Info Cards (left column) ---- */
+    .contact-info-stack {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-4);
+    }
+    .contact-info-card {
+      background: var(--clr-white);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-lg);
+      padding: var(--sp-6);
+      display: flex;
+      align-items: flex-start;
+      gap: var(--sp-4);
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow var(--transition-base), border-color var(--transition-base), transform var(--transition-base);
+    }
+    .contact-info-card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: rgba(26,58,110,0.18);
+      transform: translateY(-2px);
+    }
+    .contact-card-icon {
+      width: 48px; height: 48px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, rgba(26,58,110,0.08), rgba(37,84,160,0.14));
+      border: 1px solid rgba(26,58,110,0.1);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; color: var(--clr-primary); flex-shrink: 0;
+    }
+    .contact-card-body label {
+      display: block; font-size: var(--fs-xs); font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--clr-muted); margin-bottom: var(--sp-1);
+    }
+    .contact-card-body .contact-card-value {
+      font-size: var(--fs-base); font-weight: 600; color: var(--clr-primary-dark);
+      line-height: 1.5;
+    }
+    .contact-card-body a.contact-card-value {
+      transition: color var(--transition-fast);
+    }
+    .contact-card-body a.contact-card-value:hover { color: var(--clr-accent); }
+    .contact-card-body .contact-card-sub {
+      font-size: var(--fs-xs); color: var(--clr-muted); margin-top: 2px; line-height: 1.5;
+    }
+
+    /* Office hours card */
+    .contact-hours-card {
+      background: var(--clr-primary-dark);
+      border-radius: var(--radius-lg);
+      padding: var(--sp-6);
+      box-shadow: var(--shadow-md);
+    }
+    .contact-hours-card h4 {
+      font-family: var(--font-heading); font-size: var(--fs-sm); font-weight: 700;
+      color: var(--clr-white); margin-bottom: var(--sp-4);
+      display: flex; align-items: center; gap: var(--sp-2);
+    }
+    .contact-hours-card h4 i { color: var(--clr-accent-light); }
+    .hours-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-block: var(--sp-2);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      font-size: var(--fs-sm);
+    }
+    .hours-row:last-child { border-bottom: none; }
+    .hours-row span:first-child { color: rgba(255,255,255,0.65); }
+    .hours-row span:last-child { color: var(--clr-white); font-weight: 600; }
+    .hours-closed { color: rgba(255,100,100,0.8) !important; }
+
+    /* Social links row */
+    .contact-social-row {
+      display: flex; gap: var(--sp-3); padding-top: var(--sp-2);
+    }
+    .contact-social-row a {
+      width: 40px; height: 40px;
+      border-radius: var(--radius-md);
+      background: rgba(26,58,110,0.07);
+      border: 1px solid rgba(26,58,110,0.12);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--clr-primary); font-size: 0.9rem;
+      transition: all var(--transition-fast);
+    }
+    .contact-social-row a:hover {
+      background: var(--clr-primary); color: var(--clr-white); border-color: transparent;
+    }
+
+    /* ---- Contact Form (right column) ---- */
+    .contact-form-card {
+      background: var(--clr-white);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-xl);
+      padding: var(--sp-10);
+      box-shadow: var(--shadow-md);
+    }
+    .contact-form-card h3 {
+      font-family: var(--font-heading); font-size: var(--fs-xl); font-weight: 700;
+      color: var(--clr-primary-dark); margin-bottom: var(--sp-2);
+    }
+    .contact-form-card .form-subtitle {
+      font-size: var(--fs-sm); color: var(--clr-muted); margin-bottom: var(--sp-7);
+    }
+
+    /* Form grid */
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-5);
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-2);
+      margin-bottom: var(--sp-5);
+    }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-group label {
+      font-size: var(--fs-sm); font-weight: 600;
+      color: var(--clr-primary-dark);
+    }
+    .form-group label .req { color: var(--clr-accent); margin-left: 2px; }
+    .form-control {
+      width: 100%;
+      padding: var(--sp-3) var(--sp-4);
+      font-size: var(--fs-base);
+      font-family: var(--font-body);
+      color: var(--clr-text);
+      background: var(--clr-white);
+      border: 1.5px solid var(--clr-border);
+      border-radius: var(--radius-md);
+      outline: none;
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+      appearance: none;
+    }
+    .form-control::placeholder { color: rgba(100,116,139,0.6); }
+    .form-control:focus {
+      border-color: var(--clr-primary);
+      box-shadow: 0 0 0 3px rgba(26,58,110,0.1);
+    }
+    .form-control.error {
+      border-color: #e53e3e;
+      box-shadow: 0 0 0 3px rgba(229,62,62,0.1);
+    }
+    .form-control.success { border-color: #38a169; }
+    textarea.form-control {
+      resize: vertical;
+      min-height: 140px;
+      line-height: 1.7;
+    }
+    select.form-control {
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: var(--sp-10);
+    }
+    .field-error {
+      font-size: var(--fs-xs); color: #e53e3e;
+      display: none; align-items: center; gap: var(--sp-1); margin-top: -var(--sp-1);
+    }
+    .field-error.visible { display: flex; }
+    .field-error i { font-size: 0.7rem; }
+
+    /* Submit button row */
+    .form-submit-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--sp-4);
+      flex-wrap: wrap;
+      margin-top: var(--sp-2);
+    }
+    .form-privacy-note {
+      font-size: var(--fs-xs); color: var(--clr-muted);
+      display: flex; align-items: center; gap: var(--sp-2);
+    }
+    .form-privacy-note i { color: var(--clr-primary); }
+
+    /* Success state */
+    .form-success {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: var(--sp-12) var(--sp-6);
+      gap: var(--sp-4);
+    }
+    .form-success.visible { display: flex; }
+    .form-success-icon {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: rgba(56,161,105,0.1);
+      border: 2px solid rgba(56,161,105,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.75rem; color: #38a169;
+    }
+    .form-success h4 {
+      font-family: var(--font-heading); font-size: var(--fs-xl); font-weight: 700;
+      color: var(--clr-primary-dark);
+    }
+    .form-success p { font-size: var(--fs-base); color: var(--clr-muted); max-width: 360px; line-height: 1.7; }
+
+    /* ---- Map Section ---- */
+    .map-wrap {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      border: 1px solid var(--clr-border);
+      box-shadow: var(--shadow-md);
+      background: linear-gradient(135deg, rgba(26,58,110,0.06), rgba(37,84,160,0.1));
+      height: 420px;
+      position: relative;
+    }
+    .map-wrap iframe {
+      width: 100%; height: 100%; border: none; display: block;
+    }
+    /* Placeholder if no iframe */
+    .map-placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: var(--sp-4);
+    }
+    .map-placeholder-icon {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: rgba(26,58,110,0.08);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.75rem; color: var(--clr-primary); opacity: 0.5;
+    }
+    .map-placeholder p {
+      font-size: var(--fs-sm); color: var(--clr-muted); text-align: center; font-weight: 500;
+    }
+    .map-placeholder a.btn { opacity: 0.85; }
+
+    /* ---- FAQ Strip ---- */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--sp-5);
+    }
+    .faq-item {
+      background: var(--clr-white);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-lg);
+      padding: var(--sp-6);
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    }
+    .faq-item:hover { border-color: rgba(26,58,110,0.18); box-shadow: var(--shadow-sm); }
+    .faq-item h4 {
+      font-family: var(--font-heading); font-size: var(--fs-base); font-weight: 700;
+      color: var(--clr-primary-dark); margin-bottom: var(--sp-2);
+      display: flex; align-items: flex-start; gap: var(--sp-3);
+    }
+    .faq-item h4 i { color: var(--clr-accent); font-size: 0.85rem; margin-top: 3px; flex-shrink: 0; }
+    .faq-item p { font-size: var(--fs-sm); color: var(--clr-muted); line-height: 1.7; }
+
+    /* ---- CTA ---- */
+    .page-cta {
+      background: linear-gradient(135deg, var(--clr-primary-dark) 0%, var(--clr-primary) 55%, #1e4ca8 100%);
+      padding-block: var(--sp-20); text-align: center;
+      position: relative; overflow: hidden; border-top: 3px solid var(--clr-accent);
+    }
+    .page-cta::before {
+      content: ''; position: absolute; width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,160,32,0.09) 0%, transparent 70%);
+      top: -250px; right: -180px; pointer-events: none;
+    }
+    .page-cta-content { position: relative; z-index: 1; }
+    .page-cta h2 {
+      font-family: var(--font-heading); font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-weight: 800; color: var(--clr-white); margin-bottom: var(--sp-4);
+    }
+    .page-cta p { color: rgba(255,255,255,0.8); font-size: var(--fs-md); max-width: 500px; margin-inline: auto; margin-bottom: var(--sp-8); line-height: 1.75; }
+    .cta-btn-group { display: flex; justify-content: center; gap: var(--sp-4); flex-wrap: wrap; }
+    .page-cta .btn-accent:hover { box-shadow: 0 0 0 4px rgba(232,160,32,0.25), 0 6px 24px rgba(232,160,32,0.45); }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 1024px) {
+      .contact-layout { grid-template-columns: 1fr; }
+      .contact-info-stack { display: grid; grid-template-columns: 1fr 1fr; }
+      .contact-hours-card { grid-column: 1 / -1; }
+    }
+    @media (max-width: 700px) {
+      .contact-info-stack { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .contact-form-card { padding: var(--sp-7) var(--sp-5); }
+      .form-submit-row { flex-direction: column; align-items: flex-start; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .page-hero .container { padding-block: var(--sp-12); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =================== NAVBAR =================== -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-left">
+        <a href="mailto:admissions@sbgbca.edu.in">
+          <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+          admissions@sbgbca.edu.in
+        </a>
+        <a href="tel:+911234567890">
+          <i class="fa-solid fa-phone" aria-hidden="true"></i>
+          +91 12345 67890
+        </a>
+      </div>
+      <div class="topbar-right">
+        <span>Rani Channamma University &nbsp;|&nbsp; NAAC Accredited</span>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar" id="mainNav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="../index.html" class="nav-logo" aria-label="SBG BCA College Home">
+        <img src="../components/images/logo.png" alt="SBG BCA College Logo" class="nav-logo-img">
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu" role="list">
+        <li class="nav-item"><a href="../index.html" class="nav-link" data-nav="home">Home</a></li>
+        <li class="nav-item has-dropdown" id="aboutDropdown">
+          <a href="about.html" class="nav-link" data-nav="about" aria-haspopup="true" aria-expanded="false">
+            About Us <i class="fa-solid fa-chevron-down nav-arrow" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu" role="menu">
+            <a href="about.html" class="dropdown-link" role="menuitem">
+              <span class="dropdown-icon"><i class="fa-solid fa-house-chimney"></i></span> About Us
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="management.html" class="dropdown-link" role="menuitem">
+              <span class="dropdown-icon"><i class="fa-solid fa-users"></i></span> Our Management
+            </a>
+            <a href="founders-desk.html" class="dropdown-link" role="menuitem">
+              <span class="dropdown-icon"><i class="fa-solid fa-pen-to-square"></i></span> Founder's Desk
+            </a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="programs.html" class="nav-link" data-nav="programs">Programs</a></li>
+        <li class="nav-item"><a href="facilities.html" class="nav-link" data-nav="facilities">Facilities</a></li>
+        <li class="nav-item"><a href="gallery.html" class="nav-link" data-nav="gallery">Gallery</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link active" data-nav="contact">Contact</a></li>
+      </ul>
+      <div class="nav-cta flex gap-4">
+        <a href="contact.html" class="btn btn-primary" id="navApplyNow">Apply Now</a>
+      </div>
+    </div>
+  </nav>
+  <!-- =================== END NAVBAR =================== -->
+
+
+  <main id="main-content">
+
+    <!-- =================== PAGE HERO =================== -->
+    <section class="page-hero" aria-label="Contact page hero">
+      <!-- PASTE IMAGE HERE: assets/images/contact-hero.jpg -->
+      <img class="page-hero-bg"
+        src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1600&q=75"
+        alt="SBG BCA College contact" loading="eager" fetchpriority="high" />
+      <div class="container">
+        <nav class="page-hero-breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          <span>Contact Us</span>
+        </nav>
+        <h1>Get in <span>Touch</span></h1>
+        <p>
+          <!-- EDIT THIS CONTENT -->
+          Have a question about admissions, programs, or campus visits? We're here to help.
+          Reach out and our team will get back to you within one working day.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- =================== CONTACT MAIN =================== -->
+    <section class="section" id="contact-main" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="contact-layout">
+
+          <!-- ===== LEFT: Info Cards ===== -->
+          <aside data-reveal>
+            <div class="contact-info-stack">
+
+              <!-- Address -->
+              <div class="contact-info-card">
+                <div class="contact-card-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="contact-card-body">
+                  <label>Our Address</label>
+                  <!-- EDIT ADDRESS -->
+                  <div class="contact-card-value">123, College Road, Near SBG Complex</div>
+                  <div class="contact-card-sub">Belagavi – 590 001, Karnataka, India</div>
+                </div>
+              </div>
+
+              <!-- Phone -->
+              <div class="contact-info-card">
+                <div class="contact-card-icon"><i class="fa-solid fa-phone"></i></div>
+                <div class="contact-card-body">
+                  <label>Phone Numbers</label>
+                  <!-- EDIT PHONE -->
+                  <a href="tel:+911234567890" class="contact-card-value">+91 12345 67890</a>
+                  <div class="contact-card-sub">Mon–Sat, 9 AM – 5 PM</div>
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div class="contact-info-card">
+                <div class="contact-card-icon"><i class="fa-regular fa-envelope"></i></div>
+                <div class="contact-card-body">
+                  <label>Email Address</label>
+                  <!-- EDIT EMAIL -->
+                  <a href="mailto:admissions@sbgbca.edu.in" class="contact-card-value">admissions@sbgbca.edu.in</a>
+                  <div class="contact-card-sub">We reply within 24 hours</div>
+                </div>
+              </div>
+
+              <!-- Social -->
+              <div class="contact-info-card" style="flex-direction:column; gap:var(--sp-3);">
+                <label style="font-size:var(--fs-xs);font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--clr-muted);">Follow Us</label>
+                <div class="contact-social-row">
+                  <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                  <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                  <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+              </div>
+
+              <!-- Office Hours -->
+              <div class="contact-hours-card">
+                <h4><i class="fa-solid fa-clock" aria-hidden="true"></i> Office Hours</h4>
+                <!-- EDIT HOURS -->
+                <div class="hours-row"><span>Monday – Friday</span><span>9:00 AM – 5:00 PM</span></div>
+                <div class="hours-row"><span>Saturday</span><span>9:00 AM – 1:00 PM</span></div>
+                <div class="hours-row"><span>Sunday</span><span class="hours-closed">Closed</span></div>
+                <div class="hours-row"><span>Public Holidays</span><span class="hours-closed">Closed</span></div>
+              </div>
+
+            </div>
+          </aside>
+
+          <!-- ===== RIGHT: Contact Form ===== -->
+          <div data-reveal>
+            <div class="contact-form-card">
+
+              <!-- Form header -->
+              <h3 id="contact-heading">Send Us a Message</h3>
+              <p class="form-subtitle">
+                Fill in the form below and we'll get back to you as soon as possible.
+              </p>
+
+              <!-- Success state (hidden by default) -->
+              <div class="form-success" id="formSuccess" role="alert" aria-live="polite">
+                <div class="form-success-icon"><i class="fa-solid fa-circle-check"></i></div>
+                <h4>Message Sent!</h4>
+                <p>
+                  Thank you for reaching out. Our admissions team will get back to you within one
+                  working day at the email address you provided.
+                </p>
+                <button class="btn btn-outline" id="resetFormBtn" onclick="resetContactForm()">
+                  Send Another Message
+                </button>
+              </div>
+
+              <!-- The form -->
+              <form id="contactForm" novalidate aria-label="Contact form">
+                <div class="form-row">
+
+                  <!-- Full Name -->
+                  <div class="form-group">
+                    <label for="fullName">Full Name <span class="req" aria-hidden="true">*</span></label>
+                    <input
+                      type="text" id="fullName" name="fullName"
+                      class="form-control" placeholder="e.g. Rahul Sharma"
+                      required autocomplete="name" aria-required="true" />
+                    <span class="field-error" id="err-fullName" aria-live="polite">
+                      <i class="fa-solid fa-circle-exclamation"></i> Please enter your full name.
+                    </span>
+                  </div>
+
+                  <!-- Email -->
+                  <div class="form-group">
+                    <label for="email">Email Address <span class="req" aria-hidden="true">*</span></label>
+                    <input
+                      type="email" id="email" name="email"
+                      class="form-control" placeholder="e.g. rahul@example.com"
+                      required autocomplete="email" aria-required="true" />
+                    <span class="field-error" id="err-email" aria-live="polite">
+                      <i class="fa-solid fa-circle-exclamation"></i> Please enter a valid email address.
+                    </span>
+                  </div>
+
+                </div><!-- /.form-row -->
+
+                <div class="form-row">
+
+                  <!-- Phone -->
+                  <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input
+                      type="tel" id="phone" name="phone"
+                      class="form-control" placeholder="e.g. +91 98765 43210"
+                      autocomplete="tel" inputmode="tel" />
+                    <span class="field-error" id="err-phone" aria-live="polite">
+                      <i class="fa-solid fa-circle-exclamation"></i> Enter a valid 10-digit phone number.
+                    </span>
+                  </div>
+
+                  <!-- Subject -->
+                  <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <select id="subject" name="subject" class="form-control">
+                      <option value="" disabled selected>Select a topic…</option>
+                      <option value="admissions">Admissions Enquiry</option>
+                      <option value="programs">Programs &amp; Curriculum</option>
+                      <option value="fees">Fee Structure &amp; Scholarships</option>
+                      <option value="facilities">Campus &amp; Facilities</option>
+                      <option value="placement">Placements &amp; Careers</option>
+                      <option value="visit">Campus Visit Request</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+
+                </div><!-- /.form-row -->
+
+                <!-- Message -->
+                <div class="form-group full">
+                  <label for="message">Your Message <span class="req" aria-hidden="true">*</span></label>
+                  <textarea
+                    id="message" name="message"
+                    class="form-control" placeholder="Tell us how we can help you…"
+                    required rows="5" aria-required="true"></textarea>
+                  <span class="field-error" id="err-message" aria-live="polite">
+                    <i class="fa-solid fa-circle-exclamation"></i> Please write your message (min. 20 characters).
+                  </span>
+                </div>
+
+                <!-- Submit row -->
+                <div class="form-submit-row">
+                  <p class="form-privacy-note">
+                    <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                    Your information is kept private and will never be shared.
+                  </p>
+                  <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">
+                    Send Message <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                  </button>
+                </div>
+
+              </form><!-- /#contactForm -->
+
+            </div><!-- /.contact-form-card -->
+          </div>
+
+        </div><!-- /.contact-layout -->
+      </div>
+    </section>
+
+
+    <!-- =================== MAP =================== -->
+    <section class="section section--alt" id="map" aria-labelledby="map-heading">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-eyebrow">Find Us</span>
+          <h2 class="section-title" id="map-heading">Our Location</h2>
+          <p class="section-desc">
+            <!-- EDIT THIS CONTENT -->
+            We are located in the heart of Belagavi, Karnataka — easily accessible by road and public transport.
+          </p>
+        </div>
+
+        <div class="map-wrap" data-reveal>
+          <!--
+            PASTE MAP HERE:
+            Replace this placeholder div with a Google Maps embed iframe, e.g.:
+            <iframe
+              src="https://www.google.com/maps/embed?pb=YOUR_EMBED_CODE"
+              allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+
+            To get your embed code:
+            1. Go to Google Maps → find your college location
+            2. Click Share → Embed a map → Copy HTML
+            3. Paste the <iframe> tag here, replacing this block
+          -->
+          <div class="map-placeholder">
+            <div class="map-placeholder-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+            <p>
+              <strong>PASTE GOOGLE MAP EMBED HERE</strong><br>
+              123, College Road, Near SBG Complex,<br>Belagavi – 590 001, Karnataka
+            </p>
+            <a href="https://maps.google.com/?q=Belagavi,Karnataka" target="_blank"
+              rel="noopener noreferrer" class="btn btn-outline" id="openMapsBtn">
+              <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+              Open in Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =================== FAQ =================== -->
+    <section class="section" id="faq" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-eyebrow">Quick Answers</span>
+          <h2 class="section-title" id="faq-heading">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="faq-grid">
+
+          <div class="faq-item" data-reveal>
+            <h4><i class="fa-solid fa-circle-question" aria-hidden="true"></i> What is the admission process?</h4>
+            <p>
+              <!-- EDIT THIS CONTENT -->
+              Admissions are merit-based. Fill out the application form, submit your 10+2 marksheets
+              and documents, and receive your admission confirmation within 3–5 working days.
+            </p>
+          </div>
+
+          <div class="faq-item" data-reveal>
+            <h4><i class="fa-solid fa-circle-question" aria-hidden="true"></i> When do applications open for 2025–26?</h4>
+            <p>
+              <!-- EDIT THIS CONTENT -->
+              Applications for the 2025–26 academic batch are open from June 2025. Early applicants
+              get priority consideration for merit scholarships.
+            </p>
+          </div>
+
+          <div class="faq-item" data-reveal>
+            <h4><i class="fa-solid fa-circle-question" aria-hidden="true"></i> Is there a campus visit facility?</h4>
+            <p>
+              <!-- EDIT THIS CONTENT -->
+              Yes! We welcome prospective students and parents for campus visits every weekday.
+              Contact us to schedule a personal tour with a faculty guide.
+            </p>
+          </div>
+
+          <div class="faq-item" data-reveal>
+            <h4><i class="fa-solid fa-circle-question" aria-hidden="true"></i> Are scholarships available?</h4>
+            <p>
+              <!-- EDIT THIS CONTENT -->
+              Merit-based scholarships are available for students scoring above 85% in Class 12.
+              Government SC/ST/OBC scholarships are also facilitated through the college.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =================== CTA =================== -->
+    <section class="page-cta" id="cta" aria-label="Call to action">
+      <div class="container">
+        <div class="page-cta-content">
+          <span class="section-eyebrow" style="color:var(--clr-accent-light);">Ready to Apply?</span>
+          <h2>Begin Your Journey at SBG BCA College</h2>
+          <p>
+            <!-- EDIT THIS CONTENT -->
+            Admissions are open for 2025–26. Apply today or explore our programs to learn
+            more about the BCA degree and specialization tracks.
+          </p>
+          <div class="cta-btn-group">
+            <a href="#contactForm" class="btn btn-accent btn-lg" id="ctaGetInTouch">
+              Get In Touch <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+            <a href="programs.html" class="btn btn-outline-white btn-lg" id="ctaPrograms">
+              Explore Programs
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =================== FOOTER =================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="footer-logo">
+            <img src="../components/images/logo.png" alt="SBG BCA College Logo" class="footer-logo-img">
+          </a>
+          <p class="footer-desc">
+            Empowering students with world-class education in Computer Applications,
+            shaping the technology leaders of tomorrow. Affiliated to Rani Channamma University.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+            <li><a href="programs.html"><i class="fa-solid fa-chevron-right"></i> Programs</a></li>
+            <li><a href="facilities.html"><i class="fa-solid fa-chevron-right"></i> Facilities</a></li>
+            <li><a href="gallery.html"><i class="fa-solid fa-chevron-right"></i> Gallery</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>About College</h4>
+          <ul>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> Vision &amp; Mission</a></li>
+            <li><a href="management.html"><i class="fa-solid fa-chevron-right"></i> Our Management</a></li>
+            <li><a href="founders-desk.html"><i class="fa-solid fa-chevron-right"></i> Founder's Desk</a></li>
+            <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Admissions</a></li>
+            <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Student Portal</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="footer-contact-text">
+              <strong>Address</strong>
+              <span>123, College Road, Near SBG Complex,<br>Belagavi – 590 001, Karnataka</span>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="fa-solid fa-phone"></i></div>
+            <div class="footer-contact-text">
+              <strong>Phone</strong>
+              <a href="tel:+911234567890">+91 12345 67890</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="fa-regular fa-envelope"></i></div>
+            <div class="footer-contact-text">
+              <strong>Email</strong>
+              <a href="mailto:admissions@sbgbca.edu.in">admissions@sbgbca.edu.in</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="footerYear">2025</span> SBG BCA College. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/navbar.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+    /* =============================================
+       CONTACT FORM VALIDATION
+       ============================================= */
+    const form = document.getElementById('contactForm');
+
+    function showError(fieldId, errId, show) {
+      const field = document.getElementById(fieldId);
+      const err   = document.getElementById(errId);
+      field.classList.toggle('error', show);
+      err.classList.toggle('visible', show);
+    }
+
+    function isValidEmail(v) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
+    }
+    function isValidPhone(v) {
+      // Allow empty (optional) or 10-digit numbers with optional country code
+      if (!v.trim()) return true;
+      return /^[+]?[\d\s\-()]{10,15}$/.test(v.trim());
+    }
+
+    function validateForm() {
+      let valid = true;
+
+      // Full Name
+      const name = document.getElementById('fullName').value.trim();
+      const nameOk = name.length >= 2;
+      showError('fullName', 'err-fullName', !nameOk);
+      if (!nameOk) valid = false;
+
+      // Email
+      const email = document.getElementById('email').value.trim();
+      const emailOk = isValidEmail(email);
+      showError('email', 'err-email', !emailOk);
+      if (!emailOk) valid = false;
+
+      // Phone (optional but validated if filled)
+      const phone = document.getElementById('phone').value.trim();
+      const phoneOk = isValidPhone(phone);
+      showError('phone', 'err-phone', !phoneOk);
+      if (!phoneOk) valid = false;
+
+      // Message
+      const msg = document.getElementById('message').value.trim();
+      const msgOk = msg.length >= 20;
+      showError('message', 'err-message', !msgOk);
+      if (!msgOk) valid = false;
+
+      return valid;
+    }
+
+    // Live validation — clear errors as user types
+    ['fullName', 'email', 'phone', 'message'].forEach(id => {
+      document.getElementById(id).addEventListener('input', () => {
+        document.getElementById(id).classList.remove('error');
+        document.getElementById('err-' + id).classList.remove('visible');
+      });
+    });
+
+    // Form submit
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      if (!validateForm()) return;
+
+      // Disable button & show loading state
+      const btn = document.getElementById('submitBtn');
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending…';
+
+      // Simulate submit (replace with real fetch/ajax when backend ready)
+      setTimeout(() => {
+        form.style.display = 'none';
+        document.getElementById('formSuccess').classList.add('visible');
+        btn.disabled = false;
+        btn.innerHTML = 'Send Message <i class="fa-solid fa-paper-plane"></i>';
+      }, 1400);
+    });
+
+    function resetContactForm() {
+      form.reset();
+      form.style.display = 'block';
+      document.getElementById('formSuccess').classList.remove('visible');
+      ['fullName', 'email', 'phone', 'message'].forEach(id => {
+        document.getElementById(id).classList.remove('error', 'success');
+        document.getElementById('err-' + id).classList.remove('visible');
+      });
+      document.getElementById('fullName').focus();
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta -->
+  <title>About Us | SBG BCA College — Belagavi</title>
+  <meta name="description"
+    content="Learn about SBG BCA College, Belagavi — a premier institution under SBG Groups offering a 3-year BCA program affiliated to Rani Channamma University." />
+  <meta name="keywords"
+    content="About SBG BCA College, BCA Belagavi, Rani Channamma University, SBG Groups, vision mission" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="About Us | SBG BCA College" />
+  <meta property="og:description"
+    content="A premier BCA institution under SBG Groups, Belagavi — 15+ years of academic excellence." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sbgbca.edu.in/pages/about.html" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%231a3a6e'/><text y='.9em' font-size='64' fill='white' font-family='serif' font-weight='700' x='8'>S</text></svg>" />
+
+  <!-- CSS (paths relative from pages/) -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/navbar.css" />
+  <link rel="stylesheet" href="../assets/css/footer.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* =============================================
+       ABOUT PAGE — PAGE-SPECIFIC STYLES ONLY
+       (everything else reused from global CSS)
+       ============================================= */
+
+    /* ---- Page Hero ---- */
+    .page-hero {
+      position: relative;
+      background: var(--clr-primary-dark);
+      min-height: 320px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(10,20,45,0.9) 0%, rgba(26,58,110,0.7) 100%);
+      z-index: 1;
+    }
+    .page-hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.45;
+    }
+    .page-hero .container {
+      position: relative;
+      z-index: 2;
+      padding-block: var(--sp-16);
+    }
+    .page-hero-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-2);
+      font-size: var(--fs-xs);
+      color: rgba(255,255,255,0.6);
+      margin-bottom: var(--sp-4);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+    }
+    .page-hero-breadcrumb a {
+      color: rgba(255,255,255,0.6);
+      transition: color var(--transition-fast);
+    }
+    .page-hero-breadcrumb a:hover { color: var(--clr-accent-light); }
+    .page-hero-breadcrumb i { font-size: 0.6rem; }
+
+    .page-hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      font-weight: 800;
+      color: var(--clr-white);
+      line-height: 1.2;
+      margin-bottom: var(--sp-4);
+    }
+    .page-hero h1 span {
+      background: linear-gradient(90deg, var(--clr-accent-light), var(--clr-accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .page-hero p {
+      font-size: var(--fs-md);
+      color: rgba(255,255,255,0.8);
+      max-width: 560px;
+      line-height: 1.75;
+    }
+
+    /* ---- Overview ---- */
+    .about-overview {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-16);
+      align-items: center;
+    }
+    .about-overview-img {
+      position: relative;
+    }
+    .about-overview-img img {
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-xl);
+      display: block;
+    }
+    .about-overview-badge {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      background: var(--clr-accent);
+      color: var(--clr-dark);
+      border-radius: var(--radius-lg);
+      padding: var(--sp-4) var(--sp-5);
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+      font-family: var(--font-heading);
+    }
+    .about-overview-badge strong {
+      display: block;
+      font-size: var(--fs-2xl);
+      font-weight: 800;
+      line-height: 1;
+    }
+    .about-overview-badge span {
+      font-size: var(--fs-xs);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      opacity: 0.85;
+    }
+    .about-overview-text .section-eyebrow { margin-bottom: var(--sp-3); }
+    .about-overview-text .section-title {
+      text-align: left;
+      margin-bottom: var(--sp-4);
+    }
+    .about-overview-text p {
+      color: var(--clr-muted);
+      line-height: 1.8;
+      margin-bottom: var(--sp-4);
+      font-size: var(--fs-base);
+    }
+    .affiliation-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sp-3);
+      background: rgba(26,58,110,0.07);
+      border: 1px solid rgba(26,58,110,0.15);
+      border-radius: var(--radius-md);
+      padding: var(--sp-3) var(--sp-4);
+      margin-bottom: var(--sp-6);
+    }
+    .affiliation-badge i {
+      color: var(--clr-primary);
+      font-size: 1rem;
+    }
+    .affiliation-badge span {
+      font-size: var(--fs-sm);
+      font-weight: 600;
+      color: var(--clr-primary-dark);
+    }
+
+    /* ---- Vision & Mission ---- */
+    .vm-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-8);
+    }
+    .vm-card {
+      border-radius: var(--radius-lg);
+      padding: var(--sp-10) var(--sp-8);
+      position: relative;
+      overflow: hidden;
+    }
+    .vm-card--vision {
+      background: var(--clr-primary-dark);
+      color: var(--clr-white);
+    }
+    .vm-card--mission {
+      background: var(--clr-white);
+      border: 1px solid var(--clr-border);
+      color: var(--clr-text);
+      box-shadow: var(--shadow-md);
+    }
+    .vm-card-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: var(--sp-5);
+    }
+    .vm-card--vision .vm-card-icon {
+      background: rgba(232,160,32,0.15);
+      border: 1px solid rgba(232,160,32,0.3);
+      color: var(--clr-accent-light);
+    }
+    .vm-card--mission .vm-card-icon {
+      background: rgba(26,58,110,0.08);
+      border: 1px solid rgba(26,58,110,0.12);
+      color: var(--clr-primary);
+    }
+    .vm-card-label {
+      display: inline-block;
+      font-size: var(--fs-xs);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: var(--sp-2);
+    }
+    .vm-card--vision .vm-card-label { color: var(--clr-accent-light); }
+    .vm-card--mission .vm-card-label { color: var(--clr-accent); }
+
+    .vm-card h2 {
+      font-family: var(--font-heading);
+      font-size: var(--fs-xl);
+      font-weight: 700;
+      margin-bottom: var(--sp-4);
+      line-height: 1.25;
+    }
+    .vm-card--vision h2 { color: var(--clr-white); }
+    .vm-card--mission h2 { color: var(--clr-primary-dark); }
+
+    .vm-card p {
+      line-height: 1.8;
+      font-size: var(--fs-base);
+    }
+    .vm-card--vision p { color: rgba(255,255,255,0.75); }
+    .vm-card--mission p { color: var(--clr-muted); }
+
+    /* ---- Highlights ---- */
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--sp-6);
+    }
+    .highlight-card {
+      background: var(--clr-white);
+      border-radius: var(--radius-lg);
+      padding: var(--sp-8) var(--sp-6);
+      text-align: center;
+      border: 1px solid var(--clr-border);
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+    }
+    .highlight-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(26,58,110,0.15);
+    }
+    .highlight-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, rgba(26,58,110,0.08), rgba(37,84,160,0.14));
+      border: 1px solid rgba(26,58,110,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: var(--clr-primary);
+      margin: 0 auto var(--sp-5);
+      transition: background var(--transition-base), color var(--transition-base);
+    }
+    .highlight-card:hover .highlight-icon {
+      background: var(--clr-primary);
+      color: var(--clr-white);
+      border-color: transparent;
+    }
+    .highlight-card h3 {
+      font-family: var(--font-heading);
+      font-size: var(--fs-md);
+      font-weight: 700;
+      color: var(--clr-primary-dark);
+      margin-bottom: var(--sp-3);
+    }
+    .highlight-card p {
+      font-size: var(--fs-sm);
+      color: var(--clr-muted);
+      line-height: 1.7;
+    }
+
+    /* ---- Values strip ---- */
+    .values-strip {
+      background: var(--clr-primary-dark);
+      padding-block: var(--sp-16);
+    }
+    .values-strip .section-header { margin-bottom: var(--sp-10); }
+    .values-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-6);
+    }
+    .value-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--sp-4);
+      padding: var(--sp-6);
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      transition: background var(--transition-base);
+    }
+    .value-item:hover { background: rgba(255,255,255,0.08); }
+    .value-item-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      background: rgba(232,160,32,0.12);
+      border: 1px solid rgba(232,160,32,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: var(--clr-accent-light);
+      flex-shrink: 0;
+    }
+    .value-item-text h4 {
+      font-family: var(--font-heading);
+      font-size: var(--fs-base);
+      font-weight: 700;
+      color: var(--clr-white);
+      margin-bottom: var(--sp-1);
+    }
+    .value-item-text p {
+      font-size: var(--fs-sm);
+      color: rgba(255,255,255,0.62);
+      line-height: 1.65;
+    }
+
+    /* ---- CTA ---- */
+    .about-cta {
+      background: linear-gradient(135deg, var(--clr-primary-dark) 0%, var(--clr-primary) 55%, #1e4ca8 100%);
+      padding-block: var(--sp-20);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-top: 3px solid var(--clr-accent);
+    }
+    .about-cta::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,160,32,0.09) 0%, transparent 70%);
+      top: -250px; right: -180px;
+      pointer-events: none;
+    }
+    .about-cta-content { position: relative; z-index: 1; }
+    .about-cta h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-weight: 800;
+      color: var(--clr-white);
+      margin-bottom: var(--sp-4);
+    }
+    .about-cta p {
+      color: rgba(255,255,255,0.8);
+      font-size: var(--fs-md);
+      max-width: 500px;
+      margin-inline: auto;
+      margin-bottom: var(--sp-8);
+      line-height: 1.75;
+    }
+    .cta-btn-group {
+      display: flex;
+      justify-content: center;
+      gap: var(--sp-4);
+      flex-wrap: wrap;
+    }
+    .about-cta .btn-accent:hover {
+      box-shadow: 0 0 0 4px rgba(232,160,32,0.25), 0 6px 24px rgba(232,160,32,0.45);
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 1024px) {
+      .highlights-grid { grid-template-columns: repeat(2, 1fr); }
+      .values-list     { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 900px) {
+      .about-overview { grid-template-columns: 1fr; }
+      .about-overview-img { order: -1; }
+      .about-overview-img img { height: 300px; }
+      .about-overview-badge { bottom: -12px; right: -8px; }
+      .vm-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .highlights-grid { grid-template-columns: 1fr; }
+      .values-list     { grid-template-columns: 1fr; }
+      .page-hero .container { padding-block: var(--sp-12); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =================== NAVBAR =================== -->
+  <!-- Top Bar -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-left">
+        <a href="mailto:admissions@sbgbca.edu.in">
+          <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+          admissions@sbgbca.edu.in
+        </a>
+        <a href="tel:+911234567890">
+          <i class="fa-solid fa-phone" aria-hidden="true"></i>
+          +91 12345 67890
+        </a>
+      </div>
+      <div class="topbar-right">
+        <span>Rani Channamma University &nbsp;|&nbsp; NAAC Accredited</span>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navbar -->
+  <nav class="navbar" id="mainNav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="../index.html" class="nav-logo" aria-label="SBG BCA College Home">
+        <img src="../components/images/logo.png" alt="SBG BCA College Logo" class="nav-logo-img">
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu"
+        aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-menu" id="navMenu" role="list">
+        <li class="nav-item"><a href="../index.html" class="nav-link" data-nav="home">Home</a></li>
+        <li class="nav-item has-dropdown" id="aboutDropdown">
+          <a href="about.html" class="nav-link active" data-nav="about" aria-haspopup="true" aria-expanded="false">
+            About Us
+            <i class="fa-solid fa-chevron-down nav-arrow" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu" role="menu">
+            <a href="about.html" class="dropdown-link" role="menuitem">
+              <span class="dropdown-icon" aria-hidden="true"><i class="fa-solid fa-house-chimney"></i></span> About Us
+            </a>
+            <div class="dropdown-divider" role="separator"></div>
+            <a href="management.html" class="dropdown-link" role="menuitem">
+              <span class="dropdown-icon" aria-hidden="true"><i class="fa-solid fa-users"></i></span> Our Management
+            </a>
+            <a href="founders-desk.html" class="dropdown-link" role="menuitem">
+              <span class="dropdown-icon" aria-hidden="true"><i class="fa-solid fa-pen-to-square"></i></span> Founder's Desk
+            </a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="programs.html" class="nav-link" data-nav="programs">Programs</a></li>
+        <li class="nav-item"><a href="facilities.html" class="nav-link" data-nav="facilities">Facilities</a></li>
+        <li class="nav-item"><a href="gallery.html" class="nav-link" data-nav="gallery">Gallery</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link" data-nav="contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-cta flex gap-4">
+        <a href="contact.html" class="btn btn-primary" id="navApplyNow">Apply Now</a>
+      </div>
+    </div>
+  </nav>
+  <!-- =================== END NAVBAR =================== -->
+
+
+  <main id="main-content">
+
+    <!-- =================== PAGE HERO =================== -->
+    <section class="page-hero" aria-label="About page hero">
+      <!-- PASTE IMAGE HERE: assets/images/about-hero.jpg -->
+      <img class="page-hero-bg"
+        src="https://images.unsplash.com/photo-1562774053-701939374585?w=1600&q=75"
+        alt="SBG BCA College campus" loading="eager" fetchpriority="high" />
+
+      <div class="container">
+        <nav class="page-hero-breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          <span>About Us</span>
+        </nav>
+        <h1>About <span>SBG BCA College</span></h1>
+        <p>
+          <!-- EDIT THIS CONTENT -->
+          A premier institution under SBG Groups, dedicated to shaping the next generation
+          of technology professionals through quality education, industry exposure, and holistic development.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- =================== OVERVIEW =================== -->
+    <section class="section" id="overview" aria-labelledby="overview-heading">
+      <div class="container">
+        <div class="about-overview">
+
+          <!-- Image Side -->
+          <div class="about-overview-img" data-reveal>
+            <!-- PASTE ABOUT IMAGE HERE: assets/images/about-overview.jpg -->
+            <img
+              src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80"
+              alt="SBG BCA College campus and students" loading="lazy" />
+            <div class="about-overview-badge">
+              <strong>15+</strong>
+              <span>Years of<br>Excellence</span>
+            </div>
+          </div>
+
+          <!-- Text Side -->
+          <div data-reveal>
+            <span class="section-eyebrow">Who We Are</span>
+            <h2 class="section-title" id="overview-heading" style="text-align:left; margin-bottom:var(--sp-4);">
+              A Legacy of Academic<br>Excellence &amp; Innovation
+            </h2>
+            <div class="divider"></div>
+
+            <!-- EDIT THIS CONTENT -->
+            <p>
+              SBG BCA College, established under the prestigious SBG Groups, has been a beacon of quality
+              education in Computer Applications for over 15 years. Located in Belagavi, Karnataka, we are
+              proudly affiliated to <strong>Rani Channamma University</strong> and recognized by the
+              Government of Karnataka.
+            </p>
+            <p>
+              Our 3-year Bachelor of Computer Applications (BCA) program is designed to equip students with
+              both theoretical foundations and practical industry skills — from programming and databases to
+              full-stack development and artificial intelligence.
+            </p>
+            <p style="margin-bottom: var(--sp-5);">
+              With a placement record of over 95% and partnerships with 50+ industry recruiters, SBG BCA
+              College has consistently delivered graduates who are ready for the real world.
+            </p>
+
+            <!-- Affiliation badge -->
+            <div class="affiliation-badge">
+              <i class="fa-solid fa-university" aria-hidden="true"></i>
+              <span>Affiliated to Rani Channamma University, Belagavi</span>
+            </div>
+
+            <div class="flex gap-4">
+              <a href="contact.html" class="btn btn-primary" id="overviewApply">Apply Now
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+              <a href="programs.html" class="btn btn-outline" id="overviewPrograms">View Programs</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =================== VISION & MISSION =================== -->
+    <section class="section section--alt" id="vision-mission" aria-labelledby="vm-heading">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-eyebrow">Our Purpose</span>
+          <h2 class="section-title" id="vm-heading">Vision &amp; Mission</h2>
+          <p class="section-desc">
+            Guided by a clear purpose — to empower every student with knowledge, skills, and values
+            that lead to meaningful careers and responsible citizenship.
+          </p>
+        </div>
+
+        <div class="vm-grid">
+
+          <!-- Vision Card -->
+          <div class="vm-card vm-card--vision" data-reveal>
+            <div class="vm-card-icon" aria-hidden="true">
+              <i class="fa-solid fa-eye"></i>
+            </div>
+            <span class="vm-card-label">Our Vision</span>
+            <h2>To Be a Centre of Excellence in Technology Education</h2>
+            <p>
+              <!-- EDIT THIS CONTENT -->
+              To be a nationally recognized centre of excellence that empowers students with
+              cutting-edge technological knowledge, ethical values, and a spirit of innovation —
+              producing graduates who drive progress in the digital economy and contribute
+              meaningfully to society.
+            </p>
+          </div>
+
+          <!-- Mission Card -->
+          <div class="vm-card vm-card--mission" data-reveal>
+            <div class="vm-card-icon" aria-hidden="true">
+              <i class="fa-solid fa-bullseye"></i>
+            </div>
+            <span class="vm-card-label">Our Mission</span>
+            <h2>Delivering Quality Education That Creates Real Impact</h2>
+            <p>
+              <!-- EDIT THIS CONTENT -->
+              Our mission is to deliver a rigorous, industry-aligned BCA curriculum that combines
+              theoretical depth with practical experience. We are committed to fostering an inclusive
+              learning environment, investing in modern infrastructure, building industry partnerships,
+              and ensuring every graduate is career-ready and globally competitive.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =================== KEY HIGHLIGHTS =================== -->
+    <section class="section" id="highlights" aria-labelledby="highlights-heading">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-eyebrow">Why Choose Us</span>
+          <h2 class="section-title" id="highlights-heading">Key Highlights</h2>
+          <p class="section-desc">
+            What sets SBG BCA College apart — a combination of experienced faculty,
+            modern facilities, and a proven placement record.
+          </p>
+        </div>
+
+        <div class="highlights-grid">
+
+          <!-- Highlight 1 -->
+          <div class="highlight-card" data-reveal>
+            <div class="highlight-icon" aria-hidden="true">
+              <i class="fa-solid fa-user-tie"></i>
+            </div>
+            <h3>Experienced Faculty</h3>
+            <p>
+              <!-- EDIT THIS CONTENT -->
+              Learn from academicians and industry professionals with decades of combined experience
+              in software development, data science, networking, and computer science research.
+            </p>
+          </div>
+
+          <!-- Highlight 2 -->
+          <div class="highlight-card" data-reveal>
+            <div class="highlight-icon" aria-hidden="true">
+              <i class="fa-solid fa-laptop-code"></i>
+            </div>
+            <h3>Modern Labs &amp; Infrastructure</h3>
+            <p>
+              <!-- EDIT THIS CONTENT -->
+              Four fully equipped computer laboratories with 200+ workstations, high-speed fibre
+              internet, and licensed software tools — available 24/7 for student use.
+            </p>
+          </div>
+
+          <!-- Highlight 3 -->
+          <div class="highlight-card" data-reveal>
+            <div class="highlight-icon" aria-hidden="true">
+              <i class="fa-solid fa-handshake"></i>
+            </div>
+            <h3>Placement Support</h3>
+            <p>
+              <!-- EDIT THIS CONTENT -->
+              A dedicated Training &amp; Placement cell with partnerships across 50+ companies —
+              including TCS, Infosys, Wipro, and regional tech firms — ensuring opportunity for
+              every graduate.
+            </p>
+          </div>
+
+          <!-- Highlight 4 -->
+          <div class="highlight-card" data-reveal>
+            <div class="highlight-icon" aria-hidden="true">
+              <i class="fa-solid fa-industry"></i>
+            </div>
+            <h3>Industry Exposure</h3>
+            <p>
+              <!-- EDIT THIS CONTENT -->
+              Regular guest lectures, industry workshops, hackathons, and internship programmes
+              ensure students experience real-world technology environments before they graduate.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =================== CORE VALUES =================== -->
+    <section class="values-strip" id="values" aria-labelledby="values-heading">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-eyebrow" style="color:var(--clr-accent-light);">What We Stand For</span>
+          <h2 class="section-title" id="values-heading" style="color:var(--clr-white);">Our Core Values</h2>
+        </div>
+
+        <div class="values-list">
+
+          <div class="value-item" data-reveal>
+            <div class="value-item-icon" aria-hidden="true">
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="value-item-text">
+              <h4>Academic Excellence</h4>
+              <p>
+                <!-- EDIT THIS CONTENT -->
+                Maintaining the highest standards in teaching, curriculum design, and student
+                outcomes — consistently reviewed and updated to reflect industry evolution.
+              </p>
+            </div>
+          </div>
+
+          <div class="value-item" data-reveal>
+            <div class="value-item-icon" aria-hidden="true">
+              <i class="fa-solid fa-lightbulb"></i>
+            </div>
+            <div class="value-item-text">
+              <h4>Innovation &amp; Creativity</h4>
+              <p>
+                <!-- EDIT THIS CONTENT -->
+                Encouraging students to think critically, solve problems creatively, and embrace
+                new technology — from AI to cloud computing and beyond.
+              </p>
+            </div>
+          </div>
+
+          <div class="value-item" data-reveal>
+            <div class="value-item-icon" aria-hidden="true">
+              <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+            <div class="value-item-text">
+              <h4>Integrity &amp; Ethics</h4>
+              <p>
+                <!-- EDIT THIS CONTENT -->
+                Instilling a strong sense of professional ethics, responsibility, and integrity
+                in every student — values as important as technical skills.
+              </p>
+            </div>
+          </div>
+
+          <div class="value-item" data-reveal>
+            <div class="value-item-icon" aria-hidden="true">
+              <i class="fa-solid fa-users"></i>
+            </div>
+            <div class="value-item-text">
+              <h4>Inclusivity</h4>
+              <p>
+                <!-- EDIT THIS CONTENT -->
+                Creating a safe, inclusive, and diverse campus where every student — regardless
+                of background — has equal access to opportunity and support.
+              </p>
+            </div>
+          </div>
+
+          <div class="value-item" data-reveal>
+            <div class="value-item-icon" aria-hidden="true">
+              <i class="fa-solid fa-rocket"></i>
+            </div>
+            <div class="value-item-text">
+              <h4>Career Readiness</h4>
+              <p>
+                <!-- EDIT THIS CONTENT -->
+                Going beyond academics to ensure students are job-ready — with soft skills,
+                certifications, internships, and employer exposure built into the programme.
+              </p>
+            </div>
+          </div>
+
+          <div class="value-item" data-reveal>
+            <div class="value-item-icon" aria-hidden="true">
+              <i class="fa-solid fa-leaf"></i>
+            </div>
+            <div class="value-item-text">
+              <h4>Community &amp; Growth</h4>
+              <p>
+                <!-- EDIT THIS CONTENT -->
+                Building a vibrant alumni network and fostering a sense of community — because
+                growth is always better together.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =================== CTA =================== -->
+    <section class="about-cta" id="cta" aria-label="Call to action">
+      <div class="container">
+        <div class="about-cta-content">
+          <span class="section-eyebrow" style="color:var(--clr-accent-light);">Ready to Join?</span>
+          <h2>Take the First Step Toward Your Tech Career</h2>
+          <p>
+            <!-- EDIT THIS CONTENT -->
+            Applications for the 2025–26 academic year are now open. Join a community
+            that invests in your future — academically, professionally, and personally.
+          </p>
+          <div class="cta-btn-group">
+            <a href="contact.html" class="btn btn-accent btn-lg" id="aboutCtaApply">
+              Apply for Admission
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+            <a href="contact.html" class="btn btn-outline-white btn-lg" id="aboutCtaContact">
+              Contact Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =================== FOOTER =================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="../index.html" class="footer-logo">
+            <img src="../components/images/logo.png" alt="SBG BCA College Logo" class="footer-logo-img">
+          </a>
+          <p class="footer-desc">
+            Empowering students with world-class education in Computer Applications,
+            shaping the technology leaders of tomorrow. Affiliated to Rani Channamma University.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Home</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> About Us</a></li>
+            <li><a href="programs.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Programs</a></li>
+            <li><a href="facilities.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Facilities</a></li>
+            <li><a href="gallery.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Gallery</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>About College</h4>
+          <ul>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Vision &amp; Mission</a></li>
+            <li><a href="management.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Our Management</a></li>
+            <li><a href="founders-desk.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Founder's Desk</a></li>
+            <li><a href="#"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Admissions</a></li>
+            <li><a href="#"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Student Portal</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div class="footer-contact-text">
+              <strong>Address</strong>
+              <!-- PASTE ADDRESS HERE -->
+              <span>123, College Road, Near SBG Complex,<br>Belagavi – 590 001, Karnataka</span>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div class="footer-contact-text">
+              <strong>Phone</strong>
+              <!-- PASTE PHONE NUMBERS HERE -->
+              <a href="tel:+911234567890">+91 12345 67890</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true">
+              <i class="fa-regular fa-envelope"></i>
+            </div>
+            <div class="footer-contact-text">
+              <strong>Email</strong>
+              <!-- PASTE EMAIL HERE -->
+              <a href="mailto:admissions@sbgbca.edu.in">admissions@sbgbca.edu.in</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="footerYear">2025</span> SBG BCA College. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- =================== END FOOTER =================== -->
+
+  <!-- JavaScript -->
+  <script src="../assets/js/navbar.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    // Update footer year
+    document.getElementById('footerYear').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+
+</html>

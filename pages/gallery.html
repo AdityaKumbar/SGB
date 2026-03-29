@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta -->
+  <title>Gallery | SBG BCA College — Belagavi</title>
+  <meta name="description"
+    content="Explore the SBG BCA College gallery — campus life, events, facilities, student activities, and more from Belagavi's premier BCA institution." />
+  <meta name="keywords"
+    content="SBG BCA College gallery, campus photos, events, Belagavi BCA college photos" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Gallery | SBG BCA College" />
+  <meta property="og:description" content="A visual tour of campus life, events, and facilities at SBG BCA College, Belagavi." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sbgbca.edu.in/pages/gallery.html" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%231a3a6e'/><text y='.9em' font-size='64' fill='white' font-family='serif' font-weight='700' x='8'>S</text></svg>" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/navbar.css" />
+  <link rel="stylesheet" href="../assets/css/footer.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* =============================================
+       GALLERY PAGE — PAGE-SPECIFIC STYLES
+       ============================================= */
+
+    /* ---- Page Hero ---- */
+    .page-hero {
+      position: relative; background: var(--clr-primary-dark);
+      min-height: 320px; display: flex; align-items: center; overflow: hidden;
+    }
+    .page-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(120deg, rgba(10,20,45,0.92) 0%, rgba(26,58,110,0.72) 100%); z-index: 1;
+    }
+    .page-hero-bg {
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.4;
+    }
+    .page-hero .container { position: relative; z-index: 2; padding-block: var(--sp-16); }
+    .page-hero-breadcrumb {
+      display: flex; align-items: center; gap: var(--sp-2);
+      font-size: var(--fs-xs); color: rgba(255,255,255,0.6); margin-bottom: var(--sp-4);
+      text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;
+    }
+    .page-hero-breadcrumb a { color: rgba(255,255,255,0.6); transition: color var(--transition-fast); }
+    .page-hero-breadcrumb a:hover { color: var(--clr-accent-light); }
+    .page-hero-breadcrumb i { font-size: 0.6rem; }
+    .page-hero h1 {
+      font-family: var(--font-heading); font-size: clamp(1.9rem, 4vw, 3rem);
+      font-weight: 800; color: var(--clr-white); line-height: 1.2; margin-bottom: var(--sp-4);
+    }
+    .page-hero h1 span {
+      background: linear-gradient(90deg, var(--clr-accent-light), var(--clr-accent));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .page-hero p { font-size: var(--fs-md); color: rgba(255,255,255,0.8); max-width: 560px; line-height: 1.75; }
+
+    /* ---- Filter Tabs ---- */
+    .gallery-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--sp-2);
+      justify-content: center;
+      margin-bottom: var(--sp-10);
+    }
+    .gallery-filter-btn {
+      padding: var(--sp-2) var(--sp-6);
+      font-size: var(--fs-sm); font-weight: 600;
+      border: 1.5px solid var(--clr-border);
+      border-radius: var(--radius-full);
+      background: var(--clr-white);
+      color: var(--clr-muted);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    .gallery-filter-btn:hover {
+      border-color: var(--clr-primary);
+      color: var(--clr-primary);
+      background: rgba(26,58,110,0.04);
+    }
+    .gallery-filter-btn.active {
+      background: var(--clr-primary);
+      border-color: var(--clr-primary);
+      color: var(--clr-white);
+      box-shadow: 0 4px 12px rgba(26,58,110,0.25);
+    }
+
+    /* ---- Gallery Grid ---- */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-5);
+    }
+
+    /* Gallery item */
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      background: linear-gradient(135deg, rgba(26,58,110,0.08), rgba(37,84,160,0.13));
+      cursor: pointer;
+      /* filter transition for hiding */
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+    .gallery-item.hidden {
+      display: none;
+    }
+    .gallery-item img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform 0.5s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.07); }
+
+    /* Hover overlay */
+    .gallery-item-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(10,20,45,0.75) 0%, rgba(10,20,45,0.1) 55%, transparent 100%);
+      opacity: 0;
+      transition: opacity var(--transition-base);
+      display: flex; flex-direction: column;
+      justify-content: flex-end; align-items: flex-start;
+      padding: var(--sp-5);
+    }
+    .gallery-item:hover .gallery-item-overlay { opacity: 1; }
+    .gallery-item-caption {
+      color: var(--clr-white);
+      font-size: var(--fs-sm); font-weight: 600;
+      line-height: 1.4; margin-bottom: var(--sp-2);
+    }
+    .gallery-item-tag {
+      font-size: var(--fs-xs); font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--clr-accent-light);
+    }
+    /* Zoom icon */
+    .gallery-item-zoom {
+      position: absolute; top: var(--sp-4); right: var(--sp-4);
+      width: 36px; height: 36px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(4px);
+      border-radius: var(--radius-md);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--clr-white); font-size: 0.85rem;
+      opacity: 0; transform: scale(0.8);
+      transition: opacity var(--transition-fast), transform var(--transition-fast);
+    }
+    .gallery-item:hover .gallery-item-zoom {
+      opacity: 1; transform: scale(1);
+    }
+
+    /* Placeholder (no image) */
+    .gallery-placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: var(--sp-2); color: var(--clr-primary); opacity: 0.3;
+    }
+    .gallery-placeholder i { font-size: 2rem; }
+    .gallery-placeholder span { font-size: var(--fs-xs); font-weight: 500; text-align: center; }
+
+    /* Empty state */
+    .gallery-empty {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: var(--sp-20) 0;
+      color: var(--clr-muted);
+      display: none;
+    }
+    .gallery-empty.visible { display: block; }
+    .gallery-empty i { font-size: 2.5rem; margin-bottom: var(--sp-4); opacity: 0.4; }
+    .gallery-empty p { font-size: var(--fs-base); }
+
+    /* ---- Lightbox ---- */
+    .lightbox {
+      position: fixed; inset: 0; z-index: 9000;
+      background: rgba(5,12,30,0.94);
+      display: none; align-items: center; justify-content: center;
+      padding: var(--sp-6);
+      backdrop-filter: blur(6px);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .lightbox.open {
+      display: flex;
+      opacity: 0;
+      animation: lbFadeIn 0.25s ease forwards;
+    }
+    @keyframes lbFadeIn { to { opacity: 1; } }
+
+    .lightbox-inner {
+      position: relative;
+      max-width: 1100px; width: 100%;
+      display: flex; flex-direction: column; align-items: center;
+    }
+    .lightbox-img-wrap {
+      width: 100%;
+      max-height: 80vh;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+    }
+    .lightbox-img-wrap img {
+      width: 100%; max-height: 80vh;
+      object-fit: contain; display: block;
+    }
+    .lightbox-caption {
+      margin-top: var(--sp-4);
+      color: rgba(255,255,255,0.7);
+      font-size: var(--fs-sm); text-align: center;
+    }
+    .lightbox-caption strong { color: var(--clr-white); font-weight: 600; }
+
+    /* Navigation arrows */
+    .lightbox-nav {
+      position: absolute;
+      top: 50%; transform: translateY(-50%);
+      width: 48px; height: 48px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: var(--radius-md);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--clr-white); font-size: 1rem; cursor: pointer;
+      transition: background var(--transition-fast);
+    }
+    .lightbox-nav:hover { background: rgba(255,255,255,0.2); }
+    .lightbox-prev { left: -64px; }
+    .lightbox-next { right: -64px; }
+
+    /* Close button */
+    .lightbox-close {
+      position: absolute; top: -52px; right: 0;
+      width: 40px; height: 40px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: var(--radius-md);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--clr-white); font-size: 1rem; cursor: pointer;
+      transition: background var(--transition-fast);
+    }
+    .lightbox-close:hover { background: rgba(220,50,50,0.6); }
+
+    /* Counter */
+    .lightbox-counter {
+      position: absolute; top: -52px; left: 0;
+      font-size: var(--fs-xs); font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.06em;
+    }
+
+    /* ---- CTA ---- */
+    .page-cta {
+      background: linear-gradient(135deg, var(--clr-primary-dark) 0%, var(--clr-primary) 55%, #1e4ca8 100%);
+      padding-block: var(--sp-20); text-align: center;
+      position: relative; overflow: hidden; border-top: 3px solid var(--clr-accent);
+    }
+    .page-cta::before {
+      content: ''; position: absolute; width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,160,32,0.09) 0%, transparent 70%);
+      top: -250px; right: -180px; pointer-events: none;
+    }
+    .page-cta-content { position: relative; z-index: 1; }
+    .page-cta h2 {
+      font-family: var(--font-heading); font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-weight: 800; color: var(--clr-white); margin-bottom: var(--sp-4);
+    }
+    .page-cta p { color: rgba(255,255,255,0.8); font-size: var(--fs-md); max-width: 500px; margin-inline: auto; margin-bottom: var(--sp-8); line-height: 1.75; }
+    .cta-btn-group { display: flex; justify-content: center; gap: var(--sp-4); flex-wrap: wrap; }
+    .page-cta .btn-accent:hover { box-shadow: 0 0 0 4px rgba(232,160,32,0.25), 0 6px 24px rgba(232,160,32,0.45); }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 1024px) {
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .lightbox-prev { left: -48px; }
+      .lightbox-next { right: -48px; }
+    }
+    @media (max-width: 700px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+      .lightbox-nav { display: none; }
+      .page-hero .container { padding-block: var(--sp-12); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =================== NAVBAR =================== -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-left">
+        <a href="mailto:admissions@sbgbca.edu.in">
+          <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+          admissions@sbgbca.edu.in
+        </a>
+        <a href="tel:+911234567890">
+          <i class="fa-solid fa-phone" aria-hidden="true"></i>
+          +91 12345 67890
+        </a>
+      </div>
+      <div class="topbar-right">
+        <span>Rani Channamma University &nbsp;|&nbsp; NAAC Accredited</span>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar" id="mainNav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="../index.html" class="nav-logo" aria-label="SBG BCA College Home">
+        <img src="../components/images/logo.png" alt="SBG BCA College Logo" class="nav-logo-img">
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu" role="list">
+        <li class="nav-item"><a href="../index.html" class="nav-link" data-nav="home">Home</a></li>
+        <li class="nav-item has-dropdown" id="aboutDropdown">
+          <a href="about.html" class="nav-link" data-nav="about" aria-haspopup="true" aria-expanded="false">
+            About Us <i class="fa-solid fa-chevron-down nav-arrow" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu" role="menu">
+            <a href="about.html" class="dropdown-link" role="menuitem">
+              <span class="dropdown-icon"><i class="fa-solid fa-house-chimney"></i></span> About Us
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="management.html" class="dropdown-link" role="menuitem">
+              <span class="dropdown-icon"><i class="fa-solid fa-users"></i></span> Our Management
+            </a>
+            <a href="founders-desk.html" class="dropdown-link" role="menuitem">
+              <span class="dropdown-icon"><i class="fa-solid fa-pen-to-square"></i></span> Founder's Desk
+            </a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="programs.html" class="nav-link" data-nav="programs">Programs</a></li>
+        <li class="nav-item"><a href="facilities.html" class="nav-link" data-nav="facilities">Facilities</a></li>
+        <li class="nav-item"><a href="gallery.html" class="nav-link active" data-nav="gallery">Gallery</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link" data-nav="contact">Contact</a></li>
+      </ul>
+      <div class="nav-cta flex gap-4">
+        <a href="contact.html" class="btn btn-primary" id="navApplyNow">Apply Now</a>
+      </div>
+    </div>
+  </nav>
+  <!-- =================== END NAVBAR =================== -->
+
+
+  <main id="main-content">
+
+    <!-- =================== PAGE HERO =================== -->
+    <section class="page-hero" aria-label="Gallery hero">
+      <!-- PASTE IMAGE HERE: assets/images/gallery-hero.jpg -->
+      <img class="page-hero-bg"
+        src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?w=1600&q=75"
+        alt="SBG BCA College campus life" loading="eager" fetchpriority="high" />
+      <div class="container">
+        <nav class="page-hero-breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          <span>Gallery</span>
+        </nav>
+        <h1>Our <span>Gallery</span></h1>
+        <p>
+          <!-- EDIT THIS CONTENT -->
+          A glimpse into life at SBG BCA College — classrooms, labs, events, celebrations, and
+          the moments that make our campus more than just a place of study.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- =================== GALLERY SECTION =================== -->
+    <section class="section" id="gallery" aria-labelledby="gallery-heading">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-eyebrow">Campus Life</span>
+          <h2 class="section-title" id="gallery-heading">Photo Gallery</h2>
+          <p class="section-desc">
+            Browse through moments captured across our campus — from technical events and
+            cultural fests to everyday student life.
+          </p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="gallery-filters" role="group" aria-label="Filter gallery by category">
+          <button class="gallery-filter-btn active" data-filter="all"   onclick="filterGallery('all')">All Photos</button>
+          <button class="gallery-filter-btn"        data-filter="campus"   onclick="filterGallery('campus')">Campus</button>
+          <button class="gallery-filter-btn"        data-filter="events"   onclick="filterGallery('events')">Events</button>
+          <button class="gallery-filter-btn"        data-filter="facilities" onclick="filterGallery('facilities')">Facilities</button>
+          <button class="gallery-filter-btn"        data-filter="students" onclick="filterGallery('students')">Student Life</button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <!--
+          TO ADD REAL IMAGES:
+          1. Replace src="https://..." with src="../assets/images/gallery-X.jpg"
+          2. Update alt, caption, and category (data-category)
+          Available categories: campus | events | facilities | students
+        -->
+        <div class="gallery-grid" id="galleryGrid">
+
+          <!-- Item 1 — Campus -->
+          <div class="gallery-item" data-category="campus" data-caption="Main campus building and entrance" tabindex="0" role="button" aria-label="Open campus photo">
+            <img src="https://images.unsplash.com/photo-1562774053-701939374585?w=800&q=70" alt="SBG BCA College main building" loading="lazy" />
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-caption">Main Campus Building</span>
+              <span class="gallery-item-tag"><i class="fa-solid fa-building-columns"></i> Campus</span>
+            </div>
+            <div class="gallery-item-zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+
+          <!-- Item 2 — Facilities -->
+          <div class="gallery-item" data-category="facilities" data-caption="State-of-the-art computer laboratory" tabindex="0" role="button" aria-label="Open computer lab photo">
+            <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=800&q=70" alt="Computer laboratory" loading="lazy" />
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-caption">Computer Laboratory</span>
+              <span class="gallery-item-tag"><i class="fa-solid fa-computer"></i> Facilities</span>
+            </div>
+            <div class="gallery-item-zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+
+          <!-- Item 3 — Events -->
+          <div class="gallery-item" data-category="events" data-caption="Annual Tech Fest — student presentations" tabindex="0" role="button" aria-label="Open tech fest photo">
+            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=70" alt="Annual Tech Fest" loading="lazy" />
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-caption">Annual Tech Fest</span>
+              <span class="gallery-item-tag"><i class="fa-solid fa-calendar-star"></i> Events</span>
+            </div>
+            <div class="gallery-item-zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+
+          <!-- Item 4 — Students -->
+          <div class="gallery-item" data-category="students" data-caption="Students collaborating on a group project" tabindex="0" role="button" aria-label="Open student project photo">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=70" alt="Students working on project" loading="lazy" />
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-caption">Group Project Session</span>
+              <span class="gallery-item-tag"><i class="fa-solid fa-users"></i> Student Life</span>
+            </div>
+            <div class="gallery-item-zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+
+          <!-- Item 5 — Facilities -->
+          <div class="gallery-item" data-category="facilities" data-caption="Smart library with 10,000+ books and digital catalog" tabindex="0" role="button" aria-label="Open library photo">
+            <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&q=70" alt="College library" loading="lazy" />
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-caption">Smart Library</span>
+              <span class="gallery-item-tag"><i class="fa-solid fa-book-open"></i> Facilities</span>
+            </div>
+            <div class="gallery-item-zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+
+          <!-- Item 6 — Events -->
+          <div class="gallery-item" data-category="events" data-caption="Convocation ceremony — graduating batch 2024" tabindex="0" role="button" aria-label="Open convocation photo">
+            <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&q=70" alt="Convocation ceremony" loading="lazy" />
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-caption">Convocation Ceremony 2024</span>
+              <span class="gallery-item-tag"><i class="fa-solid fa-graduation-cap"></i> Events</span>
+            </div>
+            <div class="gallery-item-zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+
+          <!-- Item 7 — Campus -->
+          <div class="gallery-item" data-category="campus" data-caption="Campus garden and open study spaces" tabindex="0" role="button" aria-label="Open campus garden photo">
+            <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&q=70" alt="Campus open spaces" loading="lazy" />
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-caption">Campus Open Spaces</span>
+              <span class="gallery-item-tag"><i class="fa-solid fa-tree"></i> Campus</span>
+            </div>
+            <div class="gallery-item-zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+
+          <!-- Item 8 — Students -->
+          <div class="gallery-item" data-category="students" data-caption="Students at the annual cultural festival" tabindex="0" role="button" aria-label="Open cultural fest photo">
+            <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=70" alt="Cultural festival" loading="lazy" />
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-caption">Cultural Festival — Utsav 2024</span>
+              <span class="gallery-item-tag"><i class="fa-solid fa-music"></i> Student Life</span>
+            </div>
+            <div class="gallery-item-zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+
+          <!-- Item 9 — Events -->
+          <div class="gallery-item" data-category="events" data-caption="Industry expert guest lecture series" tabindex="0" role="button" aria-label="Open guest lecture photo">
+            <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=70" alt="Guest lecture in auditorium" loading="lazy" />
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-caption">Guest Lecture Series</span>
+              <span class="gallery-item-tag"><i class="fa-solid fa-microphone"></i> Events</span>
+            </div>
+            <div class="gallery-item-zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+
+          <!-- Item 10 — Facilities -->
+          <div class="gallery-item" data-category="facilities" data-caption="Sports complex — outdoor cricket ground" tabindex="0" role="button" aria-label="Open sports photo">
+            <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=800&q=70" alt="Sports complex" loading="lazy" />
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-caption">Sports Complex</span>
+              <span class="gallery-item-tag"><i class="fa-solid fa-person-running"></i> Facilities</span>
+            </div>
+            <div class="gallery-item-zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+
+          <!-- Item 11 — Students -->
+          <div class="gallery-item" data-category="students" data-caption="Hackathon 2024 — 24-hour coding challenge" tabindex="0" role="button" aria-label="Open hackathon photo">
+            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=70" alt="Hackathon event" loading="lazy" />
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-caption">Hackathon 2024</span>
+              <span class="gallery-item-tag"><i class="fa-solid fa-code"></i> Student Life</span>
+            </div>
+            <div class="gallery-item-zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+
+          <!-- Item 12 — Campus -->
+          <div class="gallery-item" data-category="campus" data-caption="College entrance and administrative block" tabindex="0" role="button" aria-label="Open campus entrance photo">
+            <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=70" alt="Campus entrance" loading="lazy" />
+            <div class="gallery-item-overlay">
+              <span class="gallery-item-caption">Campus Entrance</span>
+              <span class="gallery-item-tag"><i class="fa-solid fa-building"></i> Campus</span>
+            </div>
+            <div class="gallery-item-zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+
+          <!-- Empty state (shown on filter with no results) -->
+          <div class="gallery-empty" id="galleryEmpty">
+            <i class="fa-regular fa-image" aria-hidden="true"></i>
+            <p>No photos in this category yet.<br>Check back soon!</p>
+          </div>
+
+        </div><!-- /.gallery-grid -->
+      </div>
+    </section>
+
+
+    <!-- =================== CTA =================== -->
+    <section class="page-cta" id="cta" aria-label="Call to action">
+      <div class="container">
+        <div class="page-cta-content">
+          <span class="section-eyebrow" style="color:var(--clr-accent-light);">Like What You See?</span>
+          <h2>Come Experience it in Person</h2>
+          <p>
+            <!-- EDIT THIS CONTENT -->
+            Photos tell part of the story. Visit SBG BCA College and experience the campus,
+            meet the faculty, and see why students love learning here.
+          </p>
+          <div class="cta-btn-group">
+            <a href="contact.html" class="btn btn-accent btn-lg" id="galCtaApply">
+              Apply for Admission <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+            <a href="contact.html" class="btn btn-outline-white btn-lg" id="galCtaVisit">
+              Schedule a Visit
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =================== LIGHTBOX =================== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <div class="lightbox-inner">
+      <span class="lightbox-counter" id="lbCounter" aria-live="polite"></span>
+      <button class="lightbox-close" id="lbClose" aria-label="Close lightbox">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="lightbox-img-wrap">
+        <img id="lbImg" src="" alt="" />
+      </div>
+      <p class="lightbox-caption" id="lbCaption"></p>
+      <button class="lightbox-nav lightbox-prev" id="lbPrev" aria-label="Previous image">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <button class="lightbox-nav lightbox-next" id="lbNext" aria-label="Next image">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+
+
+  <!-- =================== FOOTER =================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="footer-logo">
+            <img src="../components/images/logo.png" alt="SBG BCA College Logo" class="footer-logo-img">
+          </a>
+          <p class="footer-desc">
+            Empowering students with world-class education in Computer Applications,
+            shaping the technology leaders of tomorrow. Affiliated to Rani Channamma University.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+            <li><a href="programs.html"><i class="fa-solid fa-chevron-right"></i> Programs</a></li>
+            <li><a href="facilities.html"><i class="fa-solid fa-chevron-right"></i> Facilities</a></li>
+            <li><a href="gallery.html"><i class="fa-solid fa-chevron-right"></i> Gallery</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>About College</h4>
+          <ul>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> Vision &amp; Mission</a></li>
+            <li><a href="management.html"><i class="fa-solid fa-chevron-right"></i> Our Management</a></li>
+            <li><a href="founders-desk.html"><i class="fa-solid fa-chevron-right"></i> Founder's Desk</a></li>
+            <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Admissions</a></li>
+            <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Student Portal</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="footer-contact-text">
+              <strong>Address</strong>
+              <span>123, College Road, Near SBG Complex,<br>Belagavi – 590 001, Karnataka</span>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="fa-solid fa-phone"></i></div>
+            <div class="footer-contact-text">
+              <strong>Phone</strong>
+              <a href="tel:+911234567890">+91 12345 67890</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="fa-regular fa-envelope"></i></div>
+            <div class="footer-contact-text">
+              <strong>Email</strong>
+              <a href="mailto:admissions@sbgbca.edu.in">admissions@sbgbca.edu.in</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="footerYear">2025</span> SBG BCA College. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/navbar.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+    /* ---- Gallery Filter ---- */
+    function filterGallery(cat) {
+      // Update button states
+      document.querySelectorAll('.gallery-filter-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.filter === cat);
+      });
+
+      const items = document.querySelectorAll('.gallery-item[data-category]');
+      let visible = 0;
+
+      items.forEach(item => {
+        const match = cat === 'all' || item.dataset.category === cat;
+        item.classList.toggle('hidden', !match);
+        if (match) visible++;
+      });
+
+      // Toggle empty state
+      document.getElementById('galleryEmpty').classList.toggle('visible', visible === 0);
+
+      // Rebuild lightbox index for visible items
+      buildLightboxItems();
+    }
+
+    /* ---- Lightbox ---- */
+    let lbItems = [];
+    let lbCurrent = 0;
+
+    function buildLightboxItems() {
+      lbItems = Array.from(document.querySelectorAll('.gallery-item[data-category]:not(.hidden)'));
+    }
+
+    function openLightbox(index) {
+      lbCurrent = index;
+      const item = lbItems[lbCurrent];
+      const img  = item.querySelector('img');
+
+      document.getElementById('lbImg').src = img.src;
+      document.getElementById('lbImg').alt = img.alt;
+      document.getElementById('lbCaption').innerHTML =
+        '<strong>' + (item.dataset.caption || img.alt) + '</strong>';
+      document.getElementById('lbCounter').textContent =
+        (lbCurrent + 1) + ' / ' + lbItems.length;
+
+      const lb = document.getElementById('lightbox');
+      lb.style.display = 'flex';
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      document.getElementById('lbClose').focus();
+    }
+
+    function closeLightbox() {
+      const lb = document.getElementById('lightbox');
+      lb.style.opacity = '0';
+      setTimeout(() => { lb.style.display = 'none'; lb.classList.remove('open'); lb.style.opacity = ''; }, 250);
+      document.body.style.overflow = '';
+    }
+
+    function lbNavigate(dir) {
+      lbCurrent = (lbCurrent + dir + lbItems.length) % lbItems.length;
+      const item = lbItems[lbCurrent];
+      const img  = item.querySelector('img');
+      const lbImg = document.getElementById('lbImg');
+      lbImg.style.opacity = '0';
+      setTimeout(() => {
+        lbImg.src = img.src;
+        lbImg.alt = img.alt;
+        lbImg.style.opacity = '1';
+      }, 150);
+      document.getElementById('lbImg').style.transition = 'opacity 0.15s ease';
+      document.getElementById('lbCaption').innerHTML =
+        '<strong>' + (item.dataset.caption || img.alt) + '</strong>';
+      document.getElementById('lbCounter').textContent =
+        (lbCurrent + 1) + ' / ' + lbItems.length;
+    }
+
+    // Wire up gallery items
+    document.addEventListener('DOMContentLoaded', () => {
+      buildLightboxItems();
+
+      document.querySelectorAll('.gallery-item[data-category]').forEach((item) => {
+        function open() {
+          buildLightboxItems();
+          const visibleIdx = lbItems.indexOf(item);
+          if (visibleIdx >= 0) openLightbox(visibleIdx);
+        }
+        item.addEventListener('click', open);
+        item.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+      });
+
+      document.getElementById('lbClose').addEventListener('click', closeLightbox);
+      document.getElementById('lbPrev').addEventListener('click', () => lbNavigate(-1));
+      document.getElementById('lbNext').addEventListener('click', () => lbNavigate(1));
+
+      // Click backdrop to close
+      document.getElementById('lightbox').addEventListener('click', e => {
+        if (e.target === document.getElementById('lightbox')) closeLightbox();
+      });
+
+      // Keyboard navigation
+      document.addEventListener('keydown', e => {
+        if (!document.getElementById('lightbox').classList.contains('open')) return;
+        if (e.key === 'Escape')     closeLightbox();
+        if (e.key === 'ArrowLeft')  lbNavigate(-1);
+        if (e.key === 'ArrowRight') lbNavigate(1);
+      });
+    });
+  </script>
+
+</body>
+</html>

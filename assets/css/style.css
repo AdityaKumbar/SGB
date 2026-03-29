@@ -49,6 +49,7 @@
   --sp-8:  2rem;
   --sp-10: 2.5rem;
   --sp-12: 3rem;
+  --sp-14: 3.5rem;
   --sp-16: 4rem;
   --sp-20: 5rem;
   --sp-24: 6rem;
@@ -231,12 +232,17 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.12);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.25);
+  border: 1px solid rgba(255,255,255,0.22);
   border-radius: var(--radius-lg);
-  padding: var(--sp-5) var(--sp-8);
+  padding: var(--sp-4) var(--sp-6);
   color: var(--clr-white);
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+.stat-badge:hover {
+  background: rgba(255,255,255,0.18);
+  border-color: rgba(232,160,32,0.4);
 }
 .stat-badge strong {
   font-family: var(--font-heading);
@@ -320,6 +326,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .mt-6  { margin-top: var(--sp-6); }
 .mt-8  { margin-top: var(--sp-8); }
 .mb-4  { margin-bottom: var(--sp-4); }
+
+/* ---- Font Awesome global alignment ---- */
+.fa-solid, .fa-regular, .fa-brands {
+  vertical-align: middle;
+  line-height: 1;
+}
 
 /* ============================================= 
    RESPONSIVE BREAKPOINTS
