@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta -->
+  <title>Programs Offered | SBG BCA College — Belagavi</title>
+  <meta name="description"
+    content="Explore the 3-year Bachelor of Computer Applications (BCA) program at SBG BCA College, Belagavi — affiliated to Rani Channamma University, with specializations in Full Stack, AI, Cybersecurity, and Cloud Computing." />
+  <meta name="keywords"
+    content="BCA program Belagavi, Bachelor of Computer Applications, Rani Channamma University, full stack development, data science, cybersecurity, cloud computing" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Programs Offered | SBG BCA College" />
+  <meta property="og:description"
+    content="3-year BCA program at SBG BCA College, Belagavi — industry-aligned curriculum, 4 specializations, and a 95% placement record." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sbgbca.edu.in/pages/programs.html" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%231a3a6e'/><text y='.9em' font-size='64' fill='white' font-family='serif' font-weight='700' x='8'>S</text></svg>" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/navbar.css" />
+  <link rel="stylesheet" href="../assets/css/footer.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* =============================================
+       PROGRAMS PAGE — PAGE-SPECIFIC STYLES
+       ============================================= */
+
+    /* ---- Page Hero ---- */
+    .page-hero {
+      position: relative;
+      background: var(--clr-primary-dark);
+      min-height: 320px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(10,20,45,0.92) 0%, rgba(26,58,110,0.72) 100%);
+      z-index: 1;
+    }
+    .page-hero-bg {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; opacity: 0.4;
+    }
+    .page-hero .container  { position: relative; z-index: 2; padding-block: var(--sp-16); }
+    .page-hero-breadcrumb  {
+      display: flex; align-items: center; gap: var(--sp-2);
+      font-size: var(--fs-xs); color: rgba(255,255,255,0.6);
+      margin-bottom: var(--sp-4); text-transform: uppercase;
+      letter-spacing: 0.08em; font-weight: 600;
+    }
+    .page-hero-breadcrumb a { color: rgba(255,255,255,0.6); transition: color var(--transition-fast); }
+    .page-hero-breadcrumb a:hover { color: var(--clr-accent-light); }
+    .page-hero-breadcrumb i { font-size: 0.6rem; }
+    .page-hero h1 {
+      font-family: var(--font-heading); font-size: clamp(1.9rem, 4vw, 3rem);
+      font-weight: 800; color: var(--clr-white); line-height: 1.2; margin-bottom: var(--sp-4);
+    }
+    .page-hero h1 span {
+      background: linear-gradient(90deg, var(--clr-accent-light), var(--clr-accent));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .page-hero p { font-size: var(--fs-md); color: rgba(255,255,255,0.8); max-width: 560px; line-height: 1.75; }
+
+    /* ---- BCA Overview Card ---- */
+    .bca-overview {
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: var(--sp-12);
+      align-items: start;
+    }
+    .bca-overview-text .section-eyebrow { margin-bottom: var(--sp-3); }
+    .bca-overview-text .section-title   { text-align: left; margin-bottom: var(--sp-4); }
+    .bca-overview-text p {
+      color: var(--clr-muted); line-height: 1.8;
+      margin-bottom: var(--sp-4); font-size: var(--fs-base);
+    }
+    .bca-tag-row {
+      display: flex; flex-wrap: wrap; gap: var(--sp-2); margin-bottom: var(--sp-6);
+    }
+    .bca-tag {
+      display: inline-flex; align-items: center; gap: var(--sp-2);
+      background: rgba(26,58,110,0.07); border: 1px solid rgba(26,58,110,0.12);
+      border-radius: var(--radius-full); padding: 0.35em 0.9em;
+      font-size: var(--fs-xs); font-weight: 600; color: var(--clr-primary-dark);
+    }
+    .bca-tag i { color: var(--clr-accent); font-size: 0.75rem; }
+
+    /* BCA detail card (right column) */
+    .bca-detail-card {
+      background: var(--clr-white);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+    .bca-detail-card-header {
+      background: var(--clr-primary-dark);
+      padding: var(--sp-6) var(--sp-7);
+    }
+    .bca-detail-card-header h3 {
+      font-family: var(--font-heading);
+      font-size: var(--fs-lg);
+      font-weight: 700;
+      color: var(--clr-white);
+      margin-bottom: var(--sp-1);
+    }
+    .bca-detail-card-header p {
+      font-size: var(--fs-sm);
+      color: rgba(255,255,255,0.68);
+    }
+    .bca-detail-list {
+      padding: var(--sp-6) var(--sp-7);
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-4);
+    }
+    .bca-detail-row {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--sp-4);
+      padding-bottom: var(--sp-4);
+      border-bottom: 1px solid var(--clr-border);
+    }
+    .bca-detail-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .bca-detail-icon {
+      width: 38px; height: 38px;
+      border-radius: var(--radius-md);
+      background: rgba(26,58,110,0.07);
+      border: 1px solid rgba(26,58,110,0.1);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--clr-primary); font-size: 0.9rem; flex-shrink: 0;
+    }
+    .bca-detail-text label {
+      display: block; font-size: var(--fs-xs); font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.07em;
+      color: var(--clr-muted); margin-bottom: 2px;
+    }
+    .bca-detail-text span {
+      font-size: var(--fs-sm); font-weight: 600; color: var(--clr-primary-dark);
+    }
+    .bca-detail-card-footer {
+      padding: var(--sp-5) var(--sp-7);
+      background: var(--clr-off-white);
+      border-top: 1px solid var(--clr-border);
+    }
+
+    /* ---- Curriculum Tabs ---- */
+    .curriculum-tabs {
+      display: flex;
+      gap: var(--sp-2);
+      margin-bottom: var(--sp-8);
+      border-bottom: 2px solid var(--clr-border);
+      padding-bottom: 0;
+    }
+    .curriculum-tab {
+      padding: var(--sp-3) var(--sp-6);
+      font-size: var(--fs-sm);
+      font-weight: 600;
+      color: var(--clr-muted);
+      cursor: pointer;
+      border: none;
+      background: none;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      transition: color var(--transition-fast), border-color var(--transition-fast);
+      border-radius: var(--radius-md) var(--radius-md) 0 0;
+      letter-spacing: 0.02em;
+    }
+    .curriculum-tab:hover { color: var(--clr-primary); }
+    .curriculum-tab.active {
+      color: var(--clr-primary);
+      border-bottom-color: var(--clr-primary);
+      background: rgba(26,58,110,0.04);
+    }
+    .curriculum-panel { display: none; }
+    .curriculum-panel.active { display: block; }
+
+    .subjects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-4);
+    }
+    .subject-card {
+      background: var(--clr-white);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-lg);
+      padding: var(--sp-5) var(--sp-5);
+      display: flex;
+      align-items: flex-start;
+      gap: var(--sp-3);
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    }
+    .subject-card:hover {
+      border-color: rgba(26,58,110,0.2);
+      box-shadow: var(--shadow-sm);
+    }
+    .subject-num {
+      width: 32px; height: 32px;
+      background: rgba(26,58,110,0.08);
+      border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      font-size: var(--fs-xs); font-weight: 800;
+      color: var(--clr-primary); flex-shrink: 0;
+    }
+    .subject-info h4 {
+      font-family: var(--font-heading);
+      font-size: var(--fs-sm); font-weight: 700;
+      color: var(--clr-primary-dark); margin-bottom: 3px;
+    }
+    .subject-info span {
+      font-size: var(--fs-xs); color: var(--clr-muted);
+    }
+
+    /* ---- Specializations ---- */
+    .spec-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--sp-6);
+    }
+    .spec-card {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: var(--sp-6);
+      align-items: start;
+      background: var(--clr-white);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-xl);
+      padding: var(--sp-7);
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+      transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+    }
+    .spec-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--clr-primary), var(--clr-accent));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition-base);
+    }
+    .spec-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(26,58,110,0.15);
+    }
+    .spec-card:hover::before { transform: scaleX(1); }
+    .spec-icon {
+      width: 64px; height: 64px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, rgba(26,58,110,0.08), rgba(37,84,160,0.14));
+      border: 1px solid rgba(26,58,110,0.1);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; color: var(--clr-primary);
+      transition: background var(--transition-base), color var(--transition-base);
+    }
+    .spec-card:hover .spec-icon {
+      background: var(--clr-primary); color: var(--clr-white); border-color: transparent;
+    }
+    .spec-content h3 {
+      font-family: var(--font-heading);
+      font-size: var(--fs-md); font-weight: 700;
+      color: var(--clr-primary-dark); margin-bottom: var(--sp-2);
+    }
+    .spec-content p {
+      font-size: var(--fs-sm); color: var(--clr-muted);
+      line-height: 1.7; margin-bottom: var(--sp-4);
+    }
+    .spec-topics {
+      display: flex; flex-wrap: wrap; gap: var(--sp-2);
+    }
+    .spec-topic {
+      font-size: var(--fs-xs); font-weight: 600;
+      background: var(--clr-off-white);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-full);
+      padding: 0.2em 0.75em;
+      color: var(--clr-muted);
+    }
+
+    /* ---- Highlights ---- */
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--sp-5);
+    }
+    .highlight-card {
+      background: var(--clr-white);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-lg);
+      padding: var(--sp-7) var(--sp-6);
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+    }
+    .highlight-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(26,58,110,0.15);
+    }
+    .highlight-icon {
+      width: 60px; height: 60px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, rgba(26,58,110,0.08), rgba(37,84,160,0.14));
+      border: 1px solid rgba(26,58,110,0.1);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; color: var(--clr-primary);
+      margin: 0 auto var(--sp-4);
+      transition: background var(--transition-base), color var(--transition-base);
+    }
+    .highlight-card:hover .highlight-icon {
+      background: var(--clr-primary); color: var(--clr-white); border-color: transparent;
+    }
+    .highlight-card h3 {
+      font-family: var(--font-heading);
+      font-size: var(--fs-md); font-weight: 700;
+      color: var(--clr-primary-dark); margin-bottom: var(--sp-2);
+    }
+    .highlight-card p { font-size: var(--fs-sm); color: var(--clr-muted); line-height: 1.65; }
+
+    /* ---- Eligibility Strip ---- */
+    .eligibility-strip {
+      background: var(--clr-primary-dark);
+      padding-block: var(--sp-16);
+    }
+    .eligibility-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-10);
+      align-items: start;
+    }
+    .eligibility-block h3 {
+      font-family: var(--font-heading);
+      font-size: var(--fs-xl); font-weight: 700;
+      color: var(--clr-white); margin-bottom: var(--sp-5);
+    }
+    .eligibility-list {
+      display: flex; flex-direction: column; gap: var(--sp-3);
+    }
+    .eligibility-item {
+      display: flex; align-items: flex-start; gap: var(--sp-3);
+      padding: var(--sp-4) var(--sp-5);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-md);
+    }
+    .eligibility-item i {
+      color: var(--clr-accent-light); margin-top: 2px; flex-shrink: 0;
+    }
+    .eligibility-item span {
+      font-size: var(--fs-sm); color: rgba(255,255,255,0.78); line-height: 1.6;
+    }
+    .process-list {
+      display: flex; flex-direction: column; gap: var(--sp-3);
+      counter-reset: step;
+    }
+    .process-step {
+      display: flex; align-items: flex-start; gap: var(--sp-4);
+      padding: var(--sp-4) var(--sp-5);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-md);
+    }
+    .process-step-num {
+      width: 32px; height: 32px;
+      background: var(--clr-accent);
+      color: var(--clr-dark);
+      border-radius: var(--radius-full);
+      display: flex; align-items: center; justify-content: center;
+      font-size: var(--fs-xs); font-weight: 800; flex-shrink: 0;
+    }
+    .process-step-text h4 {
+      font-family: var(--font-heading);
+      font-size: var(--fs-sm); font-weight: 700;
+      color: var(--clr-white); margin-bottom: 2px;
+    }
+    .process-step-text p { font-size: var(--fs-xs); color: rgba(255,255,255,0.6); }
+
+    /* ---- CTA ---- */
+    .page-cta {
+      background: linear-gradient(135deg, var(--clr-primary-dark) 0%, var(--clr-primary) 55%, #1e4ca8 100%);
+      padding-block: var(--sp-20); text-align: center;
+      position: relative; overflow: hidden; border-top: 3px solid var(--clr-accent);
+    }
+    .page-cta::before {
+      content: ''; position: absolute;
+      width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,160,32,0.09) 0%, transparent 70%);
+      top: -250px; right: -180px; pointer-events: none;
+    }
+    .page-cta-content { position: relative; z-index: 1; }
+    .page-cta h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-weight: 800; color: var(--clr-white); margin-bottom: var(--sp-4);
+    }
+    .page-cta p {
+      color: rgba(255,255,255,0.8); font-size: var(--fs-md);
+      max-width: 500px; margin-inline: auto;
+      margin-bottom: var(--sp-8); line-height: 1.75;
+    }
+    .cta-btn-group { display: flex; justify-content: center; gap: var(--sp-4); flex-wrap: wrap; }
+    .page-cta .btn-accent:hover {
+      box-shadow: 0 0 0 4px rgba(232,160,32,0.25), 0 6px 24px rgba(232,160,32,0.45);
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 1024px) {
+      .bca-overview   { grid-template-columns: 1fr; }
+      .highlights-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 900px) {
+      .spec-grid       { grid-template-columns: 1fr; }
+      .eligibility-grid { grid-template-columns: 1fr; }
+      .subjects-grid   { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .subjects-grid   { grid-template-columns: 1fr; }
+      .highlights-grid { grid-template-columns: 1fr; }
+      .curriculum-tabs { flex-wrap: wrap; }
+      .page-hero .container { padding-block: var(--sp-12); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =================== NAVBAR =================== -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-left">
+        <a href="mailto:admissions@sbgbca.edu.in">
+          <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+          admissions@sbgbca.edu.in
+        </a>
+        <a href="tel:+911234567890">
+          <i class="fa-solid fa-phone" aria-hidden="true"></i>
+          +91 12345 67890
+        </a>
+      </div>
+      <div class="topbar-right">
+        <span>Rani Channamma University &nbsp;|&nbsp; NAAC Accredited</span>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar" id="mainNav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="../index.html" class="nav-logo" aria-label="SBG BCA College Home">
+        <img src="../components/images/logo.png" alt="SBG BCA College Logo" class="nav-logo-img">
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu" role="list">
+        <li class="nav-item"><a href="../index.html" class="nav-link" data-nav="home">Home</a></li>
+        <li class="nav-item has-dropdown" id="aboutDropdown">
+          <a href="about.html" class="nav-link" data-nav="about" aria-haspopup="true" aria-expanded="false">
+            About Us <i class="fa-solid fa-chevron-down nav-arrow" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu" role="menu">
+            <a href="about.html" class="dropdown-link" role="menuitem">
+              <span class="dropdown-icon"><i class="fa-solid fa-house-chimney"></i></span> About Us
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="management.html" class="dropdown-link" role="menuitem">
+              <span class="dropdown-icon"><i class="fa-solid fa-users"></i></span> Our Management
+            </a>
+            <a href="founders-desk.html" class="dropdown-link" role="menuitem">
+              <span class="dropdown-icon"><i class="fa-solid fa-pen-to-square"></i></span> Founder's Desk
+            </a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="programs.html" class="nav-link active" data-nav="programs">Programs</a></li>
+        <li class="nav-item"><a href="facilities.html" class="nav-link" data-nav="facilities">Facilities</a></li>
+        <li class="nav-item"><a href="gallery.html" class="nav-link" data-nav="gallery">Gallery</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link" data-nav="contact">Contact</a></li>
+      </ul>
+      <div class="nav-cta flex gap-4">
+        <a href="contact.html" class="btn btn-primary" id="navApplyNow">Apply Now</a>
+      </div>
+    </div>
+  </nav>
+  <!-- =================== END NAVBAR =================== -->
+
+
+  <main id="main-content">
+
+    <!-- =================== PAGE HERO =================== -->
+    <section class="page-hero" aria-label="Programs page hero">
+      <!-- PASTE IMAGE HERE: assets/images/programs-hero.jpg -->
+      <img class="page-hero-bg"
+        src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1600&q=75"
+        alt="Students coding in computer lab" loading="eager" fetchpriority="high" />
+      <div class="container">
+        <nav class="page-hero-breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          <span>Programs</span>
+        </nav>
+        <h1>Programs <span>Offered</span></h1>
+        <p>
+          <!-- EDIT THIS CONTENT -->
+          A single, focused 3-year undergraduate program designed to build the next generation of
+          technology professionals — with depth, hands-on learning, and an uncompromising focus on
+          real-world readiness.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- =================== BCA OVERVIEW =================== -->
+    <section class="section" id="bca" aria-labelledby="bca-heading">
+      <div class="container">
+        <div class="bca-overview">
+
+          <!-- Text -->
+          <div data-reveal>
+            <span class="section-eyebrow">Flagship Program</span>
+            <h2 class="section-title" id="bca-heading" style="text-align:left; margin-bottom:var(--sp-4);">
+              Bachelor of Computer<br>Applications (BCA)
+            </h2>
+            <div class="divider" style="margin-bottom:var(--sp-5);"></div>
+            <!-- EDIT THIS CONTENT -->
+            <p>
+              The BCA program at SBG BCA College is a rigorous, 3-year undergraduate degree that
+              covers the complete spectrum of modern computing — from programming fundamentals and
+              data structures to cloud architecture and artificial intelligence. Affiliated to
+              <strong>Rani Channamma University, Belagavi</strong>, the degree is recognized
+              nationally and accepted for MCA, MBA, and other postgraduate admissions.
+            </p>
+            <p>
+              Our curriculum is reviewed annually in consultation with industry partners to ensure
+              students learn technologies that are actually in demand — not outdated textbook theory.
+              Every semester combines theoretical coursework with practical lab sessions, projects,
+              and industry exposure.
+            </p>
+            <div class="bca-tag-row">
+              <span class="bca-tag"><i class="fa-solid fa-graduation-cap"></i> UG Degree</span>
+              <span class="bca-tag"><i class="fa-solid fa-calendar"></i> 3 Years / 6 Semesters</span>
+              <span class="bca-tag"><i class="fa-solid fa-users"></i> 120 Seats</span>
+              <span class="bca-tag"><i class="fa-solid fa-university"></i> Rani Channamma University</span>
+              <span class="bca-tag"><i class="fa-solid fa-language"></i> English Medium</span>
+            </div>
+            <div class="flex gap-4">
+              <a href="contact.html" class="btn btn-primary" id="bcaApply">
+                Apply Now <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+              <a href="#curriculum" class="btn btn-outline" id="bcaViewCurriculum">View Curriculum</a>
+            </div>
+          </div>
+
+          <!-- Detail Card -->
+          <div class="bca-detail-card" data-reveal>
+            <div class="bca-detail-card-header">
+              <h3>Program At a Glance</h3>
+              <p>Key details for prospective students</p>
+            </div>
+            <div class="bca-detail-list">
+              <div class="bca-detail-row">
+                <div class="bca-detail-icon"><i class="fa-solid fa-clock"></i></div>
+                <div class="bca-detail-text">
+                  <label>Duration</label>
+                  <span>3 Years (6 Semesters)</span>
+                </div>
+              </div>
+              <div class="bca-detail-row">
+                <div class="bca-detail-icon"><i class="fa-solid fa-building-columns"></i></div>
+                <div class="bca-detail-text">
+                  <label>Affiliation</label>
+                  <span>Rani Channamma University, Belagavi</span>
+                </div>
+              </div>
+              <div class="bca-detail-row">
+                <div class="bca-detail-icon"><i class="fa-solid fa-file-alt"></i></div>
+                <div class="bca-detail-text">
+                  <label>Eligibility</label>
+                  <!-- EDIT THIS CONTENT -->
+                  <span>10+2 (any stream) with min. 45% aggregate</span>
+                </div>
+              </div>
+              <div class="bca-detail-row">
+                <div class="bca-detail-icon"><i class="fa-solid fa-users"></i></div>
+                <div class="bca-detail-text">
+                  <label>Intake</label>
+                  <span>120 Students per batch</span>
+                </div>
+              </div>
+              <div class="bca-detail-row">
+                <div class="bca-detail-icon"><i class="fa-solid fa-language"></i></div>
+                <div class="bca-detail-text">
+                  <label>Medium</label>
+                  <span>English</span>
+                </div>
+              </div>
+              <div class="bca-detail-row">
+                <div class="bca-detail-icon"><i class="fa-regular fa-calendar-check"></i></div>
+                <div class="bca-detail-text">
+                  <label>Admission</label>
+                  <!-- EDIT THIS CONTENT -->
+                  <span>Merit-based | Applications open: June 2025</span>
+                </div>
+              </div>
+            </div>
+            <div class="bca-detail-card-footer">
+              <a href="contact.html" class="btn btn-primary" style="width:100%; justify-content:center;">
+                Apply for Admission <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =================== CURRICULUM =================== -->
+    <section class="section section--alt" id="curriculum" aria-labelledby="curriculum-heading">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-eyebrow">What You'll Study</span>
+          <h2 class="section-title" id="curriculum-heading">Curriculum Overview</h2>
+          <p class="section-desc">
+            Six semesters of structured learning — progressing from core foundations to advanced
+            specialization and industry project work.
+          </p>
+        </div>
+
+        <!-- Year Tabs -->
+        <div class="curriculum-tabs" role="tablist" aria-label="Curriculum by year">
+          <button class="curriculum-tab active" role="tab" id="tab-y1"
+            aria-selected="true" aria-controls="panel-y1" onclick="switchTab('y1')">
+            <i class="fa-solid fa-1" aria-hidden="true"></i>&nbsp; Year 1 — Foundations
+          </button>
+          <button class="curriculum-tab" role="tab" id="tab-y2"
+            aria-selected="false" aria-controls="panel-y2" onclick="switchTab('y2')">
+            <i class="fa-solid fa-2" aria-hidden="true"></i>&nbsp; Year 2 — Core Development
+          </button>
+          <button class="curriculum-tab" role="tab" id="tab-y3"
+            aria-selected="false" aria-controls="panel-y3" onclick="switchTab('y3')">
+            <i class="fa-solid fa-3" aria-hidden="true"></i>&nbsp; Year 3 — Advanced &amp; Specialization
+          </button>
+        </div>
+
+        <!-- Year 1 Panel -->
+        <div class="curriculum-panel active" id="panel-y1" role="tabpanel" aria-labelledby="tab-y1">
+          <div class="subjects-grid">
+            <!-- EDIT SUBJECTS BELOW -->
+            <div class="subject-card"><div class="subject-num">01</div><div class="subject-info"><h4>Fundamentals of Computer Science</h4><span>Theory + Lab</span></div></div>
+            <div class="subject-card"><div class="subject-num">02</div><div class="subject-info"><h4>Programming in C</h4><span>Theory + Lab</span></div></div>
+            <div class="subject-card"><div class="subject-num">03</div><div class="subject-info"><h4>Mathematics for Computing</h4><span>Theory</span></div></div>
+            <div class="subject-card"><div class="subject-num">04</div><div class="subject-info"><h4>Digital Electronics</h4><span>Theory + Lab</span></div></div>
+            <div class="subject-card"><div class="subject-num">05</div><div class="subject-info"><h4>Office Automation Tools</h4><span>Practical</span></div></div>
+            <div class="subject-card"><div class="subject-num">06</div><div class="subject-info"><h4>Communication Skills</h4><span>Theory</span></div></div>
+            <div class="subject-card"><div class="subject-num">07</div><div class="subject-info"><h4>Data Structures Using C</h4><span>Theory + Lab</span></div></div>
+            <div class="subject-card"><div class="subject-num">08</div><div class="subject-info"><h4>Computer Organisation</h4><span>Theory</span></div></div>
+            <div class="subject-card"><div class="subject-num">09</div><div class="subject-info"><h4>Introduction to Operating Systems</h4><span>Theory</span></div></div>
+          </div>
+        </div>
+
+        <!-- Year 2 Panel -->
+        <div class="curriculum-panel" id="panel-y2" role="tabpanel" aria-labelledby="tab-y2">
+          <div class="subjects-grid">
+            <!-- EDIT SUBJECTS BELOW -->
+            <div class="subject-card"><div class="subject-num">01</div><div class="subject-info"><h4>Object-Oriented Programming (Java)</h4><span>Theory + Lab</span></div></div>
+            <div class="subject-card"><div class="subject-num">02</div><div class="subject-info"><h4>Database Management Systems</h4><span>Theory + Lab</span></div></div>
+            <div class="subject-card"><div class="subject-num">03</div><div class="subject-info"><h4>Web Technologies (HTML, CSS, JS)</h4><span>Theory + Lab</span></div></div>
+            <div class="subject-card"><div class="subject-num">04</div><div class="subject-info"><h4>Computer Networks</h4><span>Theory + Lab</span></div></div>
+            <div class="subject-card"><div class="subject-num">05</div><div class="subject-info"><h4>Software Engineering</h4><span>Theory</span></div></div>
+            <div class="subject-card"><div class="subject-num">06</div><div class="subject-info"><h4>Python Programming</h4><span>Theory + Lab</span></div></div>
+            <div class="subject-card"><div class="subject-num">07</div><div class="subject-info"><h4>Linux &amp; Shell Scripting</h4><span>Practical</span></div></div>
+            <div class="subject-card"><div class="subject-num">08</div><div class="subject-info"><h4>Statistics &amp; Probability</h4><span>Theory</span></div></div>
+            <div class="subject-card"><div class="subject-num">09</div><div class="subject-info"><h4>Mini Project</h4><span>Project Work</span></div></div>
+          </div>
+        </div>
+
+        <!-- Year 3 Panel -->
+        <div class="curriculum-panel" id="panel-y3" role="tabpanel" aria-labelledby="tab-y3">
+          <div class="subjects-grid">
+            <!-- EDIT SUBJECTS BELOW -->
+            <div class="subject-card"><div class="subject-num">01</div><div class="subject-info"><h4>Specialization Elective I</h4><span>Theory + Lab</span></div></div>
+            <div class="subject-card"><div class="subject-num">02</div><div class="subject-info"><h4>Specialization Elective II</h4><span>Theory + Lab</span></div></div>
+            <div class="subject-card"><div class="subject-num">03</div><div class="subject-info"><h4>Advanced DBMS &amp; SQL</h4><span>Theory + Lab</span></div></div>
+            <div class="subject-card"><div class="subject-num">04</div><div class="subject-info"><h4>Mobile Application Development</h4><span>Theory + Lab</span></div></div>
+            <div class="subject-card"><div class="subject-num">05</div><div class="subject-info"><h4>Cyber Security Fundamentals</h4><span>Theory</span></div></div>
+            <div class="subject-card"><div class="subject-num">06</div><div class="subject-info"><h4>Cloud Computing Basics</h4><span>Theory + Lab</span></div></div>
+            <div class="subject-card"><div class="subject-num">07</div><div class="subject-info"><h4>Internship (8 Weeks)</h4><span>Industry Training</span></div></div>
+            <div class="subject-card"><div class="subject-num">08</div><div class="subject-info"><h4>Final Year Project</h4><span>Project Work</span></div></div>
+            <div class="subject-card"><div class="subject-num">09</div><div class="subject-info"><h4>Professional Ethics in Computing</h4><span>Theory</span></div></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =================== SPECIALIZATIONS =================== -->
+    <section class="section" id="specializations" aria-labelledby="spec-heading">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-eyebrow">Final Year Focus</span>
+          <h2 class="section-title" id="spec-heading">Specialization Tracks</h2>
+          <p class="section-desc">
+            In the 6th Semester, students choose one specialization track aligned to their career goals —
+            gaining depth in the area that excites them most.
+          </p>
+        </div>
+
+        <div class="spec-grid">
+
+          <!-- Full Stack -->
+          <div class="spec-card" data-reveal>
+            <div class="spec-icon"><i class="fa-solid fa-layer-group"></i></div>
+            <div class="spec-content">
+              <h3>Full Stack Development</h3>
+              <p>
+                <!-- EDIT THIS CONTENT -->
+                Build complete web applications from front-end interfaces to back-end APIs and databases.
+                Covers React, Node.js, Express, MongoDB, REST APIs, and deployment.
+              </p>
+              <div class="spec-topics">
+                <span class="spec-topic">React.js</span>
+                <span class="spec-topic">Node.js</span>
+                <span class="spec-topic">MongoDB</span>
+                <span class="spec-topic">REST APIs</span>
+                <span class="spec-topic">Docker</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Data Science / AI -->
+          <div class="spec-card" data-reveal>
+            <div class="spec-icon"><i class="fa-solid fa-robot"></i></div>
+            <div class="spec-content">
+              <h3>Data Science &amp; AI</h3>
+              <p>
+                <!-- EDIT THIS CONTENT -->
+                Learn to extract insights from data and build intelligent systems. Covers machine learning,
+                neural networks, data visualization, and Python-based AI frameworks.
+              </p>
+              <div class="spec-topics">
+                <span class="spec-topic">Python</span>
+                <span class="spec-topic">TensorFlow</span>
+                <span class="spec-topic">Pandas</span>
+                <span class="spec-topic">Machine Learning</span>
+                <span class="spec-topic">NLP</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cybersecurity -->
+          <div class="spec-card" data-reveal>
+            <div class="spec-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="spec-content">
+              <h3>Cybersecurity</h3>
+              <p>
+                <!-- EDIT THIS CONTENT -->
+                Understand and defend digital systems against threats. Covers ethical hacking, network
+                security, cryptography, penetration testing, and security compliance.
+              </p>
+              <div class="spec-topics">
+                <span class="spec-topic">Ethical Hacking</span>
+                <span class="spec-topic">Cryptography</span>
+                <span class="spec-topic">Firewalls</span>
+                <span class="spec-topic">Pen Testing</span>
+                <span class="spec-topic">VAPT</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cloud Computing -->
+          <div class="spec-card" data-reveal>
+            <div class="spec-icon"><i class="fa-solid fa-cloud"></i></div>
+            <div class="spec-content">
+              <h3>Cloud Computing</h3>
+              <p>
+                <!-- EDIT THIS CONTENT -->
+                Master cloud infrastructure, deployment, and management on industry-leading platforms.
+                Covers AWS, Azure, DevOps pipelines, containerization, and serverless architectures.
+              </p>
+              <div class="spec-topics">
+                <span class="spec-topic">AWS</span>
+                <span class="spec-topic">Azure</span>
+                <span class="spec-topic">DevOps</span>
+                <span class="spec-topic">Kubernetes</span>
+                <span class="spec-topic">Terraform</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =================== HIGHLIGHTS =================== -->
+    <section class="section section--alt" id="why-bca" aria-labelledby="highlights-heading">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-eyebrow">Why Our BCA</span>
+          <h2 class="section-title" id="highlights-heading">What Makes It Different</h2>
+        </div>
+        <div class="highlights-grid">
+
+          <div class="highlight-card" data-reveal>
+            <div class="highlight-icon"><i class="fa-solid fa-industry"></i></div>
+            <h3>Industry-Aligned Curriculum</h3>
+            <p>Reviewed annually with employer partners to stay current with real-world technology needs.</p>
+          </div>
+
+          <div class="highlight-card" data-reveal>
+            <div class="highlight-icon"><i class="fa-solid fa-laptop-code"></i></div>
+            <h3>Practical-First Learning</h3>
+            <p>Every theory module paired with hands-on lab work, coding exercises, and project deliverables.</p>
+          </div>
+
+          <div class="highlight-card" data-reveal>
+            <div class="highlight-icon"><i class="fa-solid fa-certificate"></i></div>
+            <h3>Industry Certifications</h3>
+            <p>Earn AWS, Google, Microsoft, and Oracle certifications integrated into the programme at no extra cost.</p>
+          </div>
+
+          <div class="highlight-card" data-reveal>
+            <div class="highlight-icon"><i class="fa-solid fa-briefcase"></i></div>
+            <h3>Placement Support</h3>
+            <p>Our T&amp;P cell works year-round to connect students with 50+ hiring partners — 95% placement rate.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =================== ELIGIBILITY & ADMISSION =================== -->
+    <section class="eligibility-strip" id="eligibility" aria-labelledby="eligibility-heading">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-eyebrow" style="color:var(--clr-accent-light);">Joining Us</span>
+          <h2 class="section-title" id="eligibility-heading" style="color:var(--clr-white);">
+            Eligibility &amp; Admission
+          </h2>
+        </div>
+        <div class="eligibility-grid">
+
+          <!-- Eligibility -->
+          <div class="eligibility-block" data-reveal>
+            <h3>Eligibility Criteria</h3>
+            <div class="eligibility-list">
+              <!-- EDIT THIS CONTENT -->
+              <div class="eligibility-item">
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                <span>Passed 10+2 (or equivalent) from a recognized board — any stream (Science, Commerce, Arts)</span>
+              </div>
+              <div class="eligibility-item">
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                <span>Minimum 45% aggregate marks (40% for SC/ST/OBC category — as per university norms)</span>
+              </div>
+              <div class="eligibility-item">
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                <span>Mathematics as a subject in 10th or 12th standard is preferred but not mandatory</span>
+              </div>
+              <div class="eligibility-item">
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                <span>Must have passed English as a subject at 10th level</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Admission Process -->
+          <div class="eligibility-block" data-reveal>
+            <h3>Admission Process</h3>
+            <div class="process-list">
+              <!-- EDIT THIS CONTENT -->
+              <div class="process-step">
+                <div class="process-step-num">1</div>
+                <div class="process-step-text">
+                  <h4>Fill the Application Form</h4>
+                  <p>Apply online or collect the form from the college office.</p>
+                </div>
+              </div>
+              <div class="process-step">
+                <div class="process-step-num">2</div>
+                <div class="process-step-text">
+                  <h4>Submit Required Documents</h4>
+                  <p>10th &amp; 12th marksheets, transfer certificate, ID proof, and passport photographs.</p>
+                </div>
+              </div>
+              <div class="process-step">
+                <div class="process-step-num">3</div>
+                <div class="process-step-text">
+                  <h4>Merit-Based Selection</h4>
+                  <p>Admission offered based on 12th percentage — no entrance exam required.</p>
+                </div>
+              </div>
+              <div class="process-step">
+                <div class="process-step-num">4</div>
+                <div class="process-step-text">
+                  <h4>Pay Fees &amp; Confirm Seat</h4>
+                  <p>Complete fee payment and collect your provisional admission letter.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =================== CTA =================== -->
+    <section class="page-cta" id="cta" aria-label="Call to action">
+      <div class="container">
+        <div class="page-cta-content">
+          <span class="section-eyebrow" style="color:var(--clr-accent-light);">Ready to Begin?</span>
+          <h2>Apply for the BCA Program Today</h2>
+          <p>
+            <!-- EDIT THIS CONTENT -->
+            Seats are limited. Applications for the 2025–26 batch are now open.
+            Take the first step toward your technology career.
+          </p>
+          <div class="cta-btn-group">
+            <a href="contact.html" class="btn btn-accent btn-lg" id="progCtaApply">
+              Apply for Admission <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+            <a href="contact.html" class="btn btn-outline-white btn-lg" id="progCtaContact">
+              Contact Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =================== FOOTER =================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="footer-logo">
+            <img src="../components/images/logo.png" alt="SBG BCA College Logo" class="footer-logo-img">
+          </a>
+          <p class="footer-desc">
+            Empowering students with world-class education in Computer Applications,
+            shaping the technology leaders of tomorrow. Affiliated to Rani Channamma University.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+            <li><a href="programs.html"><i class="fa-solid fa-chevron-right"></i> Programs</a></li>
+            <li><a href="facilities.html"><i class="fa-solid fa-chevron-right"></i> Facilities</a></li>
+            <li><a href="gallery.html"><i class="fa-solid fa-chevron-right"></i> Gallery</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>About College</h4>
+          <ul>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> Vision &amp; Mission</a></li>
+            <li><a href="management.html"><i class="fa-solid fa-chevron-right"></i> Our Management</a></li>
+            <li><a href="founders-desk.html"><i class="fa-solid fa-chevron-right"></i> Founder's Desk</a></li>
+            <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Admissions</a></li>
+            <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Student Portal</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="footer-contact-text">
+              <strong>Address</strong>
+              <span>123, College Road, Near SBG Complex,<br>Belagavi – 590 001, Karnataka</span>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="fa-solid fa-phone"></i></div>
+            <div class="footer-contact-text">
+              <strong>Phone</strong>
+              <a href="tel:+911234567890">+91 12345 67890</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="fa-regular fa-envelope"></i></div>
+            <div class="footer-contact-text">
+              <strong>Email</strong>
+              <a href="mailto:admissions@sbgbca.edu.in">admissions@sbgbca.edu.in</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="footerYear">2025</span> SBG BCA College. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/navbar.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+    // Curriculum tab switcher
+    function switchTab(year) {
+      document.querySelectorAll('.curriculum-tab').forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      document.querySelectorAll('.curriculum-panel').forEach(p => p.classList.remove('active'));
+      document.getElementById('tab-' + year).classList.add('active');
+      document.getElementById('tab-' + year).setAttribute('aria-selected', 'true');
+      document.getElementById('panel-' + year).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>

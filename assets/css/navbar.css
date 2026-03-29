@@ -150,10 +150,10 @@
 
 /* ---- Dropdown Arrow ---- */
 .nav-link .nav-arrow {
-  width: 14px;
-  height: 14px;
+  font-size: 0.75rem;
   transition: transform var(--transition-fast);
   flex-shrink: 0;
+  margin-left: 2px;
 }
 
 .nav-item:hover .nav-arrow,

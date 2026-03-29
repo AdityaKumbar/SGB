@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta -->
+  <title>Our Management | SBG BCA College — Belagavi</title>
+  <meta name="description"
+    content="Meet the visionary leadership of SBG BCA College, Belagavi — the Chairman, Director, Principal, and the dedicated management team driving excellence in BCA education." />
+  <meta name="keywords"
+    content="SBG BCA College management, chairman, principal, director, leadership Belagavi BCA" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Our Management | SBG BCA College" />
+  <meta property="og:description"
+    content="Meet the leadership team behind SBG BCA College — guiding the institution toward academic excellence and student success." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sbgbca.edu.in/pages/management.html" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%231a3a6e'/><text y='.9em' font-size='64' fill='white' font-family='serif' font-weight='700' x='8'>S</text></svg>" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/navbar.css" />
+  <link rel="stylesheet" href="../assets/css/footer.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* =============================================
+       MANAGEMENT PAGE — PAGE-SPECIFIC STYLES
+       ============================================= */
+
+    /* ---- Page Hero (shared pattern) ---- */
+    .page-hero {
+      position: relative;
+      background: var(--clr-primary-dark);
+      min-height: 320px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(10,20,45,0.92) 0%, rgba(26,58,110,0.72) 100%);
+      z-index: 1;
+    }
+    .page-hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.4;
+    }
+    .page-hero .container {
+      position: relative;
+      z-index: 2;
+      padding-block: var(--sp-16);
+    }
+    .page-hero-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-2);
+      font-size: var(--fs-xs);
+      color: rgba(255,255,255,0.6);
+      margin-bottom: var(--sp-4);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+    }
+    .page-hero-breadcrumb a {
+      color: rgba(255,255,255,0.6);
+      transition: color var(--transition-fast);
+    }
+    .page-hero-breadcrumb a:hover { color: var(--clr-accent-light); }
+    .page-hero-breadcrumb i { font-size: 0.6rem; }
+    .page-hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      font-weight: 800;
+      color: var(--clr-white);
+      line-height: 1.2;
+      margin-bottom: var(--sp-4);
+    }
+    .page-hero h1 span {
+      background: linear-gradient(90deg, var(--clr-accent-light), var(--clr-accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .page-hero p {
+      font-size: var(--fs-md);
+      color: rgba(255,255,255,0.8);
+      max-width: 560px;
+      line-height: 1.75;
+    }
+
+    /* ---- Leadership Cards (Chairman / Director) ---- */
+    .leadership-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-8);
+    }
+    .leader-card {
+      background: var(--clr-white);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--clr-border);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+    }
+    .leader-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-xl);
+    }
+    .leader-card-img-wrap {
+      position: relative;
+      height: 320px;
+      background: linear-gradient(135deg, rgba(26,58,110,0.07), rgba(37,84,160,0.12));
+      overflow: hidden;
+    }
+    .leader-card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .leader-card-img-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--sp-3);
+      color: var(--clr-primary);
+      opacity: 0.35;
+      font-size: var(--fs-sm);
+      font-weight: 500;
+    }
+    .leader-card-img-placeholder i { font-size: 3rem; }
+    .leader-badge {
+      position: absolute;
+      top: var(--sp-4);
+      left: var(--sp-4);
+      background: var(--clr-accent);
+      color: var(--clr-dark);
+      font-size: var(--fs-xs);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.3em 0.85em;
+      border-radius: var(--radius-full);
+    }
+    .leader-card-body {
+      padding: var(--sp-7) var(--sp-7) var(--sp-8);
+    }
+    .leader-card-name {
+      font-family: var(--font-heading);
+      font-size: var(--fs-xl);
+      font-weight: 800;
+      color: var(--clr-primary-dark);
+      margin-bottom: var(--sp-1);
+    }
+    .leader-card-title {
+      font-size: var(--fs-sm);
+      font-weight: 600;
+      color: var(--clr-accent);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: var(--sp-4);
+      display: flex;
+      align-items: center;
+      gap: var(--sp-2);
+    }
+    .leader-card-title::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 2px;
+      background: var(--clr-accent);
+      border-radius: var(--radius-full);
+    }
+    .leader-card-desc {
+      color: var(--clr-muted);
+      line-height: 1.8;
+      font-size: var(--fs-base);
+      margin-bottom: var(--sp-5);
+    }
+    .leader-card-socials {
+      display: flex;
+      gap: var(--sp-2);
+    }
+    .leader-card-socials a {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-md);
+      background: rgba(26,58,110,0.07);
+      border: 1px solid rgba(26,58,110,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--clr-primary);
+      font-size: 0.85rem;
+      transition: all var(--transition-fast);
+    }
+    .leader-card-socials a:hover {
+      background: var(--clr-primary);
+      color: var(--clr-white);
+      border-color: transparent;
+    }
+
+    /* ---- Philosophy Quote ---- */
+    .philosophy-section {
+      background: var(--clr-primary-dark);
+      padding-block: var(--sp-16);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .philosophy-section::before {
+      content: '';
+      position: absolute;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,160,32,0.08) 0%, transparent 70%);
+      top: -200px; right: -100px;
+      pointer-events: none;
+    }
+    .philosophy-quote {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin-inline: auto;
+    }
+    .philosophy-quote-mark {
+      font-size: 5rem;
+      line-height: 1;
+      color: var(--clr-accent);
+      opacity: 0.3;
+      font-family: Georgia, serif;
+      margin-bottom: var(--sp-2);
+      display: block;
+    }
+    .philosophy-quote blockquote {
+      font-family: var(--font-heading);
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      font-weight: 600;
+      color: var(--clr-white);
+      line-height: 1.65;
+      font-style: italic;
+      margin-bottom: var(--sp-6);
+    }
+    .philosophy-quote cite {
+      font-size: var(--fs-sm);
+      color: var(--clr-accent-light);
+      font-style: normal;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* ---- Management Team Grid ---- */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-6);
+    }
+    .team-card {
+      background: var(--clr-white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--clr-border);
+      overflow: hidden;
+      text-align: center;
+      transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+    }
+    .team-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(26,58,110,0.15);
+    }
+    .team-card-img {
+      height: 200px;
+      background: linear-gradient(135deg, rgba(26,58,110,0.07), rgba(37,84,160,0.13));
+      overflow: hidden;
+      position: relative;
+    }
+    .team-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .team-card-img-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--sp-2);
+      color: var(--clr-primary);
+      opacity: 0.4;
+    }
+    .team-card-img-placeholder i { font-size: 2.25rem; }
+    .team-card-img-placeholder span { font-size: var(--fs-xs); font-weight: 500; }
+    .team-card-body {
+      padding: var(--sp-5) var(--sp-5) var(--sp-6);
+    }
+    .team-card-name {
+      font-family: var(--font-heading);
+      font-size: var(--fs-md);
+      font-weight: 700;
+      color: var(--clr-primary-dark);
+      margin-bottom: var(--sp-1);
+    }
+    .team-card-role {
+      font-size: var(--fs-xs);
+      font-weight: 600;
+      color: var(--clr-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: var(--sp-3);
+    }
+    .team-card-dept {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sp-1);
+      font-size: var(--fs-xs);
+      color: var(--clr-muted);
+      background: var(--clr-off-white);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-full);
+      padding: 0.25em 0.75em;
+    }
+    .team-card-dept i { font-size: 0.65rem; }
+
+    /* ---- CTA (shared pattern) ---- */
+    .page-cta {
+      background: linear-gradient(135deg, var(--clr-primary-dark) 0%, var(--clr-primary) 55%, #1e4ca8 100%);
+      padding-block: var(--sp-20);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-top: 3px solid var(--clr-accent);
+    }
+    .page-cta::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,160,32,0.09) 0%, transparent 70%);
+      top: -250px; right: -180px;
+      pointer-events: none;
+    }
+    .page-cta-content { position: relative; z-index: 1; }
+    .page-cta h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-weight: 800;
+      color: var(--clr-white);
+      margin-bottom: var(--sp-4);
+    }
+    .page-cta p {
+      color: rgba(255,255,255,0.8);
+      font-size: var(--fs-md);
+      max-width: 500px;
+      margin-inline: auto;
+      margin-bottom: var(--sp-8);
+      line-height: 1.75;
+    }
+    .cta-btn-group {
+      display: flex;
+      justify-content: center;
+      gap: var(--sp-4);
+      flex-wrap: wrap;
+    }
+    .page-cta .btn-accent:hover {
+      box-shadow: 0 0 0 4px rgba(232,160,32,0.25), 0 6px 24px rgba(232,160,32,0.45);
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 900px) {
+      .leadership-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+      .leader-card-img-wrap { height: 260px; }
+    }
+    @media (max-width: 600px) {
+      .team-grid { grid-template-columns: 1fr; }
+      .page-hero .container { padding-block: var(--sp-12); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =================== NAVBAR =================== -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-left">
+        <a href="mailto:admissions@sbgbca.edu.in">
+          <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+          admissions@sbgbca.edu.in
+        </a>
+        <a href="tel:+911234567890">
+          <i class="fa-solid fa-phone" aria-hidden="true"></i>
+          +91 12345 67890
+        </a>
+      </div>
+      <div class="topbar-right">
+        <span>Rani Channamma University &nbsp;|&nbsp; NAAC Accredited</span>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar" id="mainNav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="../index.html" class="nav-logo" aria-label="SBG BCA College Home">
+        <img src="../components/images/logo.png" alt="SBG BCA College Logo" class="nav-logo-img">
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu"
+        aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-menu" id="navMenu" role="list">
+        <li class="nav-item"><a href="../index.html" class="nav-link" data-nav="home">Home</a></li>
+        <li class="nav-item has-dropdown active" id="aboutDropdown">
+          <a href="about.html" class="nav-link active" data-nav="about" aria-haspopup="true" aria-expanded="false">
+            About Us
+            <i class="fa-solid fa-chevron-down nav-arrow" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu" role="menu">
+            <a href="about.html" class="dropdown-link" role="menuitem">
+              <span class="dropdown-icon" aria-hidden="true"><i class="fa-solid fa-house-chimney"></i></span> About Us
+            </a>
+            <div class="dropdown-divider" role="separator"></div>
+            <a href="management.html" class="dropdown-link" role="menuitem">
+              <span class="dropdown-icon" aria-hidden="true"><i class="fa-solid fa-users"></i></span> Our Management
+            </a>
+            <a href="founders-desk.html" class="dropdown-link" role="menuitem">
+              <span class="dropdown-icon" aria-hidden="true"><i class="fa-solid fa-pen-to-square"></i></span> Founder's Desk
+            </a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="programs.html" class="nav-link" data-nav="programs">Programs</a></li>
+        <li class="nav-item"><a href="facilities.html" class="nav-link" data-nav="facilities">Facilities</a></li>
+        <li class="nav-item"><a href="gallery.html" class="nav-link" data-nav="gallery">Gallery</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link" data-nav="contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-cta flex gap-4">
+        <a href="contact.html" class="btn btn-primary" id="navApplyNow">Apply Now</a>
+      </div>
+    </div>
+  </nav>
+  <!-- =================== END NAVBAR =================== -->
+
+
+  <main id="main-content">
+
+    <!-- =================== PAGE HERO =================== -->
+    <section class="page-hero" aria-label="Management page hero">
+      <!-- PASTE IMAGE HERE: assets/images/management-hero.jpg -->
+      <img class="page-hero-bg"
+        src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&q=75"
+        alt="SBG BCA College leadership team" loading="eager" fetchpriority="high" />
+
+      <div class="container">
+        <nav class="page-hero-breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          <a href="about.html">About Us</a>
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          <span>Our Management</span>
+        </nav>
+        <h1>Our <span>Management</span></h1>
+        <p>
+          <!-- EDIT THIS CONTENT -->
+          Meet the visionary leaders and dedicated management team behind SBG BCA College —
+          committed to delivering excellence, fostering innovation, and shaping the future of
+          technology education in Karnataka.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- =================== LEADERSHIP =================== -->
+    <section class="section" id="leadership" aria-labelledby="leadership-heading">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-eyebrow">Senior Leadership</span>
+          <h2 class="section-title" id="leadership-heading">The Founders &amp; Directors</h2>
+          <p class="section-desc">
+            Guided by experience, driven by purpose — our founding leadership has built SBG BCA
+            College from the ground up into a respected institution of learning.
+          </p>
+        </div>
+
+        <div class="leadership-grid">
+
+          <!-- Chairman -->
+          <div class="leader-card" data-reveal>
+            <div class="leader-card-img-wrap">
+              <!-- PASTE IMAGE HERE: assets/images/management-chairman.jpg -->
+              <div class="leader-card-img-placeholder" aria-hidden="true">
+                <i class="fa-solid fa-user-tie"></i>
+                <span>Chairman's Photo</span>
+              </div>
+              <span class="leader-badge">Chairman &amp; Founder</span>
+            </div>
+            <div class="leader-card-body">
+              <!-- EDIT NAME -->
+              <div class="leader-card-name">Shri. Suresh B. Gowda</div>
+              <div class="leader-card-title">Chairman &amp; Founder, SBG Groups</div>
+              <!-- EDIT THIS CONTENT -->
+              <p class="leader-card-desc">
+                With over three decades of experience in education and business, Shri. Suresh B. Gowda
+                founded SBG Groups with a singular mission — to make quality higher education accessible
+                to every deserving student in Karnataka. His visionary leadership has transformed SBG BCA
+                College into a benchmark for academic excellence in computer applications.
+              </p>
+              <div class="leader-card-socials">
+                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Director / Principal -->
+          <div class="leader-card" data-reveal>
+            <div class="leader-card-img-wrap">
+              <!-- PASTE IMAGE HERE: assets/images/management-principal.jpg -->
+              <div class="leader-card-img-placeholder" aria-hidden="true">
+                <i class="fa-solid fa-user-tie"></i>
+                <span>Principal's Photo</span>
+              </div>
+              <span class="leader-badge">Principal</span>
+            </div>
+            <div class="leader-card-body">
+              <!-- EDIT NAME -->
+              <div class="leader-card-name">Dr. Priya R. Kulkarni</div>
+              <div class="leader-card-title">Principal &amp; Academic Director</div>
+              <!-- EDIT THIS CONTENT -->
+              <p class="leader-card-desc">
+                A PhD in Computer Science with 22 years of academic and research experience, Dr. Priya
+                R. Kulkarni leads the college's academic strategy, curriculum development, and faculty
+                excellence initiatives. Under her leadership, the college has achieved a 95% placement
+                record and forged partnerships with leading technology companies across India.
+              </p>
+              <div class="leader-card-socials">
+                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /.leadership-grid -->
+      </div>
+    </section>
+
+
+    <!-- =================== PHILOSOPHY QUOTE =================== -->
+    <section class="philosophy-section" id="philosophy" aria-label="Leadership philosophy">
+      <div class="container">
+        <div class="philosophy-quote" data-reveal>
+          <span class="philosophy-quote-mark" aria-hidden="true">&ldquo;</span>
+          <blockquote>
+            <!-- EDIT THIS CONTENT -->
+            Education is not the filling of a pail, but the lighting of a fire. At SBG BCA College,
+            we ignite curiosity, nurture talent, and build the confidence our students need to
+            lead in an ever-changing world.
+          </blockquote>
+          <!-- EDIT NAME / TITLE -->
+          <cite>— Shri. Suresh B. Gowda, Chairman &amp; Founder</cite>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =================== MANAGEMENT TEAM =================== -->
+    <section class="section section--alt" id="team" aria-labelledby="team-heading">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-eyebrow">The Team</span>
+          <h2 class="section-title" id="team-heading">Our Management Team</h2>
+          <p class="section-desc">
+            A dedicated team of academic administrators, department heads, and support leaders
+            working together to deliver the best possible experience for every student.
+          </p>
+        </div>
+
+        <div class="team-grid">
+
+          <!-- Member 1 -->
+          <div class="team-card" data-reveal>
+            <div class="team-card-img">
+              <!-- PASTE IMAGE HERE: assets/images/management-1.jpg -->
+              <div class="team-card-img-placeholder" aria-hidden="true">
+                <i class="fa-solid fa-user"></i>
+                <span>Photo</span>
+              </div>
+            </div>
+            <div class="team-card-body">
+              <!-- EDIT NAME -->
+              <div class="team-card-name">Prof. Rajan M. Patil</div>
+              <div class="team-card-role">Vice Principal</div>
+              <span class="team-card-dept">
+                <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
+                Academic Affairs
+              </span>
+            </div>
+          </div>
+
+          <!-- Member 2 -->
+          <div class="team-card" data-reveal>
+            <div class="team-card-img">
+              <!-- PASTE IMAGE HERE: assets/images/management-2.jpg -->
+              <div class="team-card-img-placeholder" aria-hidden="true">
+                <i class="fa-solid fa-user"></i>
+                <span>Photo</span>
+              </div>
+            </div>
+            <div class="team-card-body">
+              <!-- EDIT NAME -->
+              <div class="team-card-name">Mrs. Anita S. Desai</div>
+              <div class="team-card-role">Head of Department</div>
+              <span class="team-card-dept">
+                <i class="fa-solid fa-laptop-code" aria-hidden="true"></i>
+                Computer Science
+              </span>
+            </div>
+          </div>
+
+          <!-- Member 3 -->
+          <div class="team-card" data-reveal>
+            <div class="team-card-img">
+              <!-- PASTE IMAGE HERE: assets/images/management-3.jpg -->
+              <div class="team-card-img-placeholder" aria-hidden="true">
+                <i class="fa-solid fa-user"></i>
+                <span>Photo</span>
+              </div>
+            </div>
+            <div class="team-card-body">
+              <!-- EDIT NAME -->
+              <div class="team-card-name">Mr. Kiran V. Naik</div>
+              <div class="team-card-role">Training &amp; Placement Officer</div>
+              <span class="team-card-dept">
+                <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
+                Placements
+              </span>
+            </div>
+          </div>
+
+          <!-- Member 4 -->
+          <div class="team-card" data-reveal>
+            <div class="team-card-img">
+              <!-- PASTE IMAGE HERE: assets/images/management-4.jpg -->
+              <div class="team-card-img-placeholder" aria-hidden="true">
+                <i class="fa-solid fa-user"></i>
+                <span>Photo</span>
+              </div>
+            </div>
+            <div class="team-card-body">
+              <!-- EDIT NAME -->
+              <div class="team-card-name">Dr. Sunita P. Joshi</div>
+              <div class="team-card-role">Examination Controller</div>
+              <span class="team-card-dept">
+                <i class="fa-solid fa-file-alt" aria-hidden="true"></i>
+                Examinations
+              </span>
+            </div>
+          </div>
+
+          <!-- Member 5 -->
+          <div class="team-card" data-reveal>
+            <div class="team-card-img">
+              <!-- PASTE IMAGE HERE: assets/images/management-5.jpg -->
+              <div class="team-card-img-placeholder" aria-hidden="true">
+                <i class="fa-solid fa-user"></i>
+                <span>Photo</span>
+              </div>
+            </div>
+            <div class="team-card-body">
+              <!-- EDIT NAME -->
+              <div class="team-card-name">Mr. Arun T. Hegde</div>
+              <div class="team-card-role">Administrative Officer</div>
+              <span class="team-card-dept">
+                <i class="fa-solid fa-clipboard-list" aria-hidden="true"></i>
+                Administration
+              </span>
+            </div>
+          </div>
+
+          <!-- Member 6 -->
+          <div class="team-card" data-reveal>
+            <div class="team-card-img">
+              <!-- PASTE IMAGE HERE: assets/images/management-6.jpg -->
+              <div class="team-card-img-placeholder" aria-hidden="true">
+                <i class="fa-solid fa-user"></i>
+                <span>Photo</span>
+              </div>
+            </div>
+            <div class="team-card-body">
+              <!-- EDIT NAME -->
+              <div class="team-card-name">Mrs. Deepa R. Bhat</div>
+              <div class="team-card-role">Student Welfare Officer</div>
+              <span class="team-card-dept">
+                <i class="fa-solid fa-heart" aria-hidden="true"></i>
+                Student Welfare
+              </span>
+            </div>
+          </div>
+
+        </div><!-- /.team-grid -->
+      </div>
+    </section>
+
+
+    <!-- =================== CTA =================== -->
+    <section class="page-cta" id="cta" aria-label="Call to action">
+      <div class="container">
+        <div class="page-cta-content">
+          <span class="section-eyebrow" style="color:var(--clr-accent-light);">Join Our Community</span>
+          <h2>Be Part of the SBG BCA Family</h2>
+          <p>
+            <!-- EDIT THIS CONTENT -->
+            Our management team is here to support your academic journey every step of the way.
+            Apply today and let us help you build the career you deserve.
+          </p>
+          <div class="cta-btn-group">
+            <a href="contact.html" class="btn btn-accent btn-lg" id="mgmtCtaApply">
+              Apply for Admission
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+            <a href="contact.html" class="btn btn-outline-white btn-lg" id="mgmtCtaContact">
+              Contact Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =================== FOOTER =================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="../index.html" class="footer-logo">
+            <img src="../components/images/logo.png" alt="SBG BCA College Logo" class="footer-logo-img">
+          </a>
+          <p class="footer-desc">
+            Empowering students with world-class education in Computer Applications,
+            shaping the technology leaders of tomorrow. Affiliated to Rani Channamma University.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Home</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> About Us</a></li>
+            <li><a href="programs.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Programs</a></li>
+            <li><a href="facilities.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Facilities</a></li>
+            <li><a href="gallery.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Gallery</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>About College</h4>
+          <ul>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Vision &amp; Mission</a></li>
+            <li><a href="management.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Our Management</a></li>
+            <li><a href="founders-desk.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Founder's Desk</a></li>
+            <li><a href="#"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Admissions</a></li>
+            <li><a href="#"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Student Portal</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div class="footer-contact-text">
+              <strong>Address</strong>
+              <span>123, College Road, Near SBG Complex,<br>Belagavi – 590 001, Karnataka</span>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div class="footer-contact-text">
+              <strong>Phone</strong>
+              <a href="tel:+911234567890">+91 12345 67890</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true">
+              <i class="fa-regular fa-envelope"></i>
+            </div>
+            <div class="footer-contact-text">
+              <strong>Email</strong>
+              <a href="mailto:admissions@sbgbca.edu.in">admissions@sbgbca.edu.in</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="footerYear">2025</span> SBG BCA College. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/navbar.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    document.getElementById('footerYear').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

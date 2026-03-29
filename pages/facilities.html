@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta -->
+  <title>Campus Facilities | SBG BCA College — Belagavi</title>
+  <meta name="description"
+    content="Explore world-class campus facilities at SBG BCA College, Belagavi — modern computer labs, smart library, auditorium, cafeteria, sports complex, and fully Wi-Fi enabled campus." />
+  <meta name="keywords"
+    content="SBG BCA College facilities, computer lab, library, auditorium, sports, Wi-Fi campus, Belagavi" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Campus Facilities | SBG BCA College" />
+  <meta property="og:description"
+    content="State-of-the-art infrastructure built for learning, collaboration, and growth at SBG BCA College, Belagavi." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sbgbca.edu.in/pages/facilities.html" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%231a3a6e'/><text y='.9em' font-size='64' fill='white' font-family='serif' font-weight='700' x='8'>S</text></svg>" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/navbar.css" />
+  <link rel="stylesheet" href="../assets/css/footer.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* =============================================
+       FACILITIES PAGE — PAGE-SPECIFIC STYLES
+       ============================================= */
+
+    /* ---- Page Hero (shared pattern) ---- */
+    .page-hero {
+      position: relative; background: var(--clr-primary-dark);
+      min-height: 320px; display: flex; align-items: center; overflow: hidden;
+    }
+    .page-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(120deg, rgba(10,20,45,0.92) 0%, rgba(26,58,110,0.72) 100%); z-index: 1;
+    }
+    .page-hero-bg {
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.4;
+    }
+    .page-hero .container { position: relative; z-index: 2; padding-block: var(--sp-16); }
+    .page-hero-breadcrumb {
+      display: flex; align-items: center; gap: var(--sp-2);
+      font-size: var(--fs-xs); color: rgba(255,255,255,0.6); margin-bottom: var(--sp-4);
+      text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;
+    }
+    .page-hero-breadcrumb a { color: rgba(255,255,255,0.6); transition: color var(--transition-fast); }
+    .page-hero-breadcrumb a:hover { color: var(--clr-accent-light); }
+    .page-hero-breadcrumb i { font-size: 0.6rem; }
+    .page-hero h1 {
+      font-family: var(--font-heading); font-size: clamp(1.9rem, 4vw, 3rem);
+      font-weight: 800; color: var(--clr-white); line-height: 1.2; margin-bottom: var(--sp-4);
+    }
+    .page-hero h1 span {
+      background: linear-gradient(90deg, var(--clr-accent-light), var(--clr-accent));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .page-hero p { font-size: var(--fs-md); color: rgba(255,255,255,0.8); max-width: 560px; line-height: 1.75; }
+
+    /* ---- Stats Bar ---- */
+    .stats-bar {
+      background: var(--clr-primary-dark);
+      padding-block: var(--sp-6);
+    }
+    .stats-bar-inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--sp-6);
+      text-align: center;
+    }
+    .stat-item { padding-block: var(--sp-2); }
+    .stat-number {
+      font-family: var(--font-heading); font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 800; color: var(--clr-accent-light); line-height: 1; margin-bottom: var(--sp-1);
+    }
+    .stat-label { font-size: var(--fs-xs); color: rgba(255,255,255,0.6); font-weight: 500; text-transform: uppercase; letter-spacing: 0.07em; }
+    .stat-divider {
+      width: 1px; background: rgba(255,255,255,0.1);
+      align-self: stretch; margin-block: var(--sp-1);
+    }
+
+    /* ---- Facility Cards Grid ---- */
+    .facility-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-6);
+    }
+    .fac-card {
+      background: var(--clr-white);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+    }
+    .fac-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-xl);
+      border-color: rgba(26,58,110,0.15);
+    }
+    /* Image area */
+    .fac-card-img {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(26,58,110,0.08), rgba(37,84,160,0.14));
+      flex-shrink: 0;
+    }
+    .fac-card-img img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform 0.5s ease;
+    }
+    .fac-card:hover .fac-card-img img { transform: scale(1.05); }
+    .fac-card-img-placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: var(--sp-2); color: var(--clr-primary); opacity: 0.3;
+    }
+    .fac-card-img-placeholder i { font-size: 2.5rem; }
+    .fac-card-img-placeholder span { font-size: var(--fs-xs); font-weight: 500; }
+    /* Icon badge floats on image */
+    .fac-card-badge {
+      position: absolute; top: var(--sp-4); left: var(--sp-4);
+      width: 44px; height: 44px;
+      border-radius: var(--radius-md);
+      background: var(--clr-primary-dark);
+      border: 2px solid rgba(255,255,255,0.15);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; color: var(--clr-accent-light);
+      box-shadow: var(--shadow-md);
+    }
+    /* Card body */
+    .fac-card-body {
+      padding: var(--sp-6);
+      flex: 1;
+      display: flex; flex-direction: column;
+    }
+    .fac-card-title {
+      font-family: var(--font-heading);
+      font-size: var(--fs-md); font-weight: 700;
+      color: var(--clr-primary-dark); margin-bottom: var(--sp-2);
+    }
+    .fac-card-desc {
+      font-size: var(--fs-sm); color: var(--clr-muted);
+      line-height: 1.7; margin-bottom: var(--sp-4); flex: 1;
+    }
+    .fac-card-meta {
+      display: flex; flex-wrap: wrap; gap: var(--sp-2);
+      padding-top: var(--sp-4); border-top: 1px solid var(--clr-border);
+    }
+    .fac-meta-chip {
+      display: inline-flex; align-items: center; gap: var(--sp-1);
+      font-size: var(--fs-xs); font-weight: 600;
+      background: rgba(26,58,110,0.06); border: 1px solid rgba(26,58,110,0.1);
+      border-radius: var(--radius-full); padding: 0.25em 0.7em;
+      color: var(--clr-primary-dark);
+    }
+    .fac-meta-chip i { font-size: 0.65rem; color: var(--clr-accent); }
+
+    /* ---- Featured Lab Section ---- */
+    .featured-lab {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-14);
+      align-items: center;
+    }
+    .featured-lab-img {
+      position: relative;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
+    }
+    .featured-lab-img img {
+      width: 100%; height: 420px;
+      object-fit: cover; display: block;
+    }
+    .featured-lab-img-placeholder {
+      width: 100%; height: 420px;
+      background: linear-gradient(135deg, rgba(26,58,110,0.07), rgba(37,84,160,0.13));
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: var(--sp-3); color: var(--clr-primary); opacity: 0.35;
+    }
+    .featured-lab-img-placeholder i { font-size: 4rem; }
+    .featured-lab-img-placeholder span { font-size: var(--fs-sm); font-weight: 500; }
+    .featured-lab-stat-pill {
+      position: absolute; bottom: var(--sp-5); left: 50%; transform: translateX(-50%);
+      background: var(--clr-primary-dark); border-radius: var(--radius-full);
+      padding: var(--sp-2) var(--sp-6);
+      display: flex; gap: var(--sp-6); white-space: nowrap;
+    }
+    .lab-pill-item { text-align: center; }
+    .lab-pill-item strong { display: block; font-size: var(--fs-lg); font-weight: 800; color: var(--clr-accent-light); line-height: 1; }
+    .lab-pill-item span  { font-size: var(--fs-xs); color: rgba(255,255,255,0.6); }
+
+    .featured-lab-text .section-title { text-align: left; margin-bottom: var(--sp-4); }
+    .featured-lab-text p { color: var(--clr-muted); line-height: 1.8; margin-bottom: var(--sp-4); font-size: var(--fs-base); }
+    .feature-list {
+      display: flex; flex-direction: column; gap: var(--sp-3);
+      margin-bottom: var(--sp-6);
+    }
+    .feature-list-item {
+      display: flex; align-items: center; gap: var(--sp-3);
+      font-size: var(--fs-sm); color: var(--clr-muted); font-weight: 500;
+    }
+    .feature-list-item i { color: var(--clr-accent); font-size: 0.85rem; flex-shrink: 0; }
+
+    /* ---- Additional Features ---- */
+    .addl-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-5);
+    }
+    .addl-card {
+      background: var(--clr-white);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-lg);
+      padding: var(--sp-6);
+      display: flex; align-items: flex-start; gap: var(--sp-4);
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    }
+    .addl-card:hover { border-color: rgba(26,58,110,0.18); box-shadow: var(--shadow-md); }
+    .addl-icon {
+      width: 48px; height: 48px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, rgba(26,58,110,0.08), rgba(37,84,160,0.13));
+      border: 1px solid rgba(26,58,110,0.1);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.15rem; color: var(--clr-primary); flex-shrink: 0;
+    }
+    .addl-text h4 {
+      font-family: var(--font-heading); font-size: var(--fs-base); font-weight: 700;
+      color: var(--clr-primary-dark); margin-bottom: var(--sp-1);
+    }
+    .addl-text p { font-size: var(--fs-sm); color: var(--clr-muted); line-height: 1.65; }
+
+    /* ---- CTA ---- */
+    .page-cta {
+      background: linear-gradient(135deg, var(--clr-primary-dark) 0%, var(--clr-primary) 55%, #1e4ca8 100%);
+      padding-block: var(--sp-20); text-align: center;
+      position: relative; overflow: hidden; border-top: 3px solid var(--clr-accent);
+    }
+    .page-cta::before {
+      content: ''; position: absolute; width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,160,32,0.09) 0%, transparent 70%);
+      top: -250px; right: -180px; pointer-events: none;
+    }
+    .page-cta-content { position: relative; z-index: 1; }
+    .page-cta h2 {
+      font-family: var(--font-heading); font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-weight: 800; color: var(--clr-white); margin-bottom: var(--sp-4);
+    }
+    .page-cta p { color: rgba(255,255,255,0.8); font-size: var(--fs-md); max-width: 500px; margin-inline: auto; margin-bottom: var(--sp-8); line-height: 1.75; }
+    .cta-btn-group { display: flex; justify-content: center; gap: var(--sp-4); flex-wrap: wrap; }
+    .page-cta .btn-accent:hover { box-shadow: 0 0 0 4px rgba(232,160,32,0.25), 0 6px 24px rgba(232,160,32,0.45); }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 1024px) {
+      .facility-cards-grid { grid-template-columns: repeat(2, 1fr); }
+      .addl-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-bar-inner { grid-template-columns: repeat(2, 1fr); }
+      .stat-divider { display: none; }
+    }
+    @media (max-width: 900px) {
+      .featured-lab { grid-template-columns: 1fr; }
+      .featured-lab-img img,
+      .featured-lab-img-placeholder { height: 300px; }
+    }
+    @media (max-width: 600px) {
+      .facility-cards-grid { grid-template-columns: 1fr; }
+      .addl-grid { grid-template-columns: 1fr; }
+      .page-hero .container { padding-block: var(--sp-12); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =================== NAVBAR =================== -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-left">
+        <a href="mailto:admissions@sbgbca.edu.in">
+          <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+          admissions@sbgbca.edu.in
+        </a>
+        <a href="tel:+911234567890">
+          <i class="fa-solid fa-phone" aria-hidden="true"></i>
+          +91 12345 67890
+        </a>
+      </div>
+      <div class="topbar-right">
+        <span>Rani Channamma University &nbsp;|&nbsp; NAAC Accredited</span>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar" id="mainNav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="../index.html" class="nav-logo" aria-label="SBG BCA College Home">
+        <img src="../components/images/logo.png" alt="SBG BCA College Logo" class="nav-logo-img">
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false"
+        aria-controls="navMenu" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu" role="list">
+        <li class="nav-item"><a href="../index.html" class="nav-link" data-nav="home">Home</a></li>
+        <li class="nav-item has-dropdown" id="aboutDropdown">
+          <a href="about.html" class="nav-link" data-nav="about" aria-haspopup="true" aria-expanded="false">
+            About Us <i class="fa-solid fa-chevron-down nav-arrow" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu" role="menu">
+            <a href="about.html" class="dropdown-link" role="menuitem">
+              <span class="dropdown-icon"><i class="fa-solid fa-house-chimney"></i></span> About Us
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="management.html" class="dropdown-link" role="menuitem">
+              <span class="dropdown-icon"><i class="fa-solid fa-users"></i></span> Our Management
+            </a>
+            <a href="founders-desk.html" class="dropdown-link" role="menuitem">
+              <span class="dropdown-icon"><i class="fa-solid fa-pen-to-square"></i></span> Founder's Desk
+            </a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="programs.html" class="nav-link" data-nav="programs">Programs</a></li>
+        <li class="nav-item"><a href="facilities.html" class="nav-link active" data-nav="facilities">Facilities</a></li>
+        <li class="nav-item"><a href="gallery.html" class="nav-link" data-nav="gallery">Gallery</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link" data-nav="contact">Contact</a></li>
+      </ul>
+      <div class="nav-cta flex gap-4">
+        <a href="contact.html" class="btn btn-primary" id="navApplyNow">Apply Now</a>
+      </div>
+    </div>
+  </nav>
+  <!-- =================== END NAVBAR =================== -->
+
+
+  <main id="main-content">
+
+    <!-- =================== PAGE HERO =================== -->
+    <section class="page-hero" aria-label="Facilities page hero">
+      <!-- PASTE IMAGE HERE: assets/images/facilities-hero.jpg -->
+      <img class="page-hero-bg"
+        src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=1600&q=75"
+        alt="SBG BCA College campus facilities" loading="eager" fetchpriority="high" />
+      <div class="container">
+        <nav class="page-hero-breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          <span>Facilities</span>
+        </nav>
+        <h1>Campus <span>Facilities</span></h1>
+        <p>
+          <!-- EDIT THIS CONTENT -->
+          Built for the demands of modern education — SBG BCA College's campus combines
+          state-of-the-art technology infrastructure with spaces designed for collaboration,
+          creativity, and holistic student development.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- =================== STATS BAR =================== -->
+    <div class="stats-bar" aria-label="Campus statistics">
+      <div class="container">
+        <div class="stats-bar-inner">
+          <div class="stat-item" data-reveal>
+            <!-- EDIT STATS -->
+            <div class="stat-number">4</div>
+            <div class="stat-label">Computer Labs</div>
+          </div>
+          <div class="stat-item" data-reveal>
+            <div class="stat-number">200+</div>
+            <div class="stat-label">Workstations</div>
+          </div>
+          <div class="stat-item" data-reveal>
+            <div class="stat-number">10K+</div>
+            <div class="stat-label">Library Books</div>
+          </div>
+          <div class="stat-item" data-reveal>
+            <div class="stat-number">500</div>
+            <div class="stat-label">Seat Auditorium</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- =================== MAIN FACILITIES GRID =================== -->
+    <section class="section" id="facilities-grid" aria-labelledby="facilities-heading">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-eyebrow">Our Infrastructure</span>
+          <h2 class="section-title" id="facilities-heading">Campus Facilities</h2>
+          <p class="section-desc">
+            Every facility at SBG BCA College is designed with one goal — to give students the
+            best possible environment to learn, grow, and succeed.
+          </p>
+        </div>
+
+        <div class="facility-cards-grid">
+
+          <!-- Computer Labs -->
+          <div class="fac-card" data-reveal>
+            <div class="fac-card-img">
+              <!-- PASTE IMAGE HERE: assets/images/facility-lab.jpg -->
+              <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=800&q=70"
+                alt="Modern computer laboratory" loading="lazy" />
+              <div class="fac-card-badge" aria-hidden="true"><i class="fa-solid fa-computer"></i></div>
+            </div>
+            <div class="fac-card-body">
+              <h3 class="fac-card-title">Computer Laboratories</h3>
+              <p class="fac-card-desc">
+                <!-- EDIT THIS CONTENT -->
+                Four fully equipped labs with 200+ high-performance workstations running the latest
+                hardware. Equipped with fiber-optic internet, licensed development software (Visual Studio,
+                IntelliJ, Eclipse, MATLAB), and available 24/7 for student use.
+              </p>
+              <div class="fac-card-meta">
+                <span class="fac-meta-chip"><i class="fa-solid fa-desktop"></i> 200+ Workstations</span>
+                <span class="fac-meta-chip"><i class="fa-solid fa-wifi"></i> Fibre Internet</span>
+                <span class="fac-meta-chip"><i class="fa-solid fa-clock"></i> 24/7 Access</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Library -->
+          <div class="fac-card" data-reveal>
+            <div class="fac-card-img">
+              <!-- PASTE IMAGE HERE: assets/images/facility-library.jpg -->
+              <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&q=70"
+                alt="College library" loading="lazy" />
+              <div class="fac-card-badge" aria-hidden="true"><i class="fa-solid fa-book-open"></i></div>
+            </div>
+            <div class="fac-card-body">
+              <h3 class="fac-card-title">Smart Library</h3>
+              <p class="fac-card-desc">
+                <!-- EDIT THIS CONTENT -->
+                A completely digitized library with over 10,000 books, e-journals, and research
+                databases. Includes a quiet reading zone, group study rooms, digital catalog terminals,
+                and access to NPTEL, Coursera, and other online learning platforms.
+              </p>
+              <div class="fac-card-meta">
+                <span class="fac-meta-chip"><i class="fa-solid fa-book"></i> 10,000+ Books</span>
+                <span class="fac-meta-chip"><i class="fa-solid fa-tablet"></i> Digital Catalog</span>
+                <span class="fac-meta-chip"><i class="fa-solid fa-users"></i> Study Rooms</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Auditorium -->
+          <div class="fac-card" data-reveal>
+            <div class="fac-card-img">
+              <!-- PASTE IMAGE HERE: assets/images/facility-auditorium.jpg -->
+              <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=70"
+                alt="College auditorium" loading="lazy" />
+              <div class="fac-card-badge" aria-hidden="true"><i class="fa-solid fa-microphone-lines"></i></div>
+            </div>
+            <div class="fac-card-body">
+              <h3 class="fac-card-title">Auditorium</h3>
+              <p class="fac-card-desc">
+                <!-- EDIT THIS CONTENT -->
+                A 500-seat fully air-conditioned auditorium equipped with professional AV systems,
+                LED stage lighting, and a high-quality PA system. Hosts guest lectures, cultural events,
+                technical seminars, and annual convocations.
+              </p>
+              <div class="fac-card-meta">
+                <span class="fac-meta-chip"><i class="fa-solid fa-chair"></i> 500-Seat Capacity</span>
+                <span class="fac-meta-chip"><i class="fa-solid fa-snowflake"></i> Air Conditioned</span>
+                <span class="fac-meta-chip"><i class="fa-solid fa-volume-high"></i> Pro AV</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cafeteria -->
+          <div class="fac-card" data-reveal>
+            <div class="fac-card-img">
+              <!-- PASTE IMAGE HERE: assets/images/facility-cafeteria.jpg -->
+              <img src="https://images.unsplash.com/photo-1567521464027-f127ff144326?w=800&q=70"
+                alt="College cafeteria" loading="lazy" />
+              <div class="fac-card-badge" aria-hidden="true"><i class="fa-solid fa-utensils"></i></div>
+            </div>
+            <div class="fac-card-body">
+              <h3 class="fac-card-title">Cafeteria</h3>
+              <p class="fac-card-desc">
+                <!-- EDIT THIS CONTENT -->
+                A clean, hygienic cafeteria serving freshly prepared meals, snacks, and beverages at
+                affordable prices. Separate vegetarian and non-vegetarian counters, a juice bar, and
+                air-conditioned seating for 150 students.
+              </p>
+              <div class="fac-card-meta">
+                <span class="fac-meta-chip"><i class="fa-solid fa-leaf"></i> Veg &amp; Non-Veg</span>
+                <span class="fac-meta-chip"><i class="fa-solid fa-chair"></i> 150 Seats</span>
+                <span class="fac-meta-chip"><i class="fa-solid fa-snowflake"></i> Air Conditioned</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sports -->
+          <div class="fac-card" data-reveal>
+            <div class="fac-card-img">
+              <!-- PASTE IMAGE HERE: assets/images/facility-sports.jpg -->
+              <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=800&q=70"
+                alt="Sports facilities" loading="lazy" />
+              <div class="fac-card-badge" aria-hidden="true"><i class="fa-solid fa-person-running"></i></div>
+            </div>
+            <div class="fac-card-body">
+              <h3 class="fac-card-title">Sports Complex</h3>
+              <p class="fac-card-desc">
+                <!-- EDIT THIS CONTENT -->
+                A comprehensive sports complex with both indoor and outdoor facilities. Includes a cricket
+                ground, football field, badminton courts, table tennis, chess zone, and a fully equipped
+                indoor gymnasium — promoting physical health alongside academic excellence.
+              </p>
+              <div class="fac-card-meta">
+                <span class="fac-meta-chip"><i class="fa-solid fa-futbol"></i> Outdoor Courts</span>
+                <span class="fac-meta-chip"><i class="fa-solid fa-table-tennis-paddle-ball"></i> Indoor Games</span>
+                <span class="fac-meta-chip"><i class="fa-solid fa-dumbbell"></i> Gymnasium</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Wi-Fi Campus -->
+          <div class="fac-card" data-reveal>
+            <div class="fac-card-img">
+              <!-- PASTE IMAGE HERE: assets/images/facility-campus.jpg -->
+              <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&q=70"
+                alt="College campus" loading="lazy" />
+              <div class="fac-card-badge" aria-hidden="true"><i class="fa-solid fa-wifi"></i></div>
+            </div>
+            <div class="fac-card-body">
+              <h3 class="fac-card-title">Wi-Fi Enabled Campus</h3>
+              <p class="fac-card-desc">
+                <!-- EDIT THIS CONTENT -->
+                The entire campus — classrooms, corridors, library, hostels, and open spaces — is covered
+                by high-speed Wi-Fi with 1 Gbps fibre connectivity. Students enjoy uninterrupted internet
+                access for research, online courses, and collaborative projects.
+              </p>
+              <div class="fac-card-meta">
+                <span class="fac-meta-chip"><i class="fa-solid fa-bolt"></i> 1 Gbps Fibre</span>
+                <span class="fac-meta-chip"><i class="fa-solid fa-signal"></i> Full Campus</span>
+                <span class="fac-meta-chip"><i class="fa-solid fa-clock"></i> 24/7 Access</span>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /.facility-cards-grid -->
+      </div>
+    </section>
+
+
+    <!-- =================== FEATURED: COMPUTER LAB =================== -->
+    <section class="section section--alt" id="featured-lab" aria-labelledby="lab-heading">
+      <div class="container">
+        <div class="featured-lab">
+
+          <!-- Image -->
+          <div class="featured-lab-img" data-reveal>
+            <!-- PASTE IMAGE HERE: assets/images/facility-lab-featured.jpg -->
+            <img
+              src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=900&q=80"
+              alt="Featured computer laboratory at SBG BCA College" loading="lazy" />
+            <div class="featured-lab-stat-pill">
+              <div class="lab-pill-item">
+                <strong>4</strong><span>Labs</span>
+              </div>
+              <div class="lab-pill-item">
+                <strong>200+</strong><span>PCs</span>
+              </div>
+              <div class="lab-pill-item">
+                <strong>1 Gbps</strong><span>Internet</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Text -->
+          <div data-reveal>
+            <span class="section-eyebrow">Featured Facility</span>
+            <h2 class="section-title" id="lab-heading" style="text-align:left; margin-bottom:var(--sp-4);">
+              State-of-the-Art<br>Computer Laboratories
+            </h2>
+            <div class="divider" style="margin-bottom:var(--sp-5);"></div>
+            <!-- EDIT THIS CONTENT -->
+            <p>
+              Our computer laboratories are the heart of the SBG BCA College experience. Designed
+              to replicate professional development environments, each lab is set up to support
+              everything from introductory programming to advanced AI model training and cloud
+              infrastructure deployment.
+            </p>
+            <p>
+              Every workstation runs on the latest generation processors with 16GB RAM and SSD storage
+              — ensuring students never have to compromise on performance. All labs are connected via
+              fibre-optic LAN and have direct access to our dedicated 1 Gbps internet link.
+            </p>
+
+            <div class="feature-list">
+              <!-- EDIT FEATURES BELOW -->
+              <div class="feature-list-item"><i class="fa-solid fa-circle-check"></i> 4 dedicated labs with 50+ workstations each</div>
+              <div class="feature-list-item"><i class="fa-solid fa-circle-check"></i> Latest processors, 16GB RAM, SSD storage per machine</div>
+              <div class="feature-list-item"><i class="fa-solid fa-circle-check"></i> Licensed software: VS Code, IntelliJ, MATLAB, Adobe CC</div>
+              <div class="feature-list-item"><i class="fa-solid fa-circle-check"></i> Cloud lab environment — AWS, Azure, GCP practice accounts</div>
+              <div class="feature-list-item"><i class="fa-solid fa-circle-check"></i> 24/7 student access with biometric entry</div>
+              <div class="feature-list-item"><i class="fa-solid fa-circle-check"></i> UPS backup — zero downtime during power outages</div>
+            </div>
+
+            <a href="contact.html" class="btn btn-primary" id="labVisit">
+              Schedule a Campus Visit <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =================== ADDITIONAL FEATURES =================== -->
+    <section class="section" id="additional" aria-labelledby="additional-heading">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-eyebrow">More on Campus</span>
+          <h2 class="section-title" id="additional-heading">Additional Facilities</h2>
+          <p class="section-desc">Beyond the core infrastructure — spaces that enrich campus life.</p>
+        </div>
+
+        <div class="addl-grid">
+
+          <div class="addl-card" data-reveal>
+            <div class="addl-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+            <div class="addl-text">
+              <h4>Smart Classrooms</h4>
+              <p>
+                <!-- EDIT THIS CONTENT -->
+                All classrooms are equipped with digital projectors, interactive whiteboards, and
+                high-quality audio systems for an engaging, multimedia-driven learning experience.
+              </p>
+            </div>
+          </div>
+
+          <div class="addl-card" data-reveal>
+            <div class="addl-icon"><i class="fa-solid fa-people-group"></i></div>
+            <div class="addl-text">
+              <h4>Seminar Halls</h4>
+              <p>
+                <!-- EDIT THIS CONTENT -->
+                Two dedicated seminar halls with 80-seat capacity each — used for guest lectures,
+                workshops, hackathons, and student presentations throughout the year.
+              </p>
+            </div>
+          </div>
+
+          <div class="addl-card" data-reveal>
+            <div class="addl-icon"><i class="fa-solid fa-bus"></i></div>
+            <div class="addl-text">
+              <h4>Transport Facility</h4>
+              <p>
+                <!-- EDIT THIS CONTENT -->
+                Fleet of college buses covering major areas in and around Belagavi — providing safe,
+                reliable, and affordable transportation for day scholars.
+              </p>
+            </div>
+          </div>
+
+          <div class="addl-card" data-reveal>
+            <div class="addl-icon"><i class="fa-solid fa-hospital"></i></div>
+            <div class="addl-text">
+              <h4>Medical Room</h4>
+              <p>
+                <!-- EDIT THIS CONTENT -->
+                On-campus medical room staffed by a qualified nurse, with a tie-up with a nearby
+                hospital for emergency medical assistance during college hours.
+              </p>
+            </div>
+          </div>
+
+          <div class="addl-card" data-reveal>
+            <div class="addl-icon"><i class="fa-solid fa-camera"></i></div>
+            <div class="addl-text">
+              <h4>CCTV &amp; Security</h4>
+              <p>
+                <!-- EDIT THIS CONTENT -->
+                The entire campus is monitored by a 24/7 CCTV surveillance system with security
+                personnel stationed at all entry and exit points for student safety.
+              </p>
+            </div>
+          </div>
+
+          <div class="addl-card" data-reveal>
+            <div class="addl-icon"><i class="fa-solid fa-print"></i></div>
+            <div class="addl-text">
+              <h4>Printing &amp; Stationery</h4>
+              <p>
+                <!-- EDIT THIS CONTENT -->
+                An on-campus printing and stationery store providing affordable printing, photocopying,
+                binding, and study materials — conveniently located within the campus.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =================== CTA =================== -->
+    <section class="page-cta" id="cta" aria-label="Call to action">
+      <div class="container">
+        <div class="page-cta-content">
+          <span class="section-eyebrow" style="color:var(--clr-accent-light);">Experience It Yourself</span>
+          <h2>Visit Our Campus &amp; See for Yourself</h2>
+          <p>
+            <!-- EDIT THIS CONTENT -->
+            Words can only say so much. Come visit SBG BCA College and experience the infrastructure,
+            meet the faculty, and see why students choose us — in person.
+          </p>
+          <div class="cta-btn-group">
+            <a href="contact.html" class="btn btn-accent btn-lg" id="facCtaApply">
+              Apply for Admission <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+            <a href="contact.html" class="btn btn-outline-white btn-lg" id="facCtaVisit">
+              Schedule a Visit
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =================== FOOTER =================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="footer-logo">
+            <img src="../components/images/logo.png" alt="SBG BCA College Logo" class="footer-logo-img">
+          </a>
+          <p class="footer-desc">
+            Empowering students with world-class education in Computer Applications,
+            shaping the technology leaders of tomorrow. Affiliated to Rani Channamma University.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+            <li><a href="programs.html"><i class="fa-solid fa-chevron-right"></i> Programs</a></li>
+            <li><a href="facilities.html"><i class="fa-solid fa-chevron-right"></i> Facilities</a></li>
+            <li><a href="gallery.html"><i class="fa-solid fa-chevron-right"></i> Gallery</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>About College</h4>
+          <ul>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> Vision &amp; Mission</a></li>
+            <li><a href="management.html"><i class="fa-solid fa-chevron-right"></i> Our Management</a></li>
+            <li><a href="founders-desk.html"><i class="fa-solid fa-chevron-right"></i> Founder's Desk</a></li>
+            <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Admissions</a></li>
+            <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Student Portal</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="footer-contact-text">
+              <strong>Address</strong>
+              <span>123, College Road, Near SBG Complex,<br>Belagavi – 590 001, Karnataka</span>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="fa-solid fa-phone"></i></div>
+            <div class="footer-contact-text">
+              <strong>Phone</strong>
+              <a href="tel:+911234567890">+91 12345 67890</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="fa-regular fa-envelope"></i></div>
+            <div class="footer-contact-text">
+              <strong>Email</strong>
+              <a href="mailto:admissions@sbgbca.edu.in">admissions@sbgbca.edu.in</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="footerYear">2025</span> SBG BCA College. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/navbar.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    document.getElementById('footerYear').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

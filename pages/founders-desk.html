@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta -->
+  <title>Founder's Desk | SBG BCA College — Belagavi</title>
+  <meta name="description"
+    content="A personal message from the Founder and Chairman of SBG BCA College, Belagavi — sharing the vision, values, and journey behind the institution." />
+  <meta name="keywords"
+    content="Founder's message, Chairman SBG BCA College, Belagavi BCA, SBG Groups, Suresh Gowda" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Founder's Desk | SBG BCA College" />
+  <meta property="og:description"
+    content="Read a personal message from the Founder of SBG BCA College — his vision for the institution and for every student who walks through its doors." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sbgbca.edu.in/pages/founders-desk.html" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%231a3a6e'/><text y='.9em' font-size='64' fill='white' font-family='serif' font-weight='700' x='8'>S</text></svg>" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/navbar.css" />
+  <link rel="stylesheet" href="../assets/css/footer.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* =============================================
+       FOUNDER'S DESK — PAGE-SPECIFIC STYLES
+       ============================================= */
+
+    /* ---- Page Hero (shared pattern) ---- */
+    .page-hero {
+      position: relative;
+      background: var(--clr-primary-dark);
+      min-height: 320px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(10,20,45,0.92) 0%, rgba(26,58,110,0.72) 100%);
+      z-index: 1;
+    }
+    .page-hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.35;
+    }
+    .page-hero .container {
+      position: relative;
+      z-index: 2;
+      padding-block: var(--sp-16);
+    }
+    .page-hero-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-2);
+      font-size: var(--fs-xs);
+      color: rgba(255,255,255,0.6);
+      margin-bottom: var(--sp-4);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+    }
+    .page-hero-breadcrumb a {
+      color: rgba(255,255,255,0.6);
+      transition: color var(--transition-fast);
+    }
+    .page-hero-breadcrumb a:hover { color: var(--clr-accent-light); }
+    .page-hero-breadcrumb i { font-size: 0.6rem; }
+    .page-hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      font-weight: 800;
+      color: var(--clr-white);
+      line-height: 1.2;
+      margin-bottom: var(--sp-4);
+    }
+    .page-hero h1 span {
+      background: linear-gradient(90deg, var(--clr-accent-light), var(--clr-accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .page-hero p {
+      font-size: var(--fs-md);
+      color: rgba(255,255,255,0.8);
+      max-width: 560px;
+      line-height: 1.75;
+    }
+
+    /* ---- Founder Letter Layout ---- */
+    .founder-layout {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: var(--sp-16);
+      align-items: start;
+    }
+
+    /* ---- Founder Portrait ---- */
+    .founder-portrait {
+      position: sticky;
+      top: calc(var(--nav-height) + var(--sp-8));
+    }
+    .founder-portrait-img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
+      background: linear-gradient(135deg, rgba(26,58,110,0.08), rgba(37,84,160,0.14));
+      margin-bottom: var(--sp-5);
+    }
+    .founder-portrait-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .founder-portrait-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--sp-3);
+      color: var(--clr-primary);
+      opacity: 0.35;
+    }
+    .founder-portrait-placeholder i { font-size: 4rem; }
+    .founder-portrait-placeholder span { font-size: var(--fs-sm); font-weight: 500; }
+    .founder-portrait-info {
+      background: var(--clr-white);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-lg);
+      padding: var(--sp-5) var(--sp-6);
+      box-shadow: var(--shadow-sm);
+    }
+    .founder-portrait-name {
+      font-family: var(--font-heading);
+      font-size: var(--fs-lg);
+      font-weight: 800;
+      color: var(--clr-primary-dark);
+      margin-bottom: var(--sp-1);
+    }
+    .founder-portrait-title {
+      font-size: var(--fs-sm);
+      font-weight: 600;
+      color: var(--clr-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: var(--sp-4);
+      display: flex;
+      align-items: center;
+      gap: var(--sp-2);
+    }
+    .founder-portrait-title::before {
+      content: '';
+      display: inline-block;
+      width: 18px;
+      height: 2px;
+      background: var(--clr-accent);
+      border-radius: var(--radius-full);
+    }
+    .founder-portrait-meta {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-2);
+    }
+    .founder-portrait-meta span {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-2);
+      font-size: var(--fs-xs);
+      color: var(--clr-muted);
+      font-weight: 500;
+    }
+    .founder-portrait-meta i {
+      color: var(--clr-primary);
+      width: 14px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    /* ---- Letter / Message ---- */
+    .founder-letter {
+      padding-block: var(--sp-4);
+    }
+    .letter-header {
+      margin-bottom: var(--sp-8);
+      padding-bottom: var(--sp-6);
+      border-bottom: 1px solid var(--clr-border);
+    }
+    .letter-salutation {
+      font-family: var(--font-heading);
+      font-size: var(--fs-xl);
+      font-weight: 700;
+      color: var(--clr-primary-dark);
+      margin-bottom: var(--sp-2);
+    }
+    .letter-subtitle {
+      font-size: var(--fs-sm);
+      color: var(--clr-muted);
+      font-style: italic;
+    }
+
+    .letter-body p {
+      color: var(--clr-muted);
+      font-size: var(--fs-base);
+      line-height: 1.9;
+      margin-bottom: var(--sp-5);
+    }
+    .letter-body p:last-of-type { margin-bottom: var(--sp-8); }
+
+    /* Opening pull-quote */
+    .letter-pullquote {
+      border-left: 4px solid var(--clr-accent);
+      padding: var(--sp-4) var(--sp-6);
+      margin: var(--sp-8) 0;
+      background: rgba(232,160,32,0.05);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    }
+    .letter-pullquote p {
+      font-family: var(--font-heading);
+      font-size: var(--fs-lg);
+      font-weight: 600;
+      color: var(--clr-primary-dark);
+      font-style: italic;
+      line-height: 1.55;
+      margin-bottom: 0 !important;
+    }
+
+    /* Signature */
+    .letter-signature {
+      margin-top: var(--sp-8);
+      padding-top: var(--sp-6);
+      border-top: 1px solid var(--clr-border);
+      display: flex;
+      align-items: center;
+      gap: var(--sp-6);
+    }
+    .signature-img {
+      height: 72px;
+      opacity: 0.75;
+      filter: contrast(1.1);
+    }
+    .signature-text .name {
+      font-family: var(--font-heading);
+      font-size: var(--fs-lg);
+      font-weight: 700;
+      color: var(--clr-primary-dark);
+    }
+    .signature-text .role {
+      font-size: var(--fs-sm);
+      color: var(--clr-muted);
+      margin-top: 2px;
+    }
+
+    /* ---- Key Commitments strip ---- */
+    .commitments-strip {
+      background: var(--clr-primary-dark);
+      padding-block: var(--sp-16);
+    }
+    .commitments-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--sp-5);
+    }
+    .commitment-item {
+      text-align: center;
+      padding: var(--sp-7) var(--sp-5);
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      transition: background var(--transition-base);
+    }
+    .commitment-item:hover { background: rgba(255,255,255,0.08); }
+    .commitment-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-md);
+      background: rgba(232,160,32,0.12);
+      border: 1px solid rgba(232,160,32,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: var(--clr-accent-light);
+      margin: 0 auto var(--sp-4);
+    }
+    .commitment-item h4 {
+      font-family: var(--font-heading);
+      font-size: var(--fs-base);
+      font-weight: 700;
+      color: var(--clr-white);
+      margin-bottom: var(--sp-2);
+    }
+    .commitment-item p {
+      font-size: var(--fs-sm);
+      color: rgba(255,255,255,0.6);
+      line-height: 1.6;
+    }
+
+    /* ---- CTA (shared) ---- */
+    .page-cta {
+      background: linear-gradient(135deg, var(--clr-primary-dark) 0%, var(--clr-primary) 55%, #1e4ca8 100%);
+      padding-block: var(--sp-20);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-top: 3px solid var(--clr-accent);
+    }
+    .page-cta::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,160,32,0.09) 0%, transparent 70%);
+      top: -250px; right: -180px;
+      pointer-events: none;
+    }
+    .page-cta-content { position: relative; z-index: 1; }
+    .page-cta h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-weight: 800;
+      color: var(--clr-white);
+      margin-bottom: var(--sp-4);
+    }
+    .page-cta p {
+      color: rgba(255,255,255,0.8);
+      font-size: var(--fs-md);
+      max-width: 500px;
+      margin-inline: auto;
+      margin-bottom: var(--sp-8);
+      line-height: 1.75;
+    }
+    .cta-btn-group {
+      display: flex;
+      justify-content: center;
+      gap: var(--sp-4);
+      flex-wrap: wrap;
+    }
+    .page-cta .btn-accent:hover {
+      box-shadow: 0 0 0 4px rgba(232,160,32,0.25), 0 6px 24px rgba(232,160,32,0.45);
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 1024px) {
+      .founder-layout { grid-template-columns: 280px 1fr; gap: var(--sp-10); }
+      .commitments-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 900px) {
+      .founder-layout { grid-template-columns: 1fr; }
+      .founder-portrait { position: static; }
+      .founder-portrait-img { aspect-ratio: 4/3; max-height: 320px; }
+    }
+    @media (max-width: 600px) {
+      .commitments-grid { grid-template-columns: 1fr; }
+      .letter-signature { flex-direction: column; align-items: flex-start; gap: var(--sp-3); }
+      .page-hero .container { padding-block: var(--sp-12); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =================== NAVBAR =================== -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-left">
+        <a href="mailto:admissions@sbgbca.edu.in">
+          <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+          admissions@sbgbca.edu.in
+        </a>
+        <a href="tel:+911234567890">
+          <i class="fa-solid fa-phone" aria-hidden="true"></i>
+          +91 12345 67890
+        </a>
+      </div>
+      <div class="topbar-right">
+        <span>Rani Channamma University &nbsp;|&nbsp; NAAC Accredited</span>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar" id="mainNav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="../index.html" class="nav-logo" aria-label="SBG BCA College Home">
+        <img src="../components/images/logo.png" alt="SBG BCA College Logo" class="nav-logo-img">
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu"
+        aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-menu" id="navMenu" role="list">
+        <li class="nav-item"><a href="../index.html" class="nav-link" data-nav="home">Home</a></li>
+        <li class="nav-item has-dropdown" id="aboutDropdown">
+          <a href="about.html" class="nav-link active" data-nav="about" aria-haspopup="true" aria-expanded="false">
+            About Us
+            <i class="fa-solid fa-chevron-down nav-arrow" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu" role="menu">
+            <a href="about.html" class="dropdown-link" role="menuitem">
+              <span class="dropdown-icon" aria-hidden="true"><i class="fa-solid fa-house-chimney"></i></span> About Us
+            </a>
+            <div class="dropdown-divider" role="separator"></div>
+            <a href="management.html" class="dropdown-link" role="menuitem">
+              <span class="dropdown-icon" aria-hidden="true"><i class="fa-solid fa-users"></i></span> Our Management
+            </a>
+            <a href="founders-desk.html" class="dropdown-link" role="menuitem">
+              <span class="dropdown-icon" aria-hidden="true"><i class="fa-solid fa-pen-to-square"></i></span> Founder's Desk
+            </a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="programs.html" class="nav-link" data-nav="programs">Programs</a></li>
+        <li class="nav-item"><a href="facilities.html" class="nav-link" data-nav="facilities">Facilities</a></li>
+        <li class="nav-item"><a href="gallery.html" class="nav-link" data-nav="gallery">Gallery</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link" data-nav="contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-cta flex gap-4">
+        <a href="contact.html" class="btn btn-primary" id="navApplyNow">Apply Now</a>
+      </div>
+    </div>
+  </nav>
+  <!-- =================== END NAVBAR =================== -->
+
+
+  <main id="main-content">
+
+    <!-- =================== PAGE HERO =================== -->
+    <section class="page-hero" aria-label="Founder's Desk hero">
+      <!-- PASTE IMAGE HERE: assets/images/founders-desk-hero.jpg -->
+      <img class="page-hero-bg"
+        src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=75"
+        alt="Founder's office" loading="eager" fetchpriority="high" />
+
+      <div class="container">
+        <nav class="page-hero-breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          <a href="about.html">About Us</a>
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          <span>Founder's Desk</span>
+        </nav>
+        <h1><span>Founder's</span> Desk</h1>
+        <p>
+          <!-- EDIT THIS CONTENT -->
+          A personal message from our Chairman and Founder — his journey, his vision,
+          and his unwavering commitment to transforming education in Karnataka.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- =================== FOUNDER'S MESSAGE =================== -->
+    <section class="section" id="founders-message" aria-labelledby="founders-heading">
+      <div class="container">
+        <div class="founder-layout">
+
+          <!-- Portrait Column -->
+          <aside data-reveal>
+            <div class="founder-portrait">
+              <div class="founder-portrait-img">
+                <!-- PASTE IMAGE HERE: assets/images/founder-portrait.jpg -->
+                <div class="founder-portrait-placeholder" aria-hidden="true">
+                  <i class="fa-solid fa-user-tie"></i>
+                  <span>Founder's Photo</span>
+                </div>
+              </div>
+
+              <div class="founder-portrait-info">
+                <!-- EDIT NAME -->
+                <div class="founder-portrait-name">Shri. Suresh B. Gowda</div>
+                <div class="founder-portrait-title">Chairman &amp; Founder</div>
+                <div class="founder-portrait-meta">
+                  <span>
+                    <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
+                    SBG Groups, Belagavi
+                  </span>
+                  <span>
+                    <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+                    <!-- EDIT YEAR -->
+                    Established 2009
+                  </span>
+                  <span>
+                    <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                    <!-- EDIT QUALIFICATION -->
+                    M.Com, MBA (Education Management)
+                  </span>
+                  <span>
+                    <i class="fa-solid fa-award" aria-hidden="true"></i>
+                    <!-- EDIT AWARD -->
+                    Rajyotsava Award, 2018
+                  </span>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Letter Column -->
+          <article class="founder-letter" data-reveal aria-labelledby="founders-heading">
+            <div class="letter-header">
+              <h2 class="letter-salutation" id="founders-heading">Dear Students, Parents &amp; Well-Wishers,</h2>
+              <p class="letter-subtitle">
+                <!-- EDIT DATE -->
+                A message from the desk of the Chairman — March 2025
+              </p>
+            </div>
+
+            <div class="letter-body">
+              <!-- EDIT THIS CONTENT — replace with actual founder message -->
+              <p>
+                It is with immense pride and deep humility that I welcome you to SBG BCA College —
+                an institution born out of a simple yet powerful belief: that every young person in
+                Karnataka deserves access to world-class technology education, regardless of their
+                background or circumstances.
+              </p>
+              <p>
+                When I founded SBG Groups over fifteen years ago, I had a single purpose in mind —
+                to create institutions that would stand as pillars of quality, integrity, and ambition
+                in our community. Today, as I look at the hundreds of graduates who have gone on to
+                build successful careers in technology, finance, and entrepreneurship, I feel that
+                purpose being fulfilled, one student at a time.
+              </p>
+
+              <!-- Pull quote -->
+              <div class="letter-pullquote">
+                <p>
+                  <!-- EDIT THIS CONTENT -->
+                  "I did not build this college for statistics. I built it for the student from a small
+                  village who has a dream but no roadmap. We are that roadmap."
+                </p>
+              </div>
+
+              <p>
+                The world of technology is evolving at an unprecedented pace. Artificial intelligence,
+                cloud computing, cybersecurity, and data science are no longer niche fields — they are
+                the foundations of every industry. Our BCA program, aligned to Rani Channamma University
+                and continuously refined in partnership with industry, has been built to ensure that
+                our graduates are not merely employable — they are exceptional.
+              </p>
+              <p>
+                We have invested heavily in modern infrastructure, in hiring faculty who are not just
+                teachers but mentors, and in building placement partnerships with organisations that
+                genuinely value talent. But more than any infrastructure, what I am most proud of is
+                our culture — one of warmth, discipline, and relentless encouragement.
+              </p>
+              <p>
+                To every prospective student reading this: choose SBG BCA College not because we
+                promise you easy success, but because we commit to walking every step of this journey
+                with you. To every parent who has placed their trust in us — we do not take that
+                trust lightly. It is the single greatest responsibility we carry.
+              </p>
+              <p>
+                I look forward to welcoming you into our family.
+              </p>
+            </div>
+
+            <!-- Signature block -->
+            <div class="letter-signature">
+              <!-- PASTE SIGNATURE IMAGE HERE: assets/images/founder-signature.png -->
+              <div style="display:flex; flex-direction:column; justify-content:center;">
+                <div style="font-family:Georgia,serif; font-size:2rem; font-style:italic; color:var(--clr-primary-dark); line-height:1; margin-bottom:var(--sp-1);">
+                  Suresh B. Gowda
+                </div>
+              </div>
+              <div class="signature-text">
+                <!-- EDIT NAME / ROLE -->
+                <div class="name">Shri. Suresh B. Gowda</div>
+                <div class="role">Chairman &amp; Founder, SBG BCA College</div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =================== COMMITMENTS =================== -->
+    <section class="commitments-strip" id="commitments" aria-labelledby="commitments-heading">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-eyebrow" style="color:var(--clr-accent-light);">The Founder's Promise</span>
+          <h2 class="section-title" id="commitments-heading" style="color:var(--clr-white);">
+            Our Commitments to Every Student
+          </h2>
+        </div>
+
+        <div class="commitments-grid">
+
+          <div class="commitment-item" data-reveal>
+            <div class="commitment-icon" aria-hidden="true">
+              <i class="fa-solid fa-book-open"></i>
+            </div>
+            <h4>Academic Rigour</h4>
+            <p>
+              <!-- EDIT THIS CONTENT -->
+              A curriculum that challenges, inspires, and prepares — reviewed every year
+              to remain ahead of industry expectations.
+            </p>
+          </div>
+
+          <div class="commitment-item" data-reveal>
+            <div class="commitment-icon" aria-hidden="true">
+              <i class="fa-solid fa-handshake"></i>
+            </div>
+            <h4>Placement Support</h4>
+            <p>
+              <!-- EDIT THIS CONTENT -->
+              A personal promise that every graduate will have genuine career opportunities —
+              backed by our T&amp;P cell and 50+ employer partners.
+            </p>
+          </div>
+
+          <div class="commitment-item" data-reveal>
+            <div class="commitment-icon" aria-hidden="true">
+              <i class="fa-solid fa-heart"></i>
+            </div>
+            <h4>Student Wellbeing</h4>
+            <p>
+              <!-- EDIT THIS CONTENT -->
+              A campus where every student feels safe, respected, and supported — in academics,
+              mental health, and personal growth.
+            </p>
+          </div>
+
+          <div class="commitment-item" data-reveal>
+            <div class="commitment-icon" aria-hidden="true">
+              <i class="fa-solid fa-arrow-trend-up"></i>
+            </div>
+            <h4>Continuous Growth</h4>
+            <p>
+              <!-- EDIT THIS CONTENT -->
+              A commitment to never stop improving — in infrastructure, faculty development,
+              and the opportunities we create for our students.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =================== CTA =================== -->
+    <section class="page-cta" id="cta" aria-label="Call to action">
+      <div class="container">
+        <div class="page-cta-content">
+          <span class="section-eyebrow" style="color:var(--clr-accent-light);">Begin Your Journey</span>
+          <h2>The Founder Invites You to Join the SBG Family</h2>
+          <p>
+            <!-- EDIT THIS CONTENT -->
+            Applications for the 2025–26 academic year are open. Take the first step
+            toward a career in technology — we're ready to walk the road with you.
+          </p>
+          <div class="cta-btn-group">
+            <a href="contact.html" class="btn btn-accent btn-lg" id="fdCtaApply">
+              Apply for Admission
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+            <a href="management.html" class="btn btn-outline-white btn-lg" id="fdCtaMgmt">
+              Meet the Team
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =================== FOOTER =================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="../index.html" class="footer-logo">
+            <img src="../components/images/logo.png" alt="SBG BCA College Logo" class="footer-logo-img">
+          </a>
+          <p class="footer-desc">
+            Empowering students with world-class education in Computer Applications,
+            shaping the technology leaders of tomorrow. Affiliated to Rani Channamma University.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Home</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> About Us</a></li>
+            <li><a href="programs.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Programs</a></li>
+            <li><a href="facilities.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Facilities</a></li>
+            <li><a href="gallery.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Gallery</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>About College</h4>
+          <ul>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Vision &amp; Mission</a></li>
+            <li><a href="management.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Our Management</a></li>
+            <li><a href="founders-desk.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Founder's Desk</a></li>
+            <li><a href="#"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Admissions</a></li>
+            <li><a href="#"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Student Portal</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="footer-contact-text">
+              <strong>Address</strong>
+              <span>123, College Road, Near SBG Complex,<br>Belagavi – 590 001, Karnataka</span>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true"><i class="fa-solid fa-phone"></i></div>
+            <div class="footer-contact-text">
+              <strong>Phone</strong>
+              <a href="tel:+911234567890">+91 12345 67890</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true"><i class="fa-regular fa-envelope"></i></div>
+            <div class="footer-contact-text">
+              <strong>Email</strong>
+              <a href="mailto:admissions@sbgbca.edu.in">admissions@sbgbca.edu.in</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="footerYear">2025</span> SBG BCA College. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/navbar.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    document.getElementById('footerYear').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
