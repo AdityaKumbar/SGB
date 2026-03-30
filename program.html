@@ -96,7 +96,7 @@
     }
     .bca-tag-row {
       display: flex;
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
       gap: var(--sp-4);
       margin-top: var(--sp-5);
       margin-bottom: var(--sp-8);
@@ -109,10 +109,19 @@
     .bca-tag {
       display: inline-flex; align-items: center; gap: var(--sp-2);
       background: rgba(26,58,110,0.07); border: 1px solid rgba(26,58,110,0.12);
-      border-radius: var(--radius-full); padding: 2px 12px;
+      border-radius: var(--radius-full); padding: 8px 14px;
       font-size: var(--fs-xs); font-weight: 600; color: var(--clr-primary-dark);
+      line-height: 1.35;
+      max-width: 100%;
+      white-space: normal;
+      word-break: break-word;
     }
-    .bca-tag i { color: var(--clr-accent); font-size: 0.75rem; }
+    .bca-tag i {
+      color: var(--clr-accent);
+      font-size: 0.75rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
     .bca-overview-text .section-eyebrow::after {
       display: none;
     }
@@ -366,6 +375,19 @@
     @media (max-width: 600px) {
       .highlights-grid { grid-template-columns: 1fr; }
       .page-hero .container { padding-block: var(--sp-12); }
+      .bca-tag-row {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--sp-2);
+        margin-top: var(--sp-4);
+        margin-bottom: var(--sp-6);
+      }
+      .bca-tag {
+        width: 100%;
+        border-radius: var(--radius-md);
+        padding: 10px 12px;
+        font-size: 0.92rem;
+      }
     }
   </style>
 </head>
@@ -423,7 +445,7 @@
             </a>
           </div>
         </li>
-        <li class="nav-item"><a href="program.html" class="nav-link active" data-nav="program">Program</a></li>
+        <li class="nav-item"><a href="program.html" class="nav-link active" data-nav="program">BCA Program</a></li>
         <li class="nav-item"><a href="facilities.html" class="nav-link" data-nav="facilities">Facilities</a></li>
         <li class="nav-item"><a href="gallery.html" class="nav-link" data-nav="gallery">Gallery</a></li>
         <li class="nav-item"><a href="contact.html" class="nav-link" data-nav="contact">Contact</a></li>
