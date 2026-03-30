@@ -129,6 +129,18 @@
   position: relative;
 }
 
+/* Keep dropdown open while cursor moves from trigger to menu */
+@media (min-width: 901px) {
+  .nav-item.has-dropdown::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    height: 12px;
+  }
+}
+
 .nav-link {
   display: flex;
   align-items: center;
@@ -164,7 +176,7 @@
 /* ---- Dropdown Menu ---- */
 .dropdown-menu {
   position: absolute;
-  top: calc(100% + 8px);
+  top: calc(100% + 4px);
   left: 50%;
   transform: translateX(-50%);
   min-width: 220px;
