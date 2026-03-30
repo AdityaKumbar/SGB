@@ -178,7 +178,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-weight: 600;
   letter-spacing: 0.03em;
   transition: all var(--transition-base);
-  white-space: nowrap;
+  white-space: normal;
+  text-align: center;
 }
 
 .btn-primary {
@@ -350,5 +351,28 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .container { padding-inline: var(--sp-4); }
   .section { padding-block: var(--sp-12); }
   .section-title { font-size: var(--fs-lg); }
+  .section-eyebrow { font-size: var(--fs-xs); }
+  .nav-toggle { display: block; }
+  
+  /* Keep buttons side by side but smaller */
+  .flex.gap-4 {
+    gap: var(--sp-2);
+    flex-wrap: nowrap;
+  }
+  
+  .btn {
+    padding: 0.55em 0.9em;
+    font-size: 0.7rem;
+    flex-shrink: 1;
+    min-width: 0;
+  }
+  
+  .btn-lg {
+    padding: 0.55em 0.9em;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
   :root { --nav-height: 64px; }
 }
