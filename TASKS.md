@@ -27,6 +27,7 @@
 * [x] Create Our Management page
 * [ ] Create Founder’s Desk page
 * [x] Create Programs page
+* [x] Revamp Programs page to a single flagship BCA program layout
 * [x] Create Facilities page
 * [x] Create Gallery page
 * [x] Create Contact Us page
