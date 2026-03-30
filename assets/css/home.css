@@ -464,9 +464,9 @@
 
 /* Featured/Larger Card Variant */
 .program-card--featured {
-  max-width: 550px;
+  max-width: 850px;
   width: 100%;
-  padding: var(--sp-10);
+  padding: var(--sp-12);
   background: var(--clr-white);
   border: 1px solid var(--clr-border);
 }
