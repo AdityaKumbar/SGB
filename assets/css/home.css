@@ -357,6 +357,12 @@
    ============================================= */
 .programs-preview { background: var(--clr-bg); }
 
+.program-featured-flex {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 .program-card {
   background: var(--clr-white);
   border-radius: var(--radius-lg);
@@ -455,6 +461,62 @@
 }
 .program-card-link:hover { color: var(--clr-primary-light); }
 .program-card:hover .program-card-link { gap: var(--sp-3); }
+
+/* Featured/Larger Card Variant */
+.program-card--featured {
+  max-width: 550px;
+  width: 100%;
+  padding: var(--sp-10);
+  background: var(--clr-white);
+  border: 1px solid var(--clr-border);
+}
+
+.program-card--featured .program-icon {
+  width: 72px;
+  height: 72px;
+  font-size: 1.8rem;
+  margin-bottom: var(--sp-6);
+}
+
+.program-card--featured h3 {
+  font-size: var(--fs-xl);
+  margin-bottom: var(--sp-4);
+}
+
+.program-card--featured p {
+  font-size: var(--fs-base);
+  line-height: 1.8;
+  color: var(--clr-muted);
+}
+
+.program-card--featured .program-meta {
+  margin-top: var(--sp-8);
+  padding-top: var(--sp-6);
+  gap: var(--sp-6);
+}
+
+.program-card--featured .program-meta-item {
+  font-size: var(--fs-sm);
+}
+
+.program-card--featured .program-meta-item svg {
+  width: 16px;
+  height: 16px;
+}
+
+.program-card--featured .program-card-link {
+  margin-top: var(--sp-6);
+  font-size: var(--fs-md);
+}
+
+@media (max-width: 600px) {
+  .program-card--featured {
+    padding: var(--sp-6);
+  }
+  .program-card--featured h3 {
+    font-size: var(--fs-lg);
+  }
+}
 
 /* =============================================
    WHY US / FEATURES
