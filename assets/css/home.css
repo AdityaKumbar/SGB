@@ -8,7 +8,7 @@
 
 .hero {
   position: relative;
-  min-height: calc(100vh - var(--nav-height));
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -30,10 +30,28 @@
   z-index: 1;
 }
 
+/* Mobile overlay adjustment */
+@media (max-width: 768px) {
+  .hero::before {
+    background:
+      linear-gradient(135deg,
+        rgba(10,20,45,0.5) 0%,
+        rgba(26,58,110,0.35) 50%,
+        rgba(10,20,45,0.2) 100%
+      );
+  }
+  
+  .hero-bg {
+    object-position: center center;
+    transform: scale(1.02);
+  }
+}
+
 .hero-bg {
   position: absolute;
   inset: 0;
   object-fit: cover;
+  object-position: center;
   width: 100%;
   height: 100%;
   transform: scale(1.05);
@@ -238,6 +256,8 @@
 
 .about-image-wrap {
   position: relative;
+  max-width: 620px;
+  margin-inline: auto;
   transition: transform var(--transition-slow, 0.4s ease);
 }
 .about-image-wrap:hover {
@@ -259,12 +279,12 @@
 
 .about-img-badge {
   position: absolute;
-  bottom: -24px;
-  right: -24px;
+  bottom: -12px;
+  right: -12px;
   background: var(--clr-accent);
   color: var(--clr-dark);
   border-radius: var(--radius-lg);
-  padding: var(--sp-5) var(--sp-6);
+  padding: var(--sp-3) var(--sp-4);
   text-align: center;
   box-shadow: var(--shadow-lg);
   transition: transform var(--transition-slow, 0.4s ease), box-shadow var(--transition-slow, 0.4s ease);
@@ -273,12 +293,12 @@
 .about-img-badge strong {
   display: block;
   font-family: var(--font-heading);
-  font-size: var(--fs-2xl);
+  font-size: 1.1rem;
   font-weight: 700;
   line-height: 1;
 }
 .about-img-badge span {
-  font-size: var(--fs-xs);
+  font-size: 0.65rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -291,31 +311,31 @@
 
 .about-img-accred {
   position: absolute;
-  top: -20px;
-  left: -20px;
+  top: -12px;
+  left: -12px;
   background: var(--clr-white);
   border-radius: var(--radius-md);
-  padding: var(--sp-3) var(--sp-4);
+  padding: var(--sp-2) var(--sp-3);
   display: flex;
   align-items: center;
-  gap: var(--sp-3);
+  gap: var(--sp-2);
   box-shadow: var(--shadow-lg);
-  font-size: var(--fs-sm);
+  font-size: 0.7rem;
   font-weight: 600;
   color: var(--clr-primary-dark);
   transition: transform var(--transition-slow, 0.4s ease), box-shadow var(--transition-slow, 0.4s ease);
   z-index: 2;
 }
 .about-img-accred .icon {
-  width: 36px;
-  height: 36px;
+  width: 28px;
+  height: 28px;
   background: var(--clr-primary);
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--clr-white);
-  font-size: 1.1rem;
+  font-size: 0.9rem;
 }
 .about-image-wrap:hover .about-img-accred {
   transform: translateY(-12px) translateX(-12px) scale(1.05);
@@ -931,9 +951,36 @@
 
 @media (max-width: 900px) {
   .about-preview-inner { grid-template-columns: 1fr; }
-  .about-image-wrap { order: -1; }
-  .about-img-main { height: 320px; }
-  .about-img-badge { bottom: -16px; right: -8px; }
+  .about-image-wrap { order: -1; max-width: 100%; cursor: pointer; }
+  .about-img-main {
+    height: clamp(280px, 70vw, 400px);
+    object-position: center;
+    border-radius: 32px;
+  }
+  .about-img-accred {
+    top: 8px;
+    left: 8px;
+    padding: var(--sp-2) var(--sp-3);
+    font-size: 0.7rem;
+    border-radius: var(--radius-md);
+  }
+  .about-img-accred .icon {
+    width: 26px;
+    height: 26px;
+    font-size: 0.85rem;
+  }
+  .about-img-badge {
+    bottom: 8px;
+    right: 8px;
+    padding: var(--sp-2) var(--sp-3);
+    border-radius: 16px;
+  }
+  .about-img-badge strong {
+    font-size: 1rem;
+  }
+  .about-img-badge span {
+    font-size: 0.6rem;
+  }
   .facility-grid { grid-template-columns: 1fr 1fr; }
   .facility-card--featured { grid-column: span 1; }
   .notices-wrapper { grid-template-columns: 1fr; }
@@ -943,13 +990,88 @@
   .hero-content { padding-block: var(--sp-20) var(--sp-16); }
   .hero-desc    { max-width: 100%; font-size: var(--fs-base); }
   .hero-scroll-arrow { display: none; }
+  .hero-bg {
+    object-position: center;
+    transform: scale(1.02);
+  }
 }
 
 @media (max-width: 600px) {
   .hero-content { padding-block: var(--sp-16) var(--sp-12); }
   .hero-title   { font-size: clamp(1.85rem, 7vw, 2.4rem); }
   .hero-stats   { gap: var(--sp-2); }
+  
+  .about-image-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-4);
+    padding: 0 var(--sp-2);
+    cursor: pointer;
+  }
+  .about-img-main {
+    height: clamp(240px, 80vw, 340px);
+    object-fit: cover;
+    object-position: center;
+    border-radius: 28px;
+    box-shadow: 0 12px 28px rgba(26, 58, 110, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .about-image-wrap:active .about-img-main {
+    transform: scale(0.98);
+  }
+  
+  .about-img-accred {
+    position: absolute !important;
+    top: 8px;
+    left: 8px;
+    padding: var(--sp-1) var(--sp-2);
+    font-size: 0.65rem;
+    box-shadow: var(--shadow-md);
+    background: var(--clr-white);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    gap: var(--sp-1);
+  }
+  .about-img-accred .icon {
+    width: 24px;
+    height: 24px;
+    font-size: 0.75rem;
+  }
+  .about-image-wrap:active .about-img-accred {
+    transform: scale(0.95);
+    box-shadow: 0 8px 16px rgba(26, 58, 110, 0.2);
+  }
+  
+  .about-img-badge {
+    position: absolute !important;
+    bottom: 8px;
+    right: 8px;
+    padding: var(--sp-2) var(--sp-2);
+    border-radius: 16px;
+    box-shadow: var(--shadow-lg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .about-img-badge strong {
+    font-size: 0.95rem;
+  }
+  .about-img-badge span {
+    font-size: 0.6rem;
+  }
+  .about-image-wrap:active .about-img-badge {
+    transform: scale(0.95);
+    box-shadow: 0 12px 24px rgba(232, 160, 32, 0.35);
+  }
+  
+  .about-image-wrap:hover .about-img-main,
+  .about-image-wrap:hover .about-img-accred,
+  .about-image-wrap:hover .about-img-badge {
+    transform: none;
+  }
+  
   .facility-grid { grid-template-columns: 1fr; }
+  .facility-card-img {
+    object-position: center;
+  }
   .why-us-grid   { grid-template-columns: 1fr; }
   .numbers-grid  { grid-template-columns: repeat(2, 1fr); }
 }

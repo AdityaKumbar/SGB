@@ -313,6 +313,8 @@
     left: 0;
     right: 0;
     bottom: 0;
+    width: 100%;
+    max-width: 100vw;
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
